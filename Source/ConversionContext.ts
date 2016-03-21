@@ -76,10 +76,7 @@ namespace GLS {
          * @returns The equivalent converted type name.
          */
         convertType(typeNameRaw: string): string {
-            let commandParameters: string[] = [Commands.CommandStrings.TypeCommandName, typeNameRaw],
-                rawCommand: string = Commands.CommandStrings.generateRawCommand(commandParameters);
-
-            return this.parser.parseCommand(rawCommand)[0].text;
+            return this.parser.parseCommand("type : " + typeNameRaw)[0].text;
         }
 
         /**

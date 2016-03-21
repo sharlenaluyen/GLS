@@ -15,10 +15,6 @@ var expect = require("chai").expect,
             });
         });
         
-        describe("convert", () => {
-            // ...
-        });
-        
         describe("convertType", () => {
             it("parses a type with an alias", () => {
                 let context = mocks.mockConversionContext();

@@ -15,5 +15,10 @@ namespace GLS.Languages.Properties {
          * Whether block-starting braces should be moved to the next line.
          */
         public separateBraceLines: boolean;
+
+        /**
+         * How to end lines, such as "" or ";".
+         */
+        public semicolon: string;
     }
 }

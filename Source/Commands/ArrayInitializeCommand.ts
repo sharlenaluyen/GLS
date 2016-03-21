@@ -14,6 +14,7 @@ namespace GLS.Commands {
          * @param parameters   The command's name, followed by any number of
          *                     items to initialize in the Array.
          * @returns Line(s) of code in the language.
+         * @remarks Usage: (type).
          */
         public render(parameters: string[]): CommandResult[] {
             this.requireParametersLengthMinimum(parameters, 1);

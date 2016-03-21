@@ -13,6 +13,7 @@ namespace GLS.Commands {
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
+         * @remarks Usage: (contents, ...).
          */
         public render(parameters: string[]): CommandResult[] {
             let language: Languages.Language = this.language,

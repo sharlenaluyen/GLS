@@ -67,7 +67,7 @@ namespace GLS.Commands {
          * @param minimum   The minimum allowed number of parameters.
          */
         protected requireParametersLengthMaximum(parameters: string[], maximum: number): void {
-            if (parameters.length + 1 > maximum) {
+            if (parameters.length - 1 > maximum) {
                 throw new Error(`Not enough arguments: expected fewer than ${maximum} but got ${parameters.length - 1}.`);
             }
         }
@@ -81,7 +81,7 @@ namespace GLS.Commands {
          */
         protected requireParametersLengthRange(parameters: string[], minimum: number, maximum: number): void {
             this.requireParametersLengthMinimum(parameters, minimum);
-            this.requireParametersLengthMaximum(parameters, minimum);
+            this.requireParametersLengthMaximum(parameters, maximum);
         }
     }
 }

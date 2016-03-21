@@ -13,6 +13,7 @@ namespace GLS.Commands {
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
+         * @remarks Usage: (type).
          */
         render(parameters: string[]): CommandResult[] {
             this.requireParametersLength(parameters, 1);

@@ -3,17 +3,18 @@
 /// <reference path="CommandResult.ts" />
 
 /// <reference path="ArrayInitializeCommand.ts" />
-
 /// <reference path="CommentBlockCommand.ts" />
 /// <reference path="CommentBlockEndCommand.ts" />
 /// <reference path="CommentBlockStartCommand.ts" />
 /// <reference path="CommentDocEndCommand.ts" />
 /// <reference path="CommentDocStartCommand.ts" />
 /// <reference path="CommentDocTagCommand.ts" />
-
 /// <reference path="CommentLineCommand.ts" />
 /// <reference path="LiteralCommand.ts" />
+/// <reference path="OperatorCommand.ts" />
 /// <reference path="TypeCommand.ts" />
+/// <reference path="VariableCommand.ts" />
+/// <reference path="VariableInlineCommand.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -43,7 +44,11 @@ namespace GLS.Commands {
                 "comment doc tag": new CommentDocTagCommand(context),
                 "comment line": new CommentLineCommand(context),
                 "literal": new LiteralCommand(context),
-                "type": new TypeCommand(context)
+                "operator": new OperatorCommand(context),
+                "type": new TypeCommand(context),
+                "value": new ValueCommand(context),
+                "variable": new VariableCommand(context),
+                "variable inline": new VariableInlineCommand(context)
             };
         }
 
@@ -56,6 +61,7 @@ namespace GLS.Commands {
          */
         renderCommand(parameters: string[]): CommandResult[] {
             if (!this.commands.hasOwnProperty(parameters[0])) {
+                console.log("Parmaeters", parameters);
                 throw new Error("Unknown command requested: '" + parameters[0] + "'");
             }
 

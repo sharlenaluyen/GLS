@@ -21,8 +21,8 @@ namespace GLS.Commands {
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
+         * @remarks Usage: (tag[, parameter][, comments]).
          */
-        // This is JSDoc-only for now.
         public render(parameters: string[]): CommandResult[] {
             if (this.language.properties.comments.docAsXml) {
                 return this.renderXmlDoc(parameters);

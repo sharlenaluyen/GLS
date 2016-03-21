@@ -53,6 +53,8 @@ namespace GLS.Languages {
             this.properties.strings = this.generateStringProperties();
             this.properties.style = this.generateStyleProperties();
             this.properties.variables = this.generateVariableProperties();
+
+            this.properties.operators.generateAliases();
         }
 
         /**

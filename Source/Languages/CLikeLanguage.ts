@@ -170,6 +170,7 @@ namespace GLS.Languages {
             operators.decreaseBy = "-=";
             operators.divide = "/";
             operators.divideBy = "/=";
+            operators.equals = "=";
             operators.equalTo = "==";
             operators.greaterThan = ">";
             operators.greaterThanOrEqualTo = ">=";
@@ -186,6 +187,17 @@ namespace GLS.Languages {
             operators.times = "*";
 
             return operators;
+        }
+
+        /**
+         * Generates metadata on style.
+         */
+        protected generateStyleProperties(): Properties.StyleProperties {
+            let style: Properties.StyleProperties = new Properties.StyleProperties();
+
+            style.semicolon = ";";
+
+            return style;
         }
     }
 }

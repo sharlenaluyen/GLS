@@ -56,7 +56,8 @@ namespace GLS.Languages {
             let classes: Properties.ClassProperties = super.generateClassProperties();
 
             classes.aliases = {
-                "dictionary": "Dictionary"
+                "dictionary": "Dictionary",
+                "number": "float"
             };
             classes.constructorAsClassName = true;
             classes.defineInheritanceLeft = " : ";
@@ -178,21 +179,17 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on style.
-         */
-        protected generateStyleProperties(): Properties.StyleProperties {
-            return new Properties.StyleProperties();
-        }
-
-        /**
          * @returns Metadata on variables.
          */
         protected generateVariableProperties(): Properties.VariableProperties {
             let variables: Properties.VariableProperties = new Properties.VariableProperties();
 
+            variables.aliases = {
+                "infinity": "float.PositiveInfinity"
+            };
             variables.castLeft = "(";
             variables.castRight = ")";
-            variables.declaration = "var  ";
+            variables.declaration = "";
             variables.explicitTypes = true;
             variables.null = "null";
 

@@ -6,6 +6,11 @@ namespace GLS.Languages.Properties {
      */
     export class OperatorProperties {
         /**
+         * Aliases of operators, from raw GLS syntax to this language's equivalents.
+         */
+        public aliases: { [i: string]: string };
+
+        /**
          * The symbols used for "&&".
          */
         public and: string;
@@ -24,6 +29,11 @@ namespace GLS.Languages.Properties {
          * The symbols used for "/=".
          */
         public divideBy: string;
+
+        /**
+         * The symbols used for "=".
+         */
+        public equals: string;
 
         /**
          * The symbols used for "==".
@@ -94,5 +104,32 @@ namespace GLS.Languages.Properties {
          * The symbols used for "*".
          */
         public times: string;
+
+        /**
+         * Initializes aliases based on the equivalent member properties.
+         */
+        public generateAliases(): void {
+            this.aliases = {
+                "and": this.and,
+                "decrease by": this.decreaseBy,
+                "divide": this.divide,
+                "divide by": this.divideBy,
+                "equals": this.equals,
+                "equal to": this.equalTo,
+                "greater than": this.greaterThan,
+                "greater than or equal to": this.greaterThanOrEqualTo,
+                "increase by": this.increaseBy,
+                "less than": this.lessThan,
+                "less than or equal to": this.lessThanOrEqualTo,
+                "minus": this.minus,
+                "mod": this.mod,
+                "multiply by": this.multiplyBy,
+                "not": this.not,
+                "not equal to": this.notEqualTo,
+                "or": this.or,
+                "plus": this.plus,
+                "times": this.times
+            };
+        }
     }
 }

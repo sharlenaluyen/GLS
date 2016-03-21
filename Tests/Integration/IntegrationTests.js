@@ -25,7 +25,11 @@ var mocks = require("../mocks.js"),
         "CommentDocTag": ["giant parameter", "giant summary", "long parameter", "long summary", "parameter", "summary"],
         "CommentLine": ["empty line", "multiple words", "single word"],
         "Literal": ["no parameters", "single parameter", "two parameters"],
-        "Type": ["array", "no alias", "with alias"]
+        "Operator": ["equal to", "increase by", "not equal to", "plus"],
+        "Type": ["array", "no alias", "with alias"],
+        "Value": ["false", "infinity", "true"],
+        "Variable": ["int", "int value", "number", "number value", "string", "string value"],
+        "VariableInline": ["int", "int value", "number", "number value", "string", "string value"]
     };
     
 (() => {

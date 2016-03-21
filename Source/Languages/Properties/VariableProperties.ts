@@ -6,6 +6,11 @@ namespace GLS.Languages.Properties {
      */
     export class VariableProperties {
         /**
+         * Aliases of values, from raw GLS syntax to this language's equivalents.
+         */
+        public aliases: { [i: string]: string };
+        
+        /**
          * How to start a type cast.
          */
         public castLeft: string;
