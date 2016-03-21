@@ -12,6 +12,7 @@
 /// <reference path="CommentLineCommand.ts" />
 /// <reference path="LiteralCommand.ts" />
 /// <reference path="OperatorCommand.ts" />
+/// <reference path="ThisCommand.ts" />
 /// <reference path="TypeCommand.ts" />
 /// <reference path="ValueCommand.ts" />
 /// <reference path="VariableCommand.ts" />
@@ -46,6 +47,7 @@ namespace GLS.Commands {
                 "comment line": new CommentLineCommand(context),
                 "literal": new LiteralCommand(context),
                 "operator": new OperatorCommand(context),
+                "this": new ThisCommand(context),
                 "type": new TypeCommand(context),
                 "value": new ValueCommand(context),
                 "variable": new VariableCommand(context),
