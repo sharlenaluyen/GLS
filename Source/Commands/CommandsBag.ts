@@ -13,6 +13,7 @@
 /// <reference path="LiteralCommand.ts" />
 /// <reference path="OperatorCommand.ts" />
 /// <reference path="TypeCommand.ts" />
+/// <reference path="ValueCommand.ts" />
 /// <reference path="VariableCommand.ts" />
 /// <reference path="VariableInlineCommand.ts" />
 
@@ -61,7 +62,6 @@ namespace GLS.Commands {
          */
         renderCommand(parameters: string[]): CommandResult[] {
             if (!this.commands.hasOwnProperty(parameters[0])) {
-                console.log("Parmaeters", parameters);
                 throw new Error("Unknown command requested: '" + parameters[0] + "'");
             }
 
