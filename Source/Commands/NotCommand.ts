@@ -5,20 +5,22 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for printing the "this" keyword.
+     * A command for printing a logical inverse.
      */
-    export class ThisCommand extends Command {
+    export class NotCommand extends Command {
         /**
          * Renders the command for a language with the given parameters.
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
-         * @remarks Usage: ().
+         * @remarks Usage: (value).
          */
         public render(parameters: string[]): CommandResult[] {
-            this.requireParametersLength(parameters, 0);
+            this.requireParametersLength(parameters, 1);
 
-            return [new CommandResult(this.language.properties.classes.this, 0)];
+            let not = this.language.properties.operators.not;
+
+            return [new CommandResult(not + parameters[1], 0)];
         }
     }
 }
