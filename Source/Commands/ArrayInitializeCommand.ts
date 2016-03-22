@@ -19,14 +19,14 @@ namespace GLS.Commands {
         public render(parameters: string[]): CommandResult[] {
             this.requireParametersLengthMinimum(parameters, 1);
 
-            let typeName: string = this.context.convertType(parameters[1]),
+            let typeName: string = this.context.convertCommon("type", parameters[1]),
                 output: string = "";
 
             if (this.language.properties.arrays.initializeAsNew) {
                 output += "new ";
 
                 if (this.language.properties.arrays.initializeByType) {
-                    output += this.context.convertType(typeName + "[]");
+                    output += this.context.convertCommon("type", typeName + "[]");
                 }
             }
 

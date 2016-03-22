@@ -68,15 +68,16 @@ namespace GLS {
 
             return output;
         }
-        
+
         /**
-         * Converts a raw type name using the Type command.
+         * Converts a command with a single argument.
          * 
-         * @param typeNameRaw   A raw type name to convert.
-         * @returns The equivalent converted type name.
+         * @param command   The name of the command.
+         * @param argumentRaw   A raw argument for the command.
+         * @returns An equivalent line of code in the context language. 
          */
-        convertType(typeNameRaw: string): string {
-            return this.parser.parseCommand("type : " + typeNameRaw)[0].text;
+        convertCommon(command: string, argumentRaw: string): string {
+            return this.parser.renderParsedCommand([command, argumentRaw])[0].text;
         }
 
         /**

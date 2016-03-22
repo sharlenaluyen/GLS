@@ -15,21 +15,6 @@ var expect = require("chai").expect,
             });
         });
         
-        describe("convertType", () => {
-            it("parses a type with an alias", () => {
-                let context = mocks.mockConversionContext();
-                
-                expect(context.convertType("dictionary")).to.be.equal("object");
-            });
-
-            it("parses a type without an alias", () => {
-                let context = mocks.mockConversionContext(),
-                    typeName = "aaa";
-
-                expect(context.convertType(typeName)).to.be.equal(typeName);
-            });
-        });
-        
         describe("generateTabs", () => {
             it("generates 0 tabs", () => {
                 expect(mocks.mockConversionContext().generateTabs(0)).to.be.equal("");

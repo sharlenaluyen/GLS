@@ -45,7 +45,17 @@ namespace GLS {
                 }
             }
 
-            return this.commandsBag.renderCommand(parameters);
+            return this.renderParsedCommand(parameters);
+        }
+        
+        /**
+         * Renders a parsed line into the equivalent language code. 
+         * 
+         * @param lineParsed   A parsed line from raw GLS syntax.
+         * @returns The equivalent lines of code in the language.
+         */
+        renderParsedCommand(lineParsed: string[]): Commands.CommandResult[] {
+            return this.commandsBag.renderCommand(lineParsed);
         }
 
         /**

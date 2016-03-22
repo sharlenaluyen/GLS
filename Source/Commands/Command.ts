@@ -83,5 +83,27 @@ namespace GLS.Commands {
             this.requireParametersLengthMinimum(parameters, minimum);
             this.requireParametersLengthMaximum(parameters, maximum);
         }
+
+        /**
+         * Throws an error if an odd number of parameters are passed.
+         * 
+         * @param parameters   Parameters passed to a command.
+         */
+        protected requireParametersLengthEven(parameters: string[]): void {
+            if ((parameters.length % 2 - 1) !== 0) {
+                throw new Error(`Expected parameters to be even, but got ${parameters.length - 1}.`);
+            }
+        }
+
+        /**
+         * Throws an error if an even number of parameters are passed.
+         * 
+         * @param parameters   Parameters passed to a command.
+         */
+        protected requireParametersLengthOdd(parameters: string[]): void {
+            if ((parameters.length - 1) % 2 === 0) {
+                throw new Error(`Expected parameters to be odd, but got ${parameters.length - 1}.`);
+            }
+        }
     }
 }

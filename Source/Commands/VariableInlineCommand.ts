@@ -19,7 +19,7 @@ namespace GLS.Commands {
             this.requireParametersLengthRange(parameters, 2, 3);
 
             let name: string = parameters[1];
-            let typeName: string = this.context.convertType(parameters[2]);
+            let typeName: string = this.context.convertCommon("type", parameters[2]);
             let output: string = "";
 
             if (this.language.properties.variables.explicitTypes) {
