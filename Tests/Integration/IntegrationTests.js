@@ -5,12 +5,14 @@ var mocks = require("../mocks.js"),
     fs = require("fs"),
     commandsPath = "Tests/Integration/Commands",
     languagesByName = {
-        "C#": new GLS.Languages.CSharp,
-        "TypeScript": new GLS.Languages.TypeScript
+        "C#": new GLS.Languages.CSharp(),
+        "Python": new GLS.Languages.Python(),
+        "TypeScript": new GLS.Languages.TypeScript()
     },
     languages = Object.keys(languagesByName).map(key => languagesByName[key]),
     languagesByExtension = {
         ".cs": languagesByName["C#"],
+        ".py": languagesByName["Python"],
         ".ts": languagesByName["TypeScript"]
     },
     languageExtensions = Object.keys(languagesByExtension),
