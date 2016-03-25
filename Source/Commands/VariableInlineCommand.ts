@@ -18,6 +18,10 @@ namespace GLS.Commands {
         public render(parameters: string[]): CommandResult[] {
             this.requireParametersLengthRange(parameters, 2, 3);
 
+            if (parameters.length === 3 && !this.language.properties.variables.declarationRequired) {
+                return [new CommandResult("\0", 0)];
+            }
+
             let name: string = parameters[1];
             let typeName: string = this.context.convertCommon("type", parameters[2]);
             let output: string = "";

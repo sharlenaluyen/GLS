@@ -84,17 +84,15 @@ namespace GLS.Languages {
                 "summary": "\0",
                 "parameter": ""
             };
-            comments.docTagStart = "@";
             comments.docTagEnd = " ";
+            comments.docTagStart = "@";
             comments.docStart = "/**";
         }
 
         /**
          * @returns Metadata on dictionaries.
          */
-        protected generateDictionaryProperties(): Properties.DictionaryProperties {
-            let dictionaries: Properties.DictionaryProperties = new Properties.DictionaryProperties();
-
+        protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Object";
             dictionaries.initializeStart = "{";
             dictionaries.initializeEnd = "}";
@@ -102,8 +100,6 @@ namespace GLS.Languages {
             dictionaries.initializePairMiddle = "\": ";
             dictionaries.initializePairRight = "";
             dictionaries.keyChecker = "hasOwnProperty";
-
-            return dictionaries;
         }
 
         /**
@@ -130,8 +126,8 @@ namespace GLS.Languages {
          * @returns Metadata on general 
          */
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
-            general.name = "TypeScript";
             general.extension = ".ts";
+            general.name = "TypeScript";
         }
 
         /**
@@ -179,6 +175,8 @@ namespace GLS.Languages {
          * @returns Metadata on variables.
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
+            super.generateVariableProperties(variables);
+
             variables.aliases = {
                 "infinity": "Infinity"
             };

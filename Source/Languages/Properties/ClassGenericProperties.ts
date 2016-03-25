@@ -19,5 +19,10 @@ namespace GLS.Languages.Properties {
          * How to end declaring a class' generics.
          */
         right: string;
+
+        /**
+         * Whether the class uses generics.
+         */
+        used: boolean;
     }
 }

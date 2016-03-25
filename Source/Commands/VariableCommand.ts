@@ -18,6 +18,10 @@ namespace GLS.Commands {
         public render(parameters: string[]): CommandResult[] {
             this.requireParametersLengthRange(parameters, 2, 3);
 
+            if (parameters.length === 3 && !this.language.properties.variables.declarationRequired) {
+                return [new CommandResult("\0", 0)];
+            }
+
             let starter: string = this.language.properties.variables.declaration;
 
             // I don't know if this will work... :)

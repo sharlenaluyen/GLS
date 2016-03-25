@@ -1,1 +1,1 @@
-int aaa;
+true
