@@ -101,5 +101,27 @@ namespace GLS.Languages.Properties {
          * Metadata on variables.
          */
         public variables: VariableProperties;
+
+        /**
+         * Initializes a new instance of the LanguageProperties class.
+         */
+        constructor() {
+            this.arrays = new ArrayProperties();
+            this.booleans = new BooleanProperties();
+            this.classes = new ClassProperties();
+            this.comments = new CommentProperties();
+            this.conditionals = new ConditionalProperties();
+            this.dictionaries = new DictionaryProperties();
+            this.exceptions = new ExceptionProperties();
+            this.functions = new FunctionProperties();
+            this.general = new GeneralProperties();
+            this.lambdas = new LambdaProperties();
+            this.loops = new LoopProperties();
+            this.numbers = new NumberProperties();
+            this.operators = new OperatorProperties();
+            this.strings = new StringProperties();
+            this.style = new StyleProperties();
+            this.variables = new VariableProperties();
+        }
     }
 }

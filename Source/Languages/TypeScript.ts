@@ -28,30 +28,22 @@ namespace GLS.Languages {
         /**
          * @returns Metadata on arrays.
          */
-        protected generateArrayProperties(): Properties.ArrayProperties {
-            let arrays: Properties.ArrayProperties = new Properties.ArrayProperties();
-
+        protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "Array";
-
-            return arrays;
         }
 
         /**
          * @returns Metadata on booleans.
          */
-        protected generateBooleanProperties(): Properties.BooleanProperties {
-            let booleans: Properties.BooleanProperties = new Properties.BooleanProperties();
-
+        protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
             booleans.className = "boolean";
-
-            return booleans;
         }
 
         /**
          * @returns Metadata on classes.
          */
-        protected generateClassProperties(): Properties.ClassProperties {
-            let classes: Properties.ClassProperties = super.generateClassProperties();
+        protected generateClassProperties(classes: Properties.ClassProperties): void {
+            super.generateClassProperties(classes);
 
             classes.aliases = {
                 "dictionary": "object",
@@ -59,28 +51,24 @@ namespace GLS.Languages {
             };
             classes.constructorName = "constructor";
             classes.defineInheritanceLeft = " extends ";
-
-            return classes;
         }
 
         /**
          * @returns Metadata on class members.
          */
-        protected generateClassMemberProperties(): Properties.ClassMemberProperties {
-            let members: Properties.ClassMemberProperties = new Properties.ClassMemberProperties();
+        protected generateClassMemberProperties(members: Properties.ClassMemberProperties): void {
+            super.generateClassMemberProperties(members);
 
             members.functionGetBound = true;
             members.functionGetLeft = ".bind(";
             members.functionGetRight = ")";
-
-            return members;
         }
 
         /**
          * Generates metadata on comments.
          */
-        protected generateCommentProperties(): Properties.CommentProperties {
-            let comments: Properties.CommentProperties = super.generateCommentProperties();
+        protected generateCommentProperties(comments: Properties.CommentProperties): void {
+            super.generateCommentProperties(comments);
 
             comments.docEnd = " */";
             comments.docLineEnd = "";
@@ -99,8 +87,6 @@ namespace GLS.Languages {
             comments.docTagStart = "@";
             comments.docTagEnd = " ";
             comments.docStart = "/**";
-
-            return comments;
         }
 
         /**
@@ -123,37 +109,29 @@ namespace GLS.Languages {
         /**
          * @returns Metadata on exceptions.
          */
-        protected generateExceptionProperties(): Properties.ExceptionProperties {
-            let exceptions: Properties.ExceptionProperties = super.generateExceptionProperties();
+        protected generateExceptionProperties(exceptions: Properties.ExceptionProperties): void {
+            super.generateExceptionProperties(exceptions);
 
             exceptions.className = "Error";
-
-            return exceptions;
         }
 
         /**
          * @returns Metadata on functions.
          */
-        protected generateFunctionProperties(): Properties.FunctionProperties {
-            let functions: Properties.FunctionProperties = super.generateFunctionProperties();
+        protected generateFunctionProperties(functions: Properties.FunctionProperties): void {
+            super.generateFunctionProperties(functions);
 
             functions.defineStartLeft = "function ";
             functions.returnTypeAfterName = true;
             functions.returnTypeMarker = ": ";
-
-            return functions;
         }
 
         /**
          * @returns Metadata on general 
          */
-        protected generateGeneralProperties(): Properties.GeneralProperties {
-            let general: Properties.GeneralProperties = new Properties.GeneralProperties();
-
+        protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.name = "TypeScript";
             general.extension = ".ts";
-
-            return general;
         }
 
         /**
@@ -183,32 +161,24 @@ namespace GLS.Languages {
         /**
          * @returns Metadata on operators.
          */
-        protected generateOperatorProperties(): Properties.OperatorProperties {
-            let operators: Properties.OperatorProperties = super.generateOperatorProperties();
+        protected generateOperatorProperties(operators: Properties.OperatorProperties): void {
+            super.generateOperatorProperties(operators);
 
             operators.equalTo = "===";
             operators.notEqualTo = "!==";
-
-            return operators;
         }
 
         /**
          * @returns Metadata on strings.
          */
-        protected generateStringProperties(): Properties.StringProperties {
-            let strings: Properties.StringProperties = new Properties.StringProperties();
-
+        protected generateStringProperties(strings: Properties.StringProperties): void {
             strings.className = "String";
-
-            return strings;
         }
 
         /**
          * @returns Metadata on variables.
          */
-        protected generateVariableProperties(): Properties.VariableProperties {
-            let variables: Properties.VariableProperties = new Properties.VariableProperties();
-
+        protected generateVariableProperties(variables: Properties.VariableProperties): void {
             variables.aliases = {
                 "infinity": "Infinity"
             };
@@ -219,8 +189,6 @@ namespace GLS.Languages {
             variables.null = "undefined";
             variables.typesAfterName = true;
             variables.typeLeft = ": ";
-
-            return variables;
         }
     }
 }

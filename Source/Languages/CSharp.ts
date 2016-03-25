@@ -28,32 +28,24 @@ namespace GLS.Languages {
         /**
          * @returns Metadata on arrays.
          */
-        protected generateArrayProperties(): Properties.ArrayProperties {
-            let arrays: Properties.ArrayProperties = new Properties.ArrayProperties();
-
+        protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "List";
             arrays.initializeAsNew = true;
             arrays.initializeByType = true;
-
-            return arrays;
         }
 
         /**
          * @returns Metadata on booleans.
          */
-        protected generateBooleanProperties(): Properties.BooleanProperties {
-            let booleans: Properties.BooleanProperties = new Properties.BooleanProperties();
-
+        protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
             booleans.className = "bool";
-
-            return booleans;
         }
 
         /**
          * @returns Metadata on classes.
          */
-        protected generateClassProperties(): Properties.ClassProperties {
-            let classes: Properties.ClassProperties = super.generateClassProperties();
+        protected generateClassProperties(classes: Properties.ClassProperties): void {
+            super.generateClassProperties(classes);
 
             classes.aliases = {
                 "dictionary": "Dictionary",
@@ -61,28 +53,22 @@ namespace GLS.Languages {
             };
             classes.constructorAsClassName = true;
             classes.defineInheritanceLeft = " : ";
-
-            return classes;
         }
 
         /**
          * @returns Metadata on class members.
          */
-        protected generateClassGenericProperties(): Properties.ClassGenericProperties {
-            let generics: Properties.ClassGenericProperties = new Properties.ClassGenericProperties();
-
+        protected generateClassGenericProperties(generics: Properties.ClassGenericProperties): void {
             generics.left = "<";
             generics.middle = ", ";
             generics.right = ">";
-
-            return generics;
         }
 
         /**
          * Generates metadata on comments.
          */
-        protected generateCommentProperties(): Properties.CommentProperties {
-            let comments: Properties.CommentProperties = super.generateCommentProperties();
+        protected generateCommentProperties(comments: Properties.CommentProperties): void {
+            super.generateCommentProperties(comments);
 
             comments.docAsXml = true;
             comments.docEnd = "";
@@ -99,16 +85,12 @@ namespace GLS.Languages {
                 "parameter": "name"
             };
             comments.docLineStart = "/// ";
-
-            return comments;
         }
 
         /**
          * @returns Metadata on dictionaries.
          */
-        protected generateDictionaryProperties(): Properties.DictionaryProperties {
-            let dictionaries: Properties.DictionaryProperties = new Properties.DictionaryProperties();
-
+        protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Dictionary";
             dictionaries.initializeStart = "{";
             dictionaries.initializeEnd = "}";
@@ -116,74 +98,50 @@ namespace GLS.Languages {
             dictionaries.initializePairMiddle = ", ";
             dictionaries.initializePairRight = "}";
             dictionaries.keyChecker = "ContainsKey";
-
-            return dictionaries;
         }
 
         /**
          * @returns Metadata on exceptions.
          */
-        protected generateExceptionProperties(): Properties.ExceptionProperties {
-            let exceptions: Properties.ExceptionProperties = super.generateExceptionProperties();
-
+        protected generateExceptionProperties(exceptions: Properties.ExceptionProperties): void {
             exceptions.className = "Error";
-
-            return exceptions;
         }
 
         /**
          * @returns General metadata.
          */
-        protected generateGeneralProperties(): Properties.GeneralProperties {
-            let general: Properties.GeneralProperties = new Properties.GeneralProperties();
-
+        protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.name = "C#";
             general.extension = ".cs";
-
-            return general;
         }
 
         /**
          * @returns Metadata on loops.
          */
-        protected generateLoopProperties(): Properties.LoopProperties {
-            let loops: Properties.LoopProperties = new Properties.LoopProperties();
-
+        protected generateLoopProperties(loops: Properties.LoopProperties): void {
             loops.forEachLeft = "foreach (";
             loops.forEachMiddle = " in ";
             loops.forEachRight = ") {";
-
-            return loops;
         }
 
         /**
          * @returns Metadata on numbers.
          */
-        protected generateNumberProperties(): Properties.NumberProperties {
-            let numbers: Properties.NumberProperties = new Properties.NumberProperties();
-
+        protected generateNumberProperties(numbers: Properties.NumberProperties): void {
             numbers.className = "float";
-
-            return numbers;
         }
 
         /**
          * @returns Metadata on strings.
          */
-        protected generateStringProperties(): Properties.StringProperties {
-            let strings: Properties.StringProperties = new Properties.StringProperties();
-
+        protected generateStringProperties(strings: Properties.StringProperties): void {
             strings.className = "string";
-
-            return strings;
         }
 
         /**
          * @returns Metadata on variables.
          */
-        protected generateVariableProperties(): Properties.VariableProperties {
-            let variables: Properties.VariableProperties = new Properties.VariableProperties();
-
+        protected generateVariableProperties(variables: Properties.VariableProperties): void {
             variables.aliases = {
                 "infinity": "float.PositiveInfinity"
             };
@@ -192,8 +150,6 @@ namespace GLS.Languages {
             variables.declaration = "";
             variables.explicitTypes = true;
             variables.null = "null";
-
-            return variables;
         }
     }
 }

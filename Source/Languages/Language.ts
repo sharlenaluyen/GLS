@@ -31,120 +31,120 @@ namespace GLS.Languages {
         public /* readonly */ properties: Properties.LanguageProperties;
 
         /**
-         * Initializes a new instance of the LanguageProperties class.
+         * Initializes a new instance of the Language class.
          */
         constructor() {
             this.properties = new Properties.LanguageProperties();
-            this.properties.arrays = this.generateArrayProperties();
-            this.properties.booleans = this.generateBooleanProperties();
-            this.properties.classes = this.generateClassProperties();
-            this.properties.classes.generics = this.generateClassGenericProperties();
-            this.properties.classes.members = this.generateClassMemberProperties();
-            this.properties.comments = this.generateCommentProperties();
-            this.properties.conditionals = this.generateConditionalProperties();
-            this.properties.dictionaries = this.generateDictionaryProperties();
-            this.properties.exceptions = this.generateExceptionProperties();
-            this.properties.functions = this.generateFunctionProperties();
-            this.properties.general = this.generateGeneralProperties();
-            this.properties.lambdas = this.generateLambdaProperties();
-            this.properties.loops = this.generateLoopProperties();
-            this.properties.numbers = this.generateNumberProperties();
-            this.properties.operators = this.generateOperatorProperties();
-            this.properties.strings = this.generateStringProperties();
-            this.properties.style = this.generateStyleProperties();
-            this.properties.variables = this.generateVariableProperties();
+            this.generateArrayProperties(this.properties.arrays);
+            this.generateBooleanProperties(this.properties.booleans);
+            this.generateClassProperties(this.properties.classes);
+            this.generateClassGenericProperties(this.properties.classes.generics);
+            this.generateClassMemberProperties(this.properties.classes.members);
+            this.generateCommentProperties(this.properties.comments);
+            this.generateConditionalProperties(this.properties.conditionals);
+            this.generateDictionaryProperties(this.properties.dictionaries);
+            this.generateExceptionProperties(this.properties.exceptions);
+            this.generateFunctionProperties(this.properties.functions);
+            this.generateGeneralProperties(this.properties.general);
+            this.generateLambdaProperties(this.properties.lambdas);
+            this.generateLoopProperties(this.properties.loops);
+            this.generateNumberProperties(this.properties.numbers);
+            this.generateOperatorProperties(this.properties.operators);
+            this.generateStringProperties(this.properties.strings);
+            this.generateStyleProperties(this.properties.style);
+            this.generateVariableProperties(this.properties.variables);
 
             this.properties.operators.generateAliases();
         }
 
         /**
-         * Generates metadata on arrays.
+         * Fills out metadata on arrays.
          */
-        protected abstract generateArrayProperties(): Properties.ArrayProperties;
+        protected abstract generateArrayProperties(arrays: Properties.ArrayProperties): void;
 
         /**
-         * Generates metadata on booleans.
+         * Fills out metadata on booleans.
          */
-        protected abstract generateBooleanProperties(): Properties.BooleanProperties;
+        protected abstract generateBooleanProperties(booleans: Properties.BooleanProperties): void;
 
         /**
-         * Generates metadata on classes.
+         * Fills out metadata on classes.
          */
-        protected abstract generateClassProperties(): Properties.ClassProperties;
+        protected abstract generateClassProperties(classes: Properties.ClassProperties): void;
 
         /**
-         * Generates metadata on class generics.
+         * Fills out metadata on class generics.
          */
-        protected abstract generateClassGenericProperties(): Properties.ClassGenericProperties;
+        protected abstract generateClassGenericProperties(generics: Properties.ClassGenericProperties): void;
 
         /**
-         * Generates metadata on class members.
+         * Fills out metadata on class members.
          */
-        protected abstract generateClassMemberProperties(): Properties.ClassMemberProperties;
+        protected abstract generateClassMemberProperties(members: Properties.ClassMemberProperties): void;
 
         /**
-         * Generates metadata on comments.
+         * Fills out metadata on comments.
          */
-        protected abstract generateCommentProperties(): Properties.CommentProperties;
+        protected abstract generateCommentProperties(comments: Properties.CommentProperties): void;
 
         /**
-         * Generates metadata on conditional.
+         * Fills out metadata on conditional.
          */
-        protected abstract generateConditionalProperties(): Properties.ConditionalProperties;
+        protected abstract generateConditionalProperties(conditionals: Properties.ConditionalProperties): void;
 
         /**
-         * Generates metadata on dictionaries.
+         * Fills out metadata on dictionaries.
          */
-        protected abstract generateDictionaryProperties(): Properties.DictionaryProperties;
+        protected abstract generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void;
 
         /**
-         * Generates metadata on exceptions.
+         * Fills out metadata on exceptions.
          */
-        protected abstract generateExceptionProperties(): Properties.ExceptionProperties;
+        protected abstract generateExceptionProperties(exceptions: Properties.ExceptionProperties): void;
 
         /**
-         * Generates metadata on functions.
+         * Fills out metadata on functions.
          */
-        protected abstract generateFunctionProperties(): Properties.FunctionProperties;
+        protected abstract generateFunctionProperties(functions: Properties.FunctionProperties): void;
 
         /**
-         * Generates metadata on general 
+         * Fills out metadata on general properties.
          */
-        protected abstract generateGeneralProperties(): Properties.GeneralProperties;
+        protected abstract generateGeneralProperties(general: Properties.GeneralProperties): void;
 
         /**
-         * Generates metadata on lambdas.
+         * Fills out metadata on lambdas.
          */
-        protected abstract generateLambdaProperties(): Properties.LambdaProperties;
+        protected abstract generateLambdaProperties(lambdas: Properties.LambdaProperties): void;
 
         /**
-         * Generates metadata on loops.
+         * Fills out metadata on loops.
          */
-        protected abstract generateLoopProperties(): Properties.LoopProperties;
+        protected abstract generateLoopProperties(loops: Properties.LoopProperties): void;
 
         /**
-         * Generates metadata on numbers.
+         * Fills out metadata on numbers.
          */
-        protected abstract generateNumberProperties(): Properties.NumberProperties;
+        protected abstract generateNumberProperties(numbers: Properties.NumberProperties): void;
 
         /**
-         * Generates metadata on operators.
+         * Fills out metadata on operators.
          */
-        protected abstract generateOperatorProperties(): Properties.OperatorProperties;
+        protected abstract generateOperatorProperties(operators: Properties.OperatorProperties): void;
 
         /**
-         * Generates metadata on strings.
+         * Fills out metadata on strings.
          */
-        protected abstract generateStringProperties(): Properties.StringProperties;
+        protected abstract generateStringProperties(strings: Properties.StringProperties): void;
 
         /**
-         * Generates metadata on style.
+         * Fills out metadata on style.
          */
-        protected abstract generateStyleProperties(): Properties.StyleProperties;
+        protected abstract generateStyleProperties(style: Properties.StyleProperties): void;
 
         /**
-         * Generates metadata on variables.
+         * Fills out metadata on variables.
          */
-        protected abstract generateVariableProperties(): Properties.VariableProperties;
+        protected abstract generateVariableProperties(variables: Properties.VariableProperties): void;
     }
 }

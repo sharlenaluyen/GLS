@@ -56,12 +56,12 @@ namespace GLS.Languages.Properties {
         /**
          * Metadata on generic (templated) types.
          */
-        generics: ClassGenericProperties;
+        generics: ClassGenericProperties = new ClassGenericProperties();
 
         /**
          * Metadata on class member variables and functions.
          */
-        members: ClassMemberProperties;
+        members: ClassMemberProperties = new ClassMemberProperties();
 
         /**
          * How to start declaring a new instance of a class, such as "new ".

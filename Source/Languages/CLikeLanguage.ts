@@ -28,9 +28,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on classes.
          */
-        protected generateClassProperties(): Properties.ClassProperties {
-            let classes: Properties.ClassProperties = new Properties.ClassProperties();
-
+        protected generateClassProperties(classes: Properties.ClassProperties): void {
             classes.defineInheritanceRight = "";
             classes.defineEnd = "}";
             classes.defineStartLeft = "class ";
@@ -38,29 +36,21 @@ namespace GLS.Languages {
             classes.newStart = "new ";
             classes.staticLabel = "static ";
             classes.this = "this";
-
-            return classes;
         }
 
         /**
          * Generates metadata on class generics.
          */
-        protected generateClassGenericProperties(): Properties.ClassGenericProperties {
-            let generics: Properties.ClassGenericProperties = new Properties.ClassGenericProperties();
-
+        protected generateClassGenericProperties(generics: Properties.ClassGenericProperties): void {
             generics.left = "<";
             generics.middle = ", ";
             generics.right = ">";
-
-            return generics;
         }
 
         /**
          * Generates metadata on class members.
          */
-        protected generateClassMemberProperties(): Properties.ClassMemberProperties {
-            let members: Properties.ClassMemberProperties = new Properties.ClassMemberProperties();
-
+        protected generateClassMemberProperties(members: Properties.ClassMemberProperties): void {
             members.functionStart = "";
             members.privacy = true;
             members.private = "private ";
@@ -69,103 +59,75 @@ namespace GLS.Languages {
             members.staticDecorator = "static ";
             members.variableStart = "";
             members.variableDefault = "";
-
-            return members;
         }
 
         /**
          * Generates metadata on comments.
          */
-        protected generateCommentProperties(): Properties.CommentProperties {
-            let comments: Properties.CommentProperties = new Properties.CommentProperties();
-
+        protected generateCommentProperties(comments: Properties.CommentProperties): void {
             comments.blockEnd = "*/";
             comments.blockLineLeft = "";
             comments.blockLineRight = "";
             comments.blockStart = "/*";
             comments.lineLeft = "// ";
             comments.lineRight = "";
-
-            return comments;
         }
 
         /**
          * Generates metadata on conditional.
          */
-        protected generateConditionalProperties(): Properties.ConditionalProperties {
-            let conditionals: Properties.ConditionalProperties = new Properties.ConditionalProperties();
-
+        protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
             conditionals.continueLeft = "} (";
             conditionals.continueRight = " {";
             conditionals.elif = "else if";
             conditionals.else = "else";
             conditionals.if = "if";
             conditionals.startLeft = " (";
-
-            return conditionals;
         }
 
         /**
          * Generates metadata on exceptions.
          */
-        protected generateExceptionProperties(): Properties.ExceptionProperties {
-            let exceptions: Properties.ExceptionProperties = new Properties.ExceptionProperties();
-
+        protected generateExceptionProperties(exceptions: Properties.ExceptionProperties): void {
             exceptions.catch = "catch";
             exceptions.finally = "finally";
             exceptions.throw = "throw";
             exceptions.try = "try";
             exceptions.variablePrefix = "";
-
-            return exceptions;
         }
 
         /**
          * Generates metadata on functions.
          */
-        protected generateFunctionProperties(): Properties.FunctionProperties {
-            let functions: Properties.FunctionProperties = new Properties.FunctionProperties();
-
+        protected generateFunctionProperties(functions: Properties.FunctionProperties): void {
             functions.defineStartLeft = "";
             functions.defineStartRight = ") {";
             functions.defineEnd = "}";
             functions.explicitReturns = true;
-
-            return functions;
         }
 
         /**
          * Generates metadata on lambdas.
          */
-        protected generateLambdaProperties(): Properties.LambdaProperties {
-            let lambdas: Properties.LambdaProperties = new Properties.LambdaProperties();
-
+        protected generateLambdaProperties(lambdas: Properties.LambdaProperties): void {
             lambdas.startLeft = "(";
             lambdas.startMiddle = ") => ";
             lambdas.startRight = "";
-
-            return lambdas;
         }
 
         /**
          * Generates metadata on loops.
          */
-        protected generateLoopProperties(): Properties.LoopProperties {
-            let loops: Properties.LoopProperties = new Properties.LoopProperties();
-
+        protected generateLoopProperties(loops: Properties.LoopProperties): void {
             loops.break = "break";
             loops.continue = "continue";
             loops.forEachRight = ") {";
-
-            return loops;
         }
 
         /**
          * Generates metadata on operators.
          */
-        protected generateOperatorProperties(): Properties.OperatorProperties {
-            let operators: Properties.OperatorProperties = new Properties.OperatorProperties();
-
+        protected generateOperatorProperties(operators: Properties.OperatorProperties): void {
             operators.and = "&&";
             operators.decreaseBy = "-=";
             operators.divide = "/";
@@ -185,19 +147,13 @@ namespace GLS.Languages {
             operators.or = "||";
             operators.plus = "+";
             operators.times = "*";
-
-            return operators;
         }
 
         /**
          * Generates metadata on style.
          */
-        protected generateStyleProperties(): Properties.StyleProperties {
-            let style: Properties.StyleProperties = new Properties.StyleProperties();
-
+        protected generateStyleProperties(style: Properties.StyleProperties): void {
             style.semicolon = ";";
-
-            return style;
         }
     }
 }
