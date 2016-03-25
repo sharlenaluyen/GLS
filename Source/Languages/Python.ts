@@ -113,6 +113,8 @@ namespace GLS.Languages {
          * @param strings   The property container for metadata on strings.
          */
         protected generateStringProperties(strings: Properties.StringProperties): void {
+            super.generateStringProperties(strings);
+
             strings.className = "string";
         }
     }

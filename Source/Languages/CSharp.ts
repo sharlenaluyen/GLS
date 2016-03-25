@@ -135,6 +135,8 @@ namespace GLS.Languages {
          * @returns Metadata on strings.
          */
         protected generateStringProperties(strings: Properties.StringProperties): void {
+            super.generateStringProperties(strings);
+
             strings.className = "string";
         }
 

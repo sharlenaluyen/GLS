@@ -150,6 +150,13 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on strings.
+         */
+        protected generateStringProperties(strings: Properties.StringProperties): void {
+            strings.concatenate = " + ";
+        }
+
+        /**
          * Generates metadata on style.
          */
         protected generateStyleProperties(style: Properties.StyleProperties): void {

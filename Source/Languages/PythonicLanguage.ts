@@ -171,6 +171,13 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on strings.
+         */
+        protected generateStringProperties(strings: Properties.StringProperties): void {
+            strings.concatenate = " + ";
+        }
+
+        /**
          * Generates metadata on variables.
          * 
          * @param variables   The property container for metadata on variables. 

@@ -9,5 +9,10 @@ namespace GLS.Languages.Properties {
          * The name of the string class.
          */
         public className: string;
+
+        /**
+         * The name of the concatenation operator.
+         */
+        public concatenate: string;
     }
 }
