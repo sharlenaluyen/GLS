@@ -84,8 +84,8 @@ namespace GLS.Languages {
                 "summary": "\0",
                 "parameter": ""
             };
-            comments.docTagStart = "@";
             comments.docTagEnd = " ";
+            comments.docTagStart = "@";
             comments.docStart = "/**";
         }
 
@@ -175,6 +175,8 @@ namespace GLS.Languages {
          * @returns Metadata on variables.
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
+            super.generateVariableProperties(variables);
+
             variables.aliases = {
                 "infinity": "Infinity"
             };

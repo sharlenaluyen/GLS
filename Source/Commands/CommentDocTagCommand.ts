@@ -85,10 +85,13 @@ namespace GLS.Commands {
             this.requireParametersLengthMinimum(parameters, 2);
 
             let tagRaw: string = parameters[1],
-                tag: string = this.language.properties.comments.docTagStart
-                    + this.parseTag(tagRaw)
-                    + this.language.properties.comments.docTagEnd,
+                tagParsed: string = this.parseTag(tagRaw),
+                tag: string = tagParsed + this.language.properties.comments.docTagEnd,
                 contentsRaw: string;
+
+            if (tagParsed !== "") {
+                tag = this.language.properties.comments.docTagStart + tag;
+            }
 
             if (this.language.properties.comments.docTagsWithParameters.hasOwnProperty(tagRaw)) {
                 let parameterInfo = this.language.properties.comments.docTagsWithParameters[tagRaw];
@@ -101,8 +104,11 @@ namespace GLS.Commands {
                     tag += parameters[2] + "   ";
                 }
             } else {
-                tag += "!";
                 contentsRaw = parameters.slice(2).join(" ");
+            }
+
+            if (tag === this.language.properties.comments.docTagEnd) {
+                tag = "";
             }
 
             let contents: string[] = this.wrapTagContents(tag, contentsRaw),

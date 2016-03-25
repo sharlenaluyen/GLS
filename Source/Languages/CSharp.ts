@@ -73,6 +73,7 @@ namespace GLS.Languages {
             comments.docAsXml = true;
             comments.docEnd = "";
             comments.docLineEnd = "";
+            comments.docLineStart = "/// ";
             comments.docStart = "";
             comments.docTagAliases = {
                 "note": "remarks",
@@ -84,7 +85,6 @@ namespace GLS.Languages {
             comments.docTagsWithParameters = {
                 "parameter": "name"
             };
-            comments.docLineStart = "/// ";
         }
 
         /**
@@ -142,6 +142,8 @@ namespace GLS.Languages {
          * @returns Metadata on variables.
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
+            super.generateVariableProperties(variables);
+
             variables.aliases = {
                 "infinity": "float.PositiveInfinity"
             };

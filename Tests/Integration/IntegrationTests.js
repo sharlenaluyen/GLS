@@ -78,8 +78,10 @@ var mocks = require("../mocks.js"),
     function testCommandOptionFile(descriptor, sourceContents, outputContents, language) {
         let context = new GLS.ConversionContext(language),
             sourceLines = sourceContents.split("\r\n"),
-            validLines = trimRight(outputContents, "\r\n").split("\r\n"),
+            validLines = outputContents.split("\r\n"),
             resultLines;
+
+        validLines.pop();
 
         try {
             resultLines = context.convert(sourceLines);

@@ -26,6 +26,11 @@ namespace GLS.Languages.Properties {
         public declaration: string;
 
         /**
+         * Whether variables must be declared before usage.
+         */
+        public declarationRequired: boolean;
+
+        /**
          * Whether types are explicitly stated with declarations.
          */
         public explicitTypes: boolean;

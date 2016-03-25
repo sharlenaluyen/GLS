@@ -155,5 +155,12 @@ namespace GLS.Languages {
         protected generateStyleProperties(style: Properties.StyleProperties): void {
             style.semicolon = ";";
         }
+
+        /**
+         * Generates metadata on variables.
+         */
+        protected generateVariableProperties(variables: Properties.VariableProperties): void {
+            variables.declarationRequired = true;
+        }
     }
 }

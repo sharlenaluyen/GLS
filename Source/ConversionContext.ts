@@ -58,7 +58,9 @@ namespace GLS {
                         indentation -= result.indentation;
                     }
 
-                    output.push(this.generateTabs(indentation) + result.text);
+                    if (result.text !== "\0") {
+                        output.push(this.generateTabs(indentation) + result.text);
+                    }
 
                     if (result.indentation > 0) {
                         indentation += result.indentation;

@@ -1,1 +1,1 @@
-let aaa: number;
+true

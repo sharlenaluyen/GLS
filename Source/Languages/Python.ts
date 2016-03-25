@@ -42,6 +42,51 @@ namespace GLS.Languages {
         protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
             booleans.className = "bool";
         }
+        /**
+         * Generates metadata on classes.
+         * 
+         * @param classes   The property container for metadata on classes. 
+         */
+        protected generateClassProperties(classes: Properties.ClassProperties): void {
+            super.generateClassProperties(classes);
+
+            classes.aliases = {
+                "dictionary": "dict",
+                "number": "float"
+            };
+        }
+
+        /**
+         * Generates metadata on comments.
+         * 
+         * @param comments   The property container for metadata on comments. 
+         */
+        protected generateCommentProperties(comments: Properties.CommentProperties): void {
+            comments.blockEnd = "\"\"\"";
+            comments.blockLineLeft = "";
+            comments.blockLineRight = "";
+            comments.blockStart = "\"\"\"";
+
+            comments.docEnd = "\"\"\"";
+            comments.docLineEnd = "";
+            comments.docLineStart = "";
+            comments.docStart = "\"\"\"";
+            comments.docTagAliases = {
+                "note": "remarks",
+                "parameter": "param",
+                "returns": "returns",
+                "summary": "",
+                "todo": "todo"
+            };
+            comments.docTagsWithParameters = {
+                "parameter": ""
+            };
+            comments.docTagEnd = " ";
+            comments.docTagStart = ":";
+
+            comments.lineLeft = "// ";
+            comments.lineRight = "";
+        }
 
         /**
          * Generates general metadata.

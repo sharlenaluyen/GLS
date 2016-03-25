@@ -61,20 +61,6 @@ namespace GLS.Languages {
         }
 
         /**
-         * Generates metadata on comments.
-         * 
-         * @param comments   The property container for metadata on comments. 
-         */
-        protected generateCommentProperties(comments: Properties.CommentProperties): void {
-            comments.blockEnd = "\"\"\"";
-            comments.blockLineLeft = "";
-            comments.blockLineRight = "";
-            comments.blockStart = "\"\"\"";
-            comments.lineLeft = "// ";
-            comments.lineRight = "";
-        }
-
-        /**
          * Generates metadata on conditionals.
          * 
          * @param conditionals   The property container for metadata on conditionals. 
@@ -191,8 +177,11 @@ namespace GLS.Languages {
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
             variables.aliases = {
-                "infinity": "inf"
+                "false": "False",
+                "infinity": "inf",
+                "true": "True"
             };
+            variables.declaration = "";
             variables.null = "None";
         }
     }
