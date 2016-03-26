@@ -165,6 +165,15 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on output.
+         * 
+         * @param output   The property container for metadata on output.
+         */
+        protected generateOutputProperties(output: Properties.OutputProperties): void {
+            output.print = "console.log";
+        }
+
+        /**
          * @returns Metadata on strings.
          */
         protected generateStringProperties(strings: Properties.StringProperties): void {

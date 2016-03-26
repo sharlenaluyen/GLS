@@ -6,13 +6,13 @@ namespace GLS.Languages.Properties {
      */
     export class GeneralProperties {
         /**
-         * The common name.
-         */
-        public name: string;
-
-        /**
          * The file extension.
          */
         public extension: string;
+
+        /**
+         * The common name.
+         */
+        public name: string;
     }
 }

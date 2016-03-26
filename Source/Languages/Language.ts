@@ -13,6 +13,7 @@
 /// <reference path="Properties/LanguageProperties.ts" />
 /// <reference path="Properties/LoopProperties.ts" />
 /// <reference path="Properties/NumberProperties.ts" />
+/// <reference path="Properties/OutputProperties.ts" />
 /// <reference path="Properties/OperatorProperties.ts" />
 /// <reference path="Properties/StringProperties.ts" />
 /// <reference path="Properties/StyleProperties.ts" />
@@ -50,6 +51,7 @@ namespace GLS.Languages {
             this.generateLoopProperties(this.properties.loops);
             this.generateNumberProperties(this.properties.numbers);
             this.generateOperatorProperties(this.properties.operators);
+            this.generateOutputProperties(this.properties.output);
             this.generateStringProperties(this.properties.strings);
             this.generateStyleProperties(this.properties.style);
             this.generateVariableProperties(this.properties.variables);
@@ -131,6 +133,11 @@ namespace GLS.Languages {
          * Fills out metadata on operators.
          */
         protected abstract generateOperatorProperties(operators: Properties.OperatorProperties): void;
+
+        /**
+         * Fills out metadata on output.
+         */
+        protected abstract generateOutputProperties(operators: Properties.OutputProperties): void;
 
         /**
          * Fills out metadata on strings.

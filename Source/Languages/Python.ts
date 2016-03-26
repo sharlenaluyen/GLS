@@ -13,6 +13,7 @@
 /// <reference path="Properties/LambdaProperties.ts" />
 /// <reference path="Properties/LoopProperties.ts" />
 /// <reference path="Properties/NumberProperties.ts" />
+/// <reference path="Properties/OutputProperties.ts" />
 /// <reference path="Properties/OperatorProperties.ts" />
 /// <reference path="Properties/StringProperties.ts" />
 /// <reference path="Properties/StyleProperties.ts" />
@@ -105,6 +106,15 @@ namespace GLS.Languages {
          */
         protected generateNumberProperties(numbers: Properties.NumberProperties): void {
             numbers.className = "float";
+        }
+
+        /**
+         * Generates metadata on numbers.
+         * 
+         * @param numbers   The property container for metadata on numbers.
+         */
+        protected generateOutputProperties(output: Properties.OutputProperties): void {
+            output.print = "print";
         }
 
         /**

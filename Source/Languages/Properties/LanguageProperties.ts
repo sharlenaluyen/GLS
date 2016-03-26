@@ -10,6 +10,7 @@
 /// <reference path="LambdaProperties.ts" />
 /// <reference path="LoopProperties.ts" />
 /// <reference path="NumberProperties.ts" />
+/// <reference path="OutputProperties.ts" />
 /// <reference path="OperatorProperties.ts" />
 /// <reference path="StringProperties.ts" />
 /// <reference path="StyleProperties.ts" />
@@ -88,6 +89,11 @@ namespace GLS.Languages.Properties {
         public operators: OperatorProperties;
 
         /**
+         * Metadata on output.
+         */
+        public output: OutputProperties;
+
+        /**
          * Metadata on strings.
          */
         public strings: StringProperties;
@@ -119,6 +125,7 @@ namespace GLS.Languages.Properties {
             this.loops = new LoopProperties();
             this.numbers = new NumberProperties();
             this.operators = new OperatorProperties();
+            this.output = new OutputProperties();
             this.strings = new StringProperties();
             this.style = new StyleProperties();
             this.variables = new VariableProperties();
