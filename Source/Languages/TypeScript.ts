@@ -25,22 +25,29 @@ namespace GLS.Languages {
      * A summary of information for the TypeScript language.
      */
     export class TypeScript extends CLikeLanguage {
+
         /**
-         * @returns Metadata on arrays.
+         * Generates metadata on arrays.
+         * 
+         * @param arrays   A property container for metadata on arrays.
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "Array";
         }
 
         /**
-         * @returns Metadata on booleans.
+         * Generates metadata on booleans.
+         * 
+         * @param booleans   A property container for metadata on booleans.
          */
         protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
             booleans.className = "boolean";
         }
 
         /**
-         * @returns Metadata on classes.
+         * Generates metadata on classes.
+         * 
+         * @param classes   A property container for metadata on classes.
          */
         protected generateClassProperties(classes: Properties.ClassProperties): void {
             super.generateClassProperties(classes);
@@ -54,7 +61,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on class members.
+         * Generates metadata on class members.
+         * 
+         * @param members   A property container for metadata on class members.
          */
         protected generateClassMemberProperties(members: Properties.ClassMemberProperties): void {
             super.generateClassMemberProperties(members);
@@ -66,6 +75,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on comments.
+         * 
+         * @param comments   A property container for metadata on comments.
          */
         protected generateCommentProperties(comments: Properties.CommentProperties): void {
             super.generateCommentProperties(comments);
@@ -90,7 +101,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on dictionaries.
+         * Generates metadata on dictionaries.
+         * 
+         * @param dictionaries   A property container for metadata on dictionaries.
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Object";
@@ -103,7 +116,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on exceptions.
+         * Generates metadata on exceptions.
+         * 
+         * @param exceptions   A property container for metadata on exceptions.
          */
         protected generateExceptionProperties(exceptions: Properties.ExceptionProperties): void {
             super.generateExceptionProperties(exceptions);
@@ -112,7 +127,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on functions.
+         * Generates metadata on functions.
+         * 
+         * @param functions   A property container for metadata on functions.
          */
         protected generateFunctionProperties(functions: Properties.FunctionProperties): void {
             super.generateFunctionProperties(functions);
@@ -123,7 +140,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on general 
+         * Generates general metadata.
+         * 
+         * @param general   A property container for general metadata.
          */
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.extension = ".ts";
@@ -131,31 +150,29 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on loops.
+         * Generates metadata on loops.
+         * 
+         * @param loops   A property container for metadata on loops.
          */
-        protected generateLoopProperties(): Properties.LoopProperties {
-            let loops: Properties.LoopProperties = new Properties.LoopProperties();
-
+        protected generateLoopProperties(loops: Properties.LoopProperties): void {
             loops.forEachLeft = "for (";
             loops.forEachMiddle = " in ";
             loops.forEachRight = ") {";
-
-            return loops;
         }
 
         /**
-         * @returns Metadata on numbers.
+         * Generates metadata on numbers.
+         * 
+         * @param numbers   A property container for metadata on numbers.
          */
-        protected generateNumberProperties(): Properties.NumberProperties {
-            let numbers: Properties.NumberProperties = new Properties.NumberProperties();
-
+        protected generateNumberProperties(numbers: Properties.NumberProperties): void {
             numbers.className = "Number";
-
-            return numbers;
         }
 
         /**
-         * @returns Metadata on operators.
+         * Generates metadata on operators.
+         * 
+         * @param operators   A property container for metadata on operators.
          */
         protected generateOperatorProperties(operators: Properties.OperatorProperties): void {
             super.generateOperatorProperties(operators);
@@ -167,14 +184,16 @@ namespace GLS.Languages {
         /**
          * Generates metadata on output.
          * 
-         * @param output   The property container for metadata on output.
+         * @param output   A property container for metadata on output.
          */
         protected generateOutputProperties(output: Properties.OutputProperties): void {
             output.print = "console.log";
         }
 
         /**
-         * @returns Metadata on strings.
+         * Generates metadata on strings.
+         * 
+         * @param strings   A property container for metadata on strings.
          */
         protected generateStringProperties(strings: Properties.StringProperties): void {
             super.generateStringProperties(strings);
@@ -183,7 +202,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on variables.
+         * Generates metadata on variables.
+         * 
+         * @param variables   A property container for metadata on variables.
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
             super.generateVariableProperties(variables);

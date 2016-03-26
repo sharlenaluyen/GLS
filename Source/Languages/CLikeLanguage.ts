@@ -27,6 +27,8 @@ namespace GLS.Languages {
     export abstract class CLikeLanguage extends Language {
         /**
          * Generates metadata on classes.
+         * 
+         * @param classes   A property container for metadata on classes.
          */
         protected generateClassProperties(classes: Properties.ClassProperties): void {
             classes.defineInheritanceRight = "";
@@ -40,6 +42,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on class generics.
+         * 
+         * @param members   A property container for metadata on class generics.
          */
         protected generateClassGenericProperties(generics: Properties.ClassGenericProperties): void {
             generics.left = "<";
@@ -48,7 +52,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * Generates metadata on class members.
+         * Generates metadata on classmembers.
+         * 
+         * @param members   A property container for metadata on class members.
          */
         protected generateClassMemberProperties(members: Properties.ClassMemberProperties): void {
             members.functionStart = "";
@@ -63,6 +69,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on comments.
+         * 
+         * @param comments   A property container for metadata on comments.
          */
         protected generateCommentProperties(comments: Properties.CommentProperties): void {
             comments.blockEnd = "*/";
@@ -74,7 +82,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * Generates metadata on conditional.
+         * Generates metadata on conditionals.
+         * 
+         * @param conditionals   A property container for metadata on conditionals.
          */
         protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
             conditionals.continueLeft = "} (";
@@ -87,6 +97,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on exceptions.
+         * 
+         * @param exceptions   A property container for metadata on exceptions.
          */
         protected generateExceptionProperties(exceptions: Properties.ExceptionProperties): void {
             exceptions.catch = "catch";
@@ -98,6 +110,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on functions.
+         * 
+         * @param functions   A property container for metadata on functions.
          */
         protected generateFunctionProperties(functions: Properties.FunctionProperties): void {
             functions.defineStartLeft = "";
@@ -108,6 +122,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on lambdas.
+         * 
+         * @param lambdas   A property container for metadata on lambdas.
          */
         protected generateLambdaProperties(lambdas: Properties.LambdaProperties): void {
             lambdas.startLeft = "(";
@@ -117,6 +133,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on loops.
+         * 
+         * @param loops   A property container for metadata on loops.
          */
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             loops.break = "break";
@@ -126,6 +144,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on operators.
+         * 
+         * @param operators   A property container for metadata on operators.
          */
         protected generateOperatorProperties(operators: Properties.OperatorProperties): void {
             operators.and = "&&";
@@ -151,6 +171,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on strings.
+         * 
+         * @param strings   A property container for metadata on strings.
          */
         protected generateStringProperties(strings: Properties.StringProperties): void {
             strings.concatenate = " + ";
@@ -158,6 +180,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on style.
+         * 
+         * @param style   A property container for metadata on style.
          */
         protected generateStyleProperties(style: Properties.StyleProperties): void {
             style.semicolon = ";";
@@ -165,6 +189,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on variables.
+         * 
+         * @param variables   A property container for metadata on variables.
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
             variables.declarationRequired = true;

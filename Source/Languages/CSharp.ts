@@ -26,7 +26,9 @@ namespace GLS.Languages {
      */
     export class CSharp extends CLikeLanguage {
         /**
-         * @returns Metadata on arrays.
+         * Generates metadata on arrays.
+         * 
+         * @param arrays   A property container for metadata on arrays.
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "List";
@@ -35,14 +37,18 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on booleans.
+         * Generates metadata on booleans.
+         * 
+         * @param booleans   A property container for metadata on booleans.
          */
         protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
             booleans.className = "bool";
         }
 
         /**
-         * @returns Metadata on classes.
+         * Generates metadata on classes.
+         * 
+         * @param classes   A property container for metadata on classes.
          */
         protected generateClassProperties(classes: Properties.ClassProperties): void {
             super.generateClassProperties(classes);
@@ -56,7 +62,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on class members.
+         * Generates metadata on class generics.
+         * 
+         * @param generics   A property container for metadata on class generics.
          */
         protected generateClassGenericProperties(generics: Properties.ClassGenericProperties): void {
             generics.left = "<";
@@ -66,6 +74,8 @@ namespace GLS.Languages {
 
         /**
          * Generates metadata on comments.
+         * 
+         * @param comments   A property container for metadata on comments.
          */
         protected generateCommentProperties(comments: Properties.CommentProperties): void {
             super.generateCommentProperties(comments);
@@ -88,7 +98,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on dictionaries.
+         * Generates metadata on dictionaries.
+         * 
+         * @param dictionaries   A property container for metadata on dictionaries.
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Dictionary";
@@ -101,14 +113,18 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on exceptions.
+         * Generates metadata on exceptions.
+         * 
+         * @param exceptions   A property container for metadata on exceptions.
          */
         protected generateExceptionProperties(exceptions: Properties.ExceptionProperties): void {
             exceptions.className = "Error";
         }
 
         /**
-         * @returns General metadata.
+         * Generates general metadata.
+         * 
+         * @param general   A property container for general metadata.
          */
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.name = "C#";
@@ -116,7 +132,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on loops.
+         * Generates metadata on loops.
+         * 
+         * @param loops   A property container for metadata on loops.
          */
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             loops.forEachLeft = "foreach (";
@@ -125,7 +143,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on numbers.
+         * Generates metadata on numbers.
+         * 
+         * @param numbers   A property container for metadata on numbers.
          */
         protected generateNumberProperties(numbers: Properties.NumberProperties): void {
             numbers.className = "float";
@@ -134,14 +154,16 @@ namespace GLS.Languages {
         /**
          * Generates metadata on output.
          * 
-         * @param output   The property container for metadata on output.
+         * @param output   A property container for metadata on output.
          */
         protected generateOutputProperties(output: Properties.OutputProperties): void {
             output.print = "Console.WriteLine";
         }
 
         /**
-         * @returns Metadata on strings.
+         * Generates metadata on strings.
+         * 
+         * @param strings   A property container for metadata on strings.
          */
         protected generateStringProperties(strings: Properties.StringProperties): void {
             super.generateStringProperties(strings);
@@ -150,7 +172,9 @@ namespace GLS.Languages {
         }
 
         /**
-         * @returns Metadata on variables.
+         * Generates metadata on variables.
+         * 
+         * @param variables   A property container for metadata on variables.
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
             super.generateVariableProperties(variables);
