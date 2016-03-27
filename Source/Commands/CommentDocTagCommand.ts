@@ -89,7 +89,9 @@ namespace GLS.Commands {
                 tag: string = tagParsed + this.language.properties.comments.docTagEnd,
                 contentsRaw: string;
 
-            if (tagParsed !== "") {
+            if (tagParsed === "\0") {
+                tag = this.language.properties.comments.docTagStart;
+            } else if (tagParsed !== "") {
                 tag = this.language.properties.comments.docTagStart + tag;
             }
 
@@ -101,7 +103,9 @@ namespace GLS.Commands {
                     tag = "";
                 } else {
                     contentsRaw = parameters.slice(3).join(" ");
-                    tag += parameters[2] + "   ";
+                    tag += parameters[2];
+                    tag += this.language.properties.comments.docTagEnd;
+                    tag += this.language.properties.comments.docTagSpaceAfter;
                 }
             } else {
                 contentsRaw = parameters.slice(2).join(" ");
@@ -199,9 +203,9 @@ namespace GLS.Commands {
         /**
          * Prefixes a String with some number of spaces. 
          * 
-         * @param text   
-         * @param spaces   
-         * @returns 
+         * @param text   The text to pad.
+         * @param spaces   How many spaces to pad it with.
+         * @returns The text, padded with spaces.
          */
         private padLeft(text: string, spaces: number): string {
             let padder: string = "";

@@ -7,12 +7,14 @@ var mocks = require("../mocks.js"),
     languagesByName = {
         "C#": new GLS.Languages.CSharp(),
         "Python": new GLS.Languages.Python(),
+        "Ruby": new GLS.Languages.Ruby(),
         "TypeScript": new GLS.Languages.TypeScript()
     },
     languages = Object.keys(languagesByName).map(key => languagesByName[key]),
     languagesByExtension = {
         ".cs": languagesByName["C#"],
         ".py": languagesByName["Python"],
+        ".rb": languagesByName["Ruby"],
         ".ts": languagesByName["TypeScript"]
     },
     languageExtensions = Object.keys(languagesByExtension),

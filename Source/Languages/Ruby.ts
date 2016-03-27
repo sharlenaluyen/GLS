@@ -23,17 +23,17 @@ namespace GLS.Languages {
     "use strict";
 
     /**
-     * A summary of information for the Python language.
+     * A summary of information for the Ruby language.
      */
-    export class Python extends PythonicLanguage {
+    export class Ruby extends PythonicLanguage {
         /**
          * Generates metadata on arrays.
          * 
          * @param arrays   The property container for metadata on arrays. 
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
-            arrays.className = "list";
-            arrays.push = "append";
+            arrays.className = "Array";
+            arrays.push = "push";
         }
 
         /**
@@ -42,7 +42,7 @@ namespace GLS.Languages {
          * @param booleans   The property container for metadata on booleans.
          */
         protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
-            booleans.className = "bool";
+            booleans.className = "";
         }
         /**
          * Generates metadata on classes.
@@ -53,8 +53,8 @@ namespace GLS.Languages {
             super.generateClassProperties(classes);
 
             classes.aliases = {
-                "dictionary": "dict",
-                "number": "float"
+                "dictionary": "Hash",
+                "number": "Float"
             };
         }
 
@@ -66,9 +66,9 @@ namespace GLS.Languages {
         protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
             super.generateConditionalProperties(conditionals);
 
-            conditionals.continueRight = ":";
-            conditionals.elif = "elif";
-            conditionals.startRight = ":";
+            conditionals.continueRight = "";
+            conditionals.elif = "elsif";
+            conditionals.startRight = "";
         }
 
         /**
@@ -77,18 +77,18 @@ namespace GLS.Languages {
          * @param comments   The property container for metadata on comments. 
          */
         protected generateCommentProperties(comments: Properties.CommentProperties): void {
-            comments.blockEnd = "\"\"\"";
+            comments.blockEnd = "=end";
             comments.blockLineLeft = "";
             comments.blockLineRight = "";
-            comments.blockStart = "\"\"\"";
+            comments.blockStart = "=begin";
 
-            comments.docEnd = "\"\"\"";
+            comments.docEnd = "";
             comments.docLineEnd = "";
             comments.docLineStart = "";
-            comments.docStart = "\"\"\"";
+            comments.docStart = "##";
             comments.docTagAliases = {
                 "note": "remarks",
-                "parameter": "param",
+                "parameter": "\0",
                 "returns": "returns",
                 "summary": "",
                 "todo": "todo"
@@ -96,11 +96,11 @@ namespace GLS.Languages {
             comments.docTagsWithParameters = {
                 "parameter": ""
             };
-            comments.docTagEnd = " ";
-            comments.docTagSpaceAfter = "  ";
-            comments.docTagStart = ":";
+            comments.docTagEnd = "]";
+            comments.docTagSpaceAfter = "   ";
+            comments.docTagStart = "[";
 
-            comments.lineLeft = "// ";
+            comments.lineLeft = "# ";
             comments.lineRight = "";
         }
 
@@ -110,8 +110,8 @@ namespace GLS.Languages {
          * @param general   The property container for general metadata.
          */
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
-            general.extension = ".py";
-            general.name = "Python";
+            general.extension = ".rb";
+            general.name = "Ruby";
         }
 
         /**
@@ -122,9 +122,9 @@ namespace GLS.Languages {
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             super.generateLoopProperties(loops);
 
-            loops.rangedForLoopsLeft = " in range(";
-            loops.rangedForLoopsMiddle = ", ";
-            loops.rangedForLoopsRight = ")";
+            loops.rangedForLoopsLeft = " in ";
+            loops.rangedForLoopsMiddle = "..";
+            loops.rangedForLoopsRight = "";
         }
 
         /**
@@ -142,7 +142,7 @@ namespace GLS.Languages {
          * @param numbers   The property container for metadata on numbers.
          */
         protected generateOutputProperties(output: Properties.OutputProperties): void {
-            output.print = "print";
+            output.print = "puts";
         }
 
         /**
@@ -165,11 +165,9 @@ namespace GLS.Languages {
             super.generateVariableProperties(variables);
 
             variables.aliases = {
-                "false": "False",
-                "infinity": "inf",
-                "true": "True"
+                "infinity": "float::Infinity",
             };
-            variables.null = "None";
+            variables.null = "Nil";
         }
     }
 }

@@ -14,6 +14,7 @@
 /// <reference path="Properties/LoopProperties.ts" />
 /// <reference path="Properties/NumberProperties.ts" />
 /// <reference path="Properties/OperatorProperties.ts" />
+/// <reference path="Properties/OutputProperties.ts" />
 /// <reference path="Properties/StringProperties.ts" />
 /// <reference path="Properties/StyleProperties.ts" />
 /// <reference path="Properties/VariableProperties.ts" />
@@ -97,6 +98,7 @@ namespace GLS.Languages {
                 "parameter": ""
             };
             comments.docTagEnd = " ";
+            comments.docTagSpaceAfter = "  ";
             comments.docTagStart = "@";
             comments.docStart = "/**";
         }

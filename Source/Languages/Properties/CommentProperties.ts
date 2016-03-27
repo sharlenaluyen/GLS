@@ -46,6 +46,11 @@ namespace GLS.Languages.Properties {
         public docTagStart: string;
         
         /**
+         * Text after a documentation after a documentation tag, if not XML.
+         */
+        public docTagSpaceAfter: string;
+
+        /**
          * How to end a documentation tag, if not XML.
          */
         public docTagEnd: string;
