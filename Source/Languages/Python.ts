@@ -111,6 +111,17 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on loops.
+         * 
+         * @param loops   The property container for metadata on loops. 
+         */
+        protected generateLoopProperties(loops: Properties.LoopProperties): void {
+            super.generateLoopProperties(loops);
+
+            loops.rangedForLoopsRight = ":";
+        }
+
+        /**
          * Generates metadata on numbers.
          * 
          * @param numbers   The property container for metadata on numbers.

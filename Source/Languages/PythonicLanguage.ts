@@ -134,6 +134,9 @@ namespace GLS.Languages {
             loops.break = "break";
             loops.continue = "continue";
             loops.forEachRight = ":";
+            loops.rangedForLoops = true;
+            loops.rangedForLoopsLeft = " in ";
+            loops.rangedForLoopsMiddle = "..";
         }
 
         /**
