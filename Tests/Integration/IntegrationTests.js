@@ -19,6 +19,7 @@ var mocks = require("../mocks.js"),
     // TODO: Read these in using fs.
     commands = {
         "ArrayInitialize": ["no values", "one value", "two values", "three values"],
+        "ArrayPush": ["array push"],
         "CommentBlock": ["empty line", "multiple words", "single word"],
         "CommentBlockEnd": ["comment block end"],
         "CommentBlockStart": ["comment block start"],

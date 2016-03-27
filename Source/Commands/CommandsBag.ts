@@ -3,6 +3,7 @@
 /// <reference path="CommandResult.ts" />
 
 /// <reference path="ArrayInitializeCommand.ts" />
+/// <reference path="ArrayPushCommand.ts" />
 /// <reference path="CommentBlockCommand.ts" />
 /// <reference path="CommentBlockEndCommand.ts" />
 /// <reference path="CommentBlockStartCommand.ts" />
@@ -50,6 +51,7 @@ namespace GLS.Commands {
         constructor(context: ConversionContext) {
             this.commands = {
                 "array initialize": new ArrayInitializeCommand(context),
+                "array push": new ArrayPushCommand(context),
                 "comment block": new CommentBlockCommand(context),
                 "comment block end": new CommentBlockEndCommand(context),
                 "comment block start": new CommentBlockStartCommand(context),
