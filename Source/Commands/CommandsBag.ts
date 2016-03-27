@@ -11,6 +11,9 @@
 /// <reference path="CommentDocTagCommand.ts" />
 /// <reference path="CommentLineCommand.ts" />
 /// <reference path="ConcatenateCommand.ts" />
+/// <reference path="ElseCommand.ts" />
+/// <reference path="IfEndCommand.ts" />
+/// <reference path="IfStartCommand.ts" />
 /// <reference path="IndexCommand.ts" />
 /// <reference path="LiteralCommand.ts" />
 /// <reference path="NotCommand.ts" />
@@ -50,6 +53,7 @@ namespace GLS.Commands {
                 "comment doc tag": new CommentDocTagCommand(context),
                 "comment line": new CommentLineCommand(context),
                 "concatenate": new ConcatenateCommand(context),
+                "else": new ElseCommand(context),
                 "if end": new IfEndCommand(context),
                 "if start": new IfStartCommand(context),
                 "index": new IndexCommand(context),

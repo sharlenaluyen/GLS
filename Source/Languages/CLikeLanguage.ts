@@ -87,8 +87,6 @@ namespace GLS.Languages {
          * @param conditionals   A property container for metadata on conditionals.
          */
         protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
-            conditionals.continueLeft = "} (";
-            conditionals.continueRight = " {";
             conditionals.elif = "else if";
             conditionals.else = "else";
             conditionals.end = "}";

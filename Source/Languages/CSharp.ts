@@ -105,6 +105,8 @@ namespace GLS.Languages {
         protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
             super.generateConditionalProperties(conditionals);
 
+            conditionals.continueLeft = "}\n";
+            conditionals.continueRight = "{";
             conditionals.startRight = ")\n{";
         }
 
@@ -180,6 +182,17 @@ namespace GLS.Languages {
             super.generateStringProperties(strings);
 
             strings.className = "string";
+        }
+
+        /**
+         * Generates metadata on style.
+         * 
+         * @param style   A property container for metadata on style.
+         */
+        protected generateStyleProperties(style: Properties.StyleProperties): void {
+            super.generateStyleProperties(style);
+
+            style.separateBraceLines = true;
         }
 
         /**

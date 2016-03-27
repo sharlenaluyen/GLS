@@ -108,6 +108,8 @@ namespace GLS.Languages {
         protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
             super.generateConditionalProperties(conditionals);
 
+            conditionals.continueLeft = "} ";
+            conditionals.continueRight = " {";
             conditionals.startRight = ") {";
         }
 
