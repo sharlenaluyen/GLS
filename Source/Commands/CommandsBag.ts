@@ -13,6 +13,7 @@
 /// <reference path="ConcatenateCommand.ts" />
 /// <reference path="ElseIfStartCommand.ts" />
 /// <reference path="ElseStartCommand.ts" />
+/// <reference path="ForNumbersStartCommand.ts" />
 /// <reference path="ForEndCommand.ts" />
 /// <reference path="IfEndCommand.ts" />
 /// <reference path="IfStartCommand.ts" />
@@ -59,6 +60,7 @@ namespace GLS.Commands {
                 "concatenate": new ConcatenateCommand(context),
                 "else if start": new ElseIfStartCommand(context),
                 "else start": new ElseStartCommand(context),
+                "for numbers start": new ForNumbersStartCommand(context),
                 "for end": new ForEndCommand(context),
                 "if end": new IfEndCommand(context),
                 "if start": new IfStartCommand(context),

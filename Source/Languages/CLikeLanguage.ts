@@ -139,6 +139,7 @@ namespace GLS.Languages {
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             loops.break = "break";
             loops.continue = "continue";
+            loops.for = "for";
             loops.forEachRight = ") {";
         }
 

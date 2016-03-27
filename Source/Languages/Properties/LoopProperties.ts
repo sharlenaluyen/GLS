@@ -16,6 +16,11 @@ namespace GLS.Languages.Properties {
         public continue: string;
 
         /**
+         * The keyword used for "for".
+         */
+        public for: string;
+
+        /**
          * Whether foreach loops are a method, rather than a standard loop.
          */
         public forEachAsMethod: boolean;

@@ -118,7 +118,9 @@ namespace GLS.Languages {
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             super.generateLoopProperties(loops);
 
-            loops.rangedForLoopsRight = ":";
+            loops.rangedForLoopsLeft = " in range(";
+            loops.rangedForLoopsMiddle = ", ";
+            loops.rangedForLoopsRight = ")";
         }
 
         /**

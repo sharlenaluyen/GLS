@@ -168,6 +168,8 @@ namespace GLS.Languages {
          * @param loops   A property container for metadata on loops.
          */
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
+            super.generateLoopProperties(loops);
+
             loops.forEachLeft = "for (";
             loops.forEachMiddle = " in ";
             loops.forEachRight = ") {";

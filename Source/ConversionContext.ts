@@ -81,6 +81,16 @@ namespace GLS {
         convertCommon(command: string, argumentRaw: string): string {
             return this.parser.renderParsedCommand([command, argumentRaw])[0].text;
         }
+        
+        /**
+         * Converts a command with pre-parsed arguments.
+         * 
+         * @param lineParsed   A parsed line from raw GLS syntax.
+         * @returns The equivalent lines of code in the language.
+         */
+        convertParsed(parameters: string[]): string {
+            return this.parser.renderParsedCommand(parameters)[0].text;
+        }
 
         /**
          * Generates spaces equivalent to 4-space code tabbing.

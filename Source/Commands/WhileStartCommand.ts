@@ -5,7 +5,7 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for the beginning of a while statement.
+     * A command for the beginning of a while loop.
      */
     export class WhileStartCommand extends Command {
         /**
