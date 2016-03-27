@@ -37,6 +37,40 @@ namespace GLS.Commands {
         public abstract render(parameters: string[]): CommandResult[];
 
         /**
+         * Adds a portion of raw syntax that may contain endlines.
+         * 
+         * @param lines   In-progress line(s) of code in the rendering language.
+         * @param extra   Raw syntax to add to the lines.
+         */
+        protected addLineEnder(lines: CommandResult[], extra: string): void {
+            let currentLine: CommandResult = lines[lines.length - 1];
+            let endlineIndex: number = extra.indexOf("\n");
+
+            if (endlineIndex === -1) {
+                currentLine.text += extra;
+                return;
+            }
+
+            let currentIndex: number = 0;
+
+            while (endlineIndex !== -1) {
+                let component: string = extra.substring(currentIndex, endlineIndex);
+
+                currentLine.text += component;
+                currentIndex = endlineIndex;
+
+                currentLine = new CommandResult("", 0);
+                lines.push(currentLine);
+
+                endlineIndex = extra.indexOf("\n", currentIndex + 1);
+            }
+
+            if (currentIndex !== -1) {
+                currentLine.text = extra.substring(currentIndex + 1);
+            }
+        }
+
+        /**
          * Throws an error if an incorrect number of parameters are passed.
          * 
          * @param parameters   Parameters passed to a command.

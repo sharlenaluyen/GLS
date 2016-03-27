@@ -98,6 +98,17 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on conditionals.
+         * 
+         * @param conditionals   A property container for metadata on conditionals.
+         */
+        protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
+            super.generateConditionalProperties(conditionals);
+
+            conditionals.startRight = ")\n{";
+        }
+
+        /**
          * Generates metadata on dictionaries.
          * 
          * @param dictionaries   A property container for metadata on dictionaries.

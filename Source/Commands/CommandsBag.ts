@@ -50,6 +50,7 @@ namespace GLS.Commands {
                 "comment doc tag": new CommentDocTagCommand(context),
                 "comment line": new CommentLineCommand(context),
                 "concatenate": new ConcatenateCommand(context),
+                "if start": new IfStartCommand(context),
                 "index": new IndexCommand(context),
                 "literal": new LiteralCommand(context),
                 "not": new NotCommand(context),
