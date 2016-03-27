@@ -91,6 +91,7 @@ namespace GLS.Languages {
             conditionals.continueRight = " {";
             conditionals.elif = "else if";
             conditionals.else = "else";
+            conditionals.end = "}";
             conditionals.if = "if";
             conditionals.startLeft = " (";
         }

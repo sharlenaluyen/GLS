@@ -26,6 +26,11 @@ namespace GLS.Languages.Properties {
         public else: string;
 
         /**
+         * How to end a conditional.
+         */
+        public end: string;
+
+        /**
          * The keyword used for "if".
          */
         public if: string;

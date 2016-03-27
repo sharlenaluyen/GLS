@@ -70,6 +70,7 @@ namespace GLS.Languages {
             conditionals.continueRight = ":";
             conditionals.elif = "elif";
             conditionals.else = "else";
+            conditionals.end = "\0";
             conditionals.if = "if";
             conditionals.startLeft = " ";
         }

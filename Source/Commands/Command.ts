@@ -42,7 +42,7 @@ namespace GLS.Commands {
          * @param lines   In-progress line(s) of code in the rendering language.
          * @param extra   Raw syntax to add to the lines.
          */
-        protected addLineEnder(lines: CommandResult[], extra: string): void {
+        protected addLineEnder(lines: CommandResult[], extra: string, indentation): void {
             let currentLine: CommandResult = lines[lines.length - 1];
             let endlineIndex: number = extra.indexOf("\n");
 
@@ -59,7 +59,7 @@ namespace GLS.Commands {
                 currentLine.text += component;
                 currentIndex = endlineIndex;
 
-                currentLine = new CommandResult("", 0);
+                currentLine = new CommandResult("", indentation);
                 lines.push(currentLine);
 
                 endlineIndex = extra.indexOf("\n", currentIndex + 1);

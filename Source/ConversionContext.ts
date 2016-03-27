@@ -55,7 +55,7 @@ namespace GLS {
                     let result: Commands.CommandResult = lineParsed[j];
 
                     if (result.indentation < 0) {
-                        indentation -= result.indentation;
+                        indentation += result.indentation;
                     }
 
                     if (result.text !== "\0") {
