@@ -25,6 +25,8 @@
 /// <reference path="ValueCommand.ts" />
 /// <reference path="VariableCommand.ts" />
 /// <reference path="VariableInlineCommand.ts" />
+/// <reference path="WhileEndCommand.ts" />
+/// <reference path="WhileStartCommand.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -67,7 +69,9 @@ namespace GLS.Commands {
                 "type": new TypeCommand(context),
                 "value": new ValueCommand(context),
                 "variable": new VariableCommand(context),
-                "variable inline": new VariableInlineCommand(context)
+                "variable inline": new VariableInlineCommand(context),
+                "while end": new WhileEndCommand(context),
+                "while start": new WhileStartCommand(context)
             };
         }
 

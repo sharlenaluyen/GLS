@@ -73,6 +73,7 @@ namespace GLS.Languages {
             conditionals.end = "\0";
             conditionals.if = "if";
             conditionals.startLeft = " ";
+            conditionals.while = "while";
         }
 
         /**

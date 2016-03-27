@@ -40,7 +40,9 @@ var mocks = require("../mocks.js"),
         "Type": ["array", "no alias", "with alias"],
         "Value": ["false", "infinity", "true"],
         "Variable": ["int", "int value", "number", "number value", "string", "string value"],
-        "VariableInline": ["int", "int value", "number", "number value", "string", "string value"]
+        "VariableInline": ["int", "int value", "number", "number value", "string", "string value"],
+        "WhileEnd": ["while end"],
+        "WhileStart": ["while start"]
     };
     
 (() => {

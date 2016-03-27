@@ -44,5 +44,10 @@ namespace GLS.Languages.Properties {
          * How to end a conditional's statement line.
          */
         public startRight: string;
+
+        /**
+         * The keyword used for "while".
+         */
+        public while: string;
     }
 }

@@ -92,6 +92,7 @@ namespace GLS.Languages {
             conditionals.end = "}";
             conditionals.if = "if";
             conditionals.startLeft = " (";
+            conditionals.while = "while";
         }
 
         /**
