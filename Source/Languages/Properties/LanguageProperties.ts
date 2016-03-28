@@ -8,6 +8,7 @@
 /// <reference path="FunctionProperties.ts" />
 /// <reference path="GeneralProperties.ts" />
 /// <reference path="LambdaProperties.ts" />
+/// <reference path="ListProperties.ts" />
 /// <reference path="LoopProperties.ts" />
 /// <reference path="NumberProperties.ts" />
 /// <reference path="OutputProperties.ts" />
@@ -72,6 +73,11 @@ namespace GLS.Languages.Properties {
          * Metadata on lambdas.
          */
         public lambdas: LambdaProperties;
+
+        /**
+         * Metadata on lists.
+         */
+        public lists: ListProperties;
 
         /**
          * Metadata on loops.

@@ -2,7 +2,7 @@ namespace GLS.Languages.Properties {
     "use strict";
 
     /**
-     * Metadata on a language's Arrays.
+     * Metadata on a language's arrays.
      */
     export class ArrayProperties {
         /**
