@@ -4,6 +4,7 @@
 
 /// <reference path="ArrayInitializeCommand.ts" />
 /// <reference path="ArrayPushCommand.ts" />
+/// <reference path="BreakCommand.ts" />
 /// <reference path="CommentBlockCommand.ts" />
 /// <reference path="CommentBlockEndCommand.ts" />
 /// <reference path="CommentBlockStartCommand.ts" />
@@ -11,6 +12,7 @@
 /// <reference path="CommentDocStartCommand.ts" />
 /// <reference path="CommentDocTagCommand.ts" />
 /// <reference path="CommentLineCommand.ts" />
+/// <reference path="ContinueCommand.ts" />
 /// <reference path="ConcatenateCommand.ts" />
 /// <reference path="ElseIfStartCommand.ts" />
 /// <reference path="ElseStartCommand.ts" />
@@ -52,6 +54,7 @@ namespace GLS.Commands {
             this.commands = {
                 "array initialize": new ArrayInitializeCommand(context),
                 "array push": new ArrayPushCommand(context),
+                "break": new BreakCommand(context),
                 "comment block": new CommentBlockCommand(context),
                 "comment block end": new CommentBlockEndCommand(context),
                 "comment block start": new CommentBlockStartCommand(context),
@@ -60,6 +63,7 @@ namespace GLS.Commands {
                 "comment doc tag": new CommentDocTagCommand(context),
                 "comment line": new CommentLineCommand(context),
                 "concatenate": new ConcatenateCommand(context),
+                "continue": new ContinueCommand(context),
                 "else if start": new ElseIfStartCommand(context),
                 "else start": new ElseStartCommand(context),
                 "for numbers start": new ForNumbersStartCommand(context),
