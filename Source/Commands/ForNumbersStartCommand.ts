@@ -64,11 +64,11 @@ namespace GLS.Commands {
             let output: string = this.language.properties.loops.for;
 
             output += this.language.properties.conditionals.startLeft;
-            output += this.context.convertParsed(["variable inline", parameters[1], parameters[2], parameters[3]]);
+            output += this.context.convertParsed(["variable inline", parameters[1], parameters[2], parameters[3]])[0].text;
             output += this.language.properties.style.semicolon + " ";
-            output += this.context.convertParsed(["operation", parameters[1], "less than", parameters[4]]);
+            output += this.context.convertParsed(["operation", parameters[1], "less than", parameters[4]])[0].text;
             output += this.language.properties.style.semicolon + " ";
-            output += this.context.convertParsed(["operation", parameters[1], "increase by", "1"]);
+            output += this.context.convertParsed(["operation", parameters[1], "increase by", "1"])[0].text;
 
             return output;
         }

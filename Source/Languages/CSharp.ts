@@ -31,10 +31,9 @@ namespace GLS.Languages {
          * @param arrays   A property container for metadata on arrays.
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
-            arrays.className = "List";
+            arrays.className = "Array";
             arrays.initializeAsNew = true;
             arrays.initializeByType = true;
-            arrays.push = "Add";
         }
 
         /**
@@ -56,6 +55,7 @@ namespace GLS.Languages {
 
             classes.aliases = {
                 "dictionary": "Dictionary",
+                "list": "List",
                 "number": "float"
             };
             classes.constructorAsClassName = true;
@@ -143,6 +143,16 @@ namespace GLS.Languages {
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.name = "C#";
             general.extension = ".cs";
+        }
+
+        /**
+         * Generates metadata on lists.
+         * 
+         * @param lists   A property container for metadata on lists.
+         */
+        protected generateListProperties(lists: Properties.ListProperties): void {
+            lists.className = "List";
+            lists.push = "Add";
         }
 
         /**

@@ -72,7 +72,7 @@ namespace GLS {
         }
 
         /**
-         * Converts a command with a single argument.
+         * Converts a single-line command with a single argument.
          * 
          * @param command   The name of the command.
          * @param argumentRaw   A raw argument for the command.
@@ -88,8 +88,8 @@ namespace GLS {
          * @param lineParsed   A parsed line from raw GLS syntax.
          * @returns The equivalent lines of code in the language.
          */
-        convertParsed(parameters: string[]): string {
-            return this.parser.renderParsedCommand(parameters)[0].text;
+        convertParsed(parameters: string[]): Commands.CommandResult[] {
+            return this.parser.renderParsedCommand(parameters);
         }
 
         /**

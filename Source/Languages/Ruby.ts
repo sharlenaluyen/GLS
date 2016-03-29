@@ -29,17 +29,16 @@ namespace GLS.Languages {
         /**
          * Generates metadata on arrays.
          * 
-         * @param arrays   The property container for metadata on arrays. 
+         * @param arrays   A property container for metadata on arrays. 
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "Array";
-            arrays.push = "push";
         }
 
         /**
          * Generates metadata on booleans.
          * 
-         * @param booleans   The property container for metadata on booleans.
+         * @param booleans   A property container for metadata on booleans.
          */
         protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
             booleans.className = "";
@@ -47,7 +46,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on classes.
          * 
-         * @param classes   The property container for metadata on classes. 
+         * @param classes   A property container for metadata on classes. 
          */
         protected generateClassProperties(classes: Properties.ClassProperties): void {
             super.generateClassProperties(classes);
@@ -61,7 +60,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on conditionals.
          * 
-         * @param conditionals   The property container for metadata on conditionals. 
+         * @param conditionals   A property container for metadata on conditionals. 
          */
         protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
             super.generateConditionalProperties(conditionals);
@@ -74,7 +73,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on comments.
          * 
-         * @param comments   The property container for metadata on comments. 
+         * @param comments   A property container for metadata on comments. 
          */
         protected generateCommentProperties(comments: Properties.CommentProperties): void {
             comments.blockEnd = "=end";
@@ -107,7 +106,7 @@ namespace GLS.Languages {
         /**
          * Generates general metadata.
          * 
-         * @param general   The property container for general metadata.
+         * @param general   A property container for general metadata.
          */
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.extension = ".rb";
@@ -115,9 +114,20 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on lists.
+         * 
+         * @param lists   A property container for metadata on loops. 
+         */
+        protected generateListProperties(lists: Properties.ListProperties): void {
+            super.generateListProperties(lists);
+
+            lists.push = "push";
+        }
+
+        /**
          * Generates metadata on loops.
          * 
-         * @param loops   The property container for metadata on loops. 
+         * @param loops   A property container for metadata on loops. 
          */
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             super.generateLoopProperties(loops);
@@ -130,7 +140,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on numbers.
          * 
-         * @param numbers   The property container for metadata on numbers.
+         * @param numbers   A property container for metadata on numbers.
          */
         protected generateNumberProperties(numbers: Properties.NumberProperties): void {
             numbers.className = "float";
@@ -139,7 +149,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on numbers.
          * 
-         * @param numbers   The property container for metadata on numbers.
+         * @param numbers   A property container for metadata on numbers.
          */
         protected generateOutputProperties(output: Properties.OutputProperties): void {
             output.print = "puts";
@@ -148,7 +158,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on strings.
          * 
-         * @param strings   The property container for metadata on strings.
+         * @param strings   A property container for metadata on strings.
          */
         protected generateStringProperties(strings: Properties.StringProperties): void {
             super.generateStringProperties(strings);
@@ -159,7 +169,7 @@ namespace GLS.Languages {
         /**
          * Generates metadata on variables.
          * 
-         * @param variables   The property container for metadata on variables. 
+         * @param variables   A property container for metadata on variables. 
          */
         protected generateVariableProperties(variables: Properties.VariableProperties): void {
             super.generateVariableProperties(variables);

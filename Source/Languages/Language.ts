@@ -11,6 +11,7 @@
 /// <reference path="Properties/GeneralProperties.ts" />
 /// <reference path="Properties/LambdaProperties.ts" />
 /// <reference path="Properties/LanguageProperties.ts" />
+/// <reference path="Properties/ListProperties.ts" />
 /// <reference path="Properties/LoopProperties.ts" />
 /// <reference path="Properties/NumberProperties.ts" />
 /// <reference path="Properties/OutputProperties.ts" />
@@ -48,6 +49,7 @@ namespace GLS.Languages {
             this.generateFunctionProperties(this.properties.functions);
             this.generateGeneralProperties(this.properties.general);
             this.generateLambdaProperties(this.properties.lambdas);
+            this.generateListProperties(this.properties.lists);
             this.generateLoopProperties(this.properties.loops);
             this.generateNumberProperties(this.properties.numbers);
             this.generateOperatorProperties(this.properties.operators);
@@ -60,52 +62,72 @@ namespace GLS.Languages {
         }
 
         /**
-         * Fills out metadata on arrays.
+         * Generates metadata on arrays.
+         * 
+         * @param arrays   A property container for metadata on arrays.
          */
         protected abstract generateArrayProperties(arrays: Properties.ArrayProperties): void;
 
         /**
-         * Fills out metadata on booleans.
+         * Generates metadata on booleans.
+         * 
+         * @param booleans   A property container for metadata on booleans.
          */
         protected abstract generateBooleanProperties(booleans: Properties.BooleanProperties): void;
 
         /**
-         * Fills out metadata on classes.
+         * Generates metadata on classes.
+         * 
+         * @param classes   A property container for metadata on classes.
          */
         protected abstract generateClassProperties(classes: Properties.ClassProperties): void;
 
         /**
-         * Fills out metadata on class generics.
+         * Generates metadata on class generics.
+         * 
+         * @param members   A property container for metadata on class generics.
          */
         protected abstract generateClassGenericProperties(generics: Properties.ClassGenericProperties): void;
 
         /**
-         * Fills out metadata on class members.
+         * Generates metadata on classmembers.
+         * 
+         * @param members   A property container for metadata on class members.
          */
         protected abstract generateClassMemberProperties(members: Properties.ClassMemberProperties): void;
 
         /**
-         * Fills out metadata on comments.
+         * Generates metadata on comments.
+         * 
+         * @param comments   A property container for metadata on comments.
          */
         protected abstract generateCommentProperties(comments: Properties.CommentProperties): void;
 
         /**
-         * Fills out metadata on conditional.
+         * Generates metadata on conditionals.
+         * 
+         * @param conditionals   A property container for metadata on conditionals.
          */
         protected abstract generateConditionalProperties(conditionals: Properties.ConditionalProperties): void;
 
         /**
-         * Fills out metadata on dictionaries.
+         * Generates metadata on dictionaries.
+         * 
+         * @param dictionaries   A property container for metadata on dictionaries.
          */
         protected abstract generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void;
 
         /**
-         * Fills out metadata on exceptions.
+         * Generates metadata on exceptions.
+         * 
+         * @param exceptions   A property container for metadata on exceptions.
          */
         protected abstract generateExceptionProperties(exceptions: Properties.ExceptionProperties): void;
 
         /**
-         * Fills out metadata on functions.
+         * Generates metadata on functions.
+         * 
+         * @param functions   A property container for metadata on functions.
          */
         protected abstract generateFunctionProperties(functions: Properties.FunctionProperties): void;
 
@@ -115,42 +137,63 @@ namespace GLS.Languages {
         protected abstract generateGeneralProperties(general: Properties.GeneralProperties): void;
 
         /**
-         * Fills out metadata on lambdas.
+         * Generates metadata on lambdas.
+         * 
+         * @param lambdas   A property container for metadata on lambdas.
          */
         protected abstract generateLambdaProperties(lambdas: Properties.LambdaProperties): void;
 
         /**
-         * Fills out metadata on loops.
+         * Fills out metadata on lists.
+         */
+        protected abstract generateListProperties(lists: Properties.ListProperties): void;
+
+        /**
+         * Generates metadata on loops.
+         * 
+         * @param loops   A property container for metadata on loops.
          */
         protected abstract generateLoopProperties(loops: Properties.LoopProperties): void;
 
         /**
-         * Fills out metadata on numbers.
+         * Generates metadata on numbers.
+         * 
+         * @param numbers   A property container for metadata on numbers.
          */
         protected abstract generateNumberProperties(numbers: Properties.NumberProperties): void;
 
         /**
-         * Fills out metadata on operators.
+         * Generates metadata on operators.
+         * 
+         * @param operators   A property container for metadata on operators.
          */
         protected abstract generateOperatorProperties(operators: Properties.OperatorProperties): void;
 
         /**
-         * Fills out metadata on output.
+         * Generates metadata on output.
+         * 
+         * @param output   A property container for metadata on output.
          */
         protected abstract generateOutputProperties(operators: Properties.OutputProperties): void;
 
         /**
-         * Fills out metadata on strings.
+         * Generates metadata on strings.
+         * 
+         * @param strings   A property container for metadata on strings.
          */
         protected abstract generateStringProperties(strings: Properties.StringProperties): void;
 
         /**
-         * Fills out metadata on style.
+         * Generates metadata on style.
+         * 
+         * @param style   A property container for metadata on style.
          */
         protected abstract generateStyleProperties(style: Properties.StyleProperties): void;
 
         /**
-         * Fills out metadata on variables.
+         * Generates metadata on variables.
+         * 
+         * @param variables   A property container for metadata on variables.
          */
         protected abstract generateVariableProperties(variables: Properties.VariableProperties): void;
     }

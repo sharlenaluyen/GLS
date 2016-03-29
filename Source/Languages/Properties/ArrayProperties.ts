@@ -24,10 +24,5 @@ namespace GLS.Languages.Properties {
          * Whether initialization is done as a static method of the array class.
          */
         public initializeViaStatic: boolean;
-
-        /**
-         * The keyword used for pushing.
-         */
-        public push: string;
     }
 }

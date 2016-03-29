@@ -5,7 +5,7 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for initializing a new Array.
+     * A command for initializing a new array.
      */
     export class ArrayInitializeCommand extends Command {
         /**
@@ -14,7 +14,7 @@ namespace GLS.Commands {
          * @param parameters   The command's name, followed by any number of
          *                     items to initialize in the Array.
          * @returns Line(s) of code in the language.
-         * @remarks Usage: (type).
+         * @remarks Usage: (type[, item, ...]).
          */
         public render(parameters: string[]): CommandResult[] {
             this.requireParametersLengthMinimum(parameters, 1);
@@ -24,18 +24,19 @@ namespace GLS.Commands {
 
             if (this.language.properties.arrays.initializeAsNew) {
                 output += "new ";
-
-                if (this.language.properties.arrays.initializeByType) {
-                    output += this.context.convertCommon("type", typeName + "[]");
-                }
             }
 
             if (this.language.properties.arrays.initializeByType) {
-                if (parameters.length > 2) {
-                    output += " { ";
-                } else {
-                    output += "(";
+                if (parameters.length === 2) {
+                    output += typeName + "[0]";
+                    return [new CommandResult(output, 0)];
                 }
+
+                output += this.context.convertCommon("type", typeName + "[]");
+            }
+
+            if (this.language.properties.arrays.initializeByType) {
+                output += " { ";
             } else {
                 output += "[";
             }
@@ -43,11 +44,7 @@ namespace GLS.Commands {
             output += parameters.slice(2).join(", ");
 
             if (this.language.properties.arrays.initializeByType) {
-                if (parameters.length > 2) {
-                    output += " }";
-                } else {
-                    output += ")";
-                }
+                output += " }";
             } else {
                 output += "]";
             }

@@ -1,1 +1,1 @@
-new List<string>()
+new string[0]

@@ -35,7 +35,11 @@ namespace GLS.Commands {
             }
 
             if (this.typeContainsArray(typeNameRaw)) {
-                return this.convertTypeWithArray(typeNameRaw);
+                return this.convertArrayType(typeNameRaw);
+            }
+
+            if (this.typeContainsGeneric(typeNameRaw)) {
+                return this.convertGenericType(typeNameRaw);
             }
 
             return typeName;
@@ -47,20 +51,37 @@ namespace GLS.Commands {
          * @param typeNameRaw   A raw type to convert.
          * @returns The equivalent converted type name.
          */
-        private convertTypeWithArray(typeNameRaw: string): string {
+        private convertArrayType(typeNameRaw: string): string {
             let bracketIndex: number = typeNameRaw.indexOf("["),
                 typeName: string = this.convertType(typeNameRaw.substring(0, bracketIndex));
 
-            if (!this.language.properties.arrays.initializeByType) {
-                return typeName + "[]";
+            return typeName + "[]";
+        }
+
+        /**
+         * Converts a raw type name with array notation into the language's equivalent.
+         * 
+         * @param typeNameRaw   A raw type to convert.
+         * @returns The equivalent converted type name.
+         * @todo Support multiple generics (commas inside the <>s).
+         */
+        private convertGenericType(typeNameRaw: string): string {
+            let bracketStartIndex: number = typeNameRaw.indexOf("<"),
+                containerTypeName: string = this.convertType(typeNameRaw.substring(0, bracketStartIndex));
+
+            if (!this.language.properties.classes.generics) {
+                return this.convertType(containerTypeName);
             }
 
-            let result = "";
-            result += this.language.properties.arrays.className;
-            result += this.language.properties.classes.generics.left;
-            result += typeName;
-            result += this.language.properties.classes.generics.right;
-            return result;
+            let bracketEndIndex: number = typeNameRaw.lastIndexOf(">"),
+                genericTypeName: string = this.convertType(typeNameRaw.substring(bracketStartIndex + 1, bracketEndIndex)),
+                output: string = containerTypeName;
+
+            output += this.language.properties.classes.generics.left;
+            output += genericTypeName;
+            output += this.language.properties.classes.generics.right;
+
+            return output;
         }
 
         /**
@@ -69,6 +90,14 @@ namespace GLS.Commands {
          */
         private typeContainsArray(typeNameRaw: string): boolean {
             return typeNameRaw.indexOf("[") !== -1;
+        }
+
+        /**
+         * @param typeNameRaw   A name of a type.
+         * @returns Whether the type name includes Array notation.
+         */
+        private typeContainsGeneric(typeNameRaw: string): boolean {
+            return typeNameRaw.indexOf("<") !== -1;
         }
     }
 }

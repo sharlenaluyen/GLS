@@ -34,7 +34,6 @@ namespace GLS.Languages {
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "Array";
-            arrays.push = "push";
         }
 
         /**
@@ -163,6 +162,16 @@ namespace GLS.Languages {
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.extension = ".ts";
             general.name = "TypeScript";
+        }
+
+        /**
+         * Generates metadata on lists.
+         * 
+         * @param lists   A property container for metadata on lists.
+         */
+        protected generateListProperties(lists: Properties.ListProperties): void {
+            lists.asArray = true;
+            lists.push = "push";
         }
 
         /**

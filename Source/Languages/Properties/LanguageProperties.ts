@@ -128,6 +128,7 @@ namespace GLS.Languages.Properties {
             this.functions = new FunctionProperties();
             this.general = new GeneralProperties();
             this.lambdas = new LambdaProperties();
+            this.lists = new ListProperties();
             this.loops = new LoopProperties();
             this.numbers = new NumberProperties();
             this.operators = new OperatorProperties();
