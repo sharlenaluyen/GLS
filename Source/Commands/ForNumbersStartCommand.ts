@@ -33,7 +33,7 @@ namespace GLS.Commands {
         }
 
         /**
-         * Starts 
+         * Renders a Pythonic ranged loop.
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
@@ -54,7 +54,7 @@ namespace GLS.Commands {
         }
 
         /**
-         * Renders the command for a language with the given parameters.
+         * Renders a traditional loop.
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.

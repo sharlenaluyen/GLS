@@ -21,6 +21,11 @@ namespace GLS.Languages.Properties {
         public for: string;
 
         /**
+         * How to start a foreach loop's initial line.
+         */
+        public foreach: string;
+
+        /**
          * Whether foreach loops are a method, rather than a standard loop.
          */
         public forEachAsMethod: boolean;
@@ -28,12 +33,17 @@ namespace GLS.Languages.Properties {
         /**
          * How objects may give their listing of keys, such as ".Keys".
          */
-        public forEachKeysGet: string;
+        public forEachGetKeys: string;
 
         /**
-         * How to start a foreach loop's initial line.
+         * How objects may give their listing of paired keys and values.
          */
-        public forEachLeft: string;
+        public forEachGetPairs: string;
+
+        /**
+         * How objects may give their listing of values, such as ".Values".
+         */
+        public forEachGetValues: string;
 
         /**
          * The middle portion of a foreach loop's initial line.

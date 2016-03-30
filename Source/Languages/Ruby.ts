@@ -132,6 +132,13 @@ namespace GLS.Languages {
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             super.generateLoopProperties(loops);
 
+            loops.foreach = "foreach";
+            loops.forEachAsMethod = true;
+            loops.forEachGetKeys = ".each_key { |";
+            loops.forEachGetPairs = ".each_pair { |";
+            loops.forEachGetValues = ".each_value { |";
+            loops.forEachRight = "|";
+
             loops.rangedForLoopsLeft = " in ";
             loops.rangedForLoopsMiddle = "..";
             loops.rangedForLoopsRight = "";

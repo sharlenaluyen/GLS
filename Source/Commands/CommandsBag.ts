@@ -16,6 +16,9 @@
 /// <reference path="ConcatenateCommand.ts" />
 /// <reference path="ElseIfStartCommand.ts" />
 /// <reference path="ElseStartCommand.ts" />
+/// <reference path="ForEachKeyStartCommand.ts" />
+/// <reference path="ForEachPairStartCommand.ts" />
+/// <reference path="ForEachValueStartCommand.ts" />
 /// <reference path="ForNumbersStartCommand.ts" />
 /// <reference path="ForEndCommand.ts" />
 /// <reference path="IfEndCommand.ts" />
@@ -69,6 +72,9 @@ namespace GLS.Commands {
                 "continue": new ContinueCommand(context),
                 "else if start": new ElseIfStartCommand(context),
                 "else start": new ElseStartCommand(context),
+                "for each key start": new ForEachKeyStartCommand(context),
+                "for each pair start": new ForEachPairStartCommand(context),
+                "for each value start": new ForEachValueStartCommand(context),
                 "for numbers start": new ForNumbersStartCommand(context),
                 "for end": new ForEndCommand(context),
                 "if end": new IfEndCommand(context),
