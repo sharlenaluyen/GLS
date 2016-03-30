@@ -6,7 +6,7 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for the end of a for loop.
+     * A command for the end of a for loop over numbers.
      */
-    export class ForEndCommand extends ConditionalEndCommand { }
+    export class ForNumbersEndCommand extends ConditionalEndCommand { }
 }
