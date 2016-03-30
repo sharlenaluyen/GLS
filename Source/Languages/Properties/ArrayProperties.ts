@@ -2,7 +2,7 @@ namespace GLS.Languages.Properties {
     "use strict";
 
     /**
-     * Metadata on a language's Arrays.
+     * Metadata on a language's arrays.
      */
     export class ArrayProperties {
         /**
@@ -24,10 +24,5 @@ namespace GLS.Languages.Properties {
          * Whether initialization is done as a static method of the array class.
          */
         public initializeViaStatic: boolean;
-
-        /**
-         * The keyword used for pushing.
-         */
-        public push: string;
     }
 }

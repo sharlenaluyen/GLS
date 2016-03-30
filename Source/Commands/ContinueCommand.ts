@@ -17,7 +17,7 @@ namespace GLS.Commands {
          */
         public render(parameters: string[]): CommandResult[] {
             this.requireParametersLength(parameters, 0);
-            
+
             let output: string = this.language.properties.loops.continue;
             output += this.language.properties.style.semicolon;
 

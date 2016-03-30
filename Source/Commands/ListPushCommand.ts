@@ -5,9 +5,9 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for the beginning of an array push statement.
+     * A command for a list push statement.
      */
-    export class ArrayPushCommand extends Command {
+    export class ListPushCommand extends Command {
         /**
          * Renders the command for a language with the given parameters.
          * 
@@ -19,7 +19,7 @@ namespace GLS.Commands {
             this.requireParametersLength(parameters, 2);
 
             let result: string = parameters[1] + ".";
-            result += this.language.properties.arrays.push;
+            result += this.language.properties.lists.push;
             result += "(" + parameters[2] + ")";
             result += this.language.properties.style.semicolon;
 

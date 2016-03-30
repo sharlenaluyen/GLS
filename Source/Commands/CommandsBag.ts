@@ -3,7 +3,7 @@
 /// <reference path="CommandResult.ts" />
 
 /// <reference path="ArrayInitializeCommand.ts" />
-/// <reference path="ArrayPushCommand.ts" />
+/// <reference path="ArrayLengthCommand.ts" />
 /// <reference path="BreakCommand.ts" />
 /// <reference path="CommentBlockCommand.ts" />
 /// <reference path="CommentBlockEndCommand.ts" />
@@ -21,6 +21,9 @@
 /// <reference path="IfEndCommand.ts" />
 /// <reference path="IfStartCommand.ts" />
 /// <reference path="IndexCommand.ts" />
+/// <reference path="ListInitializeCommand.ts" />
+/// <reference path="ListLengthCommand.ts" />
+/// <reference path="ListPushCommand.ts" />
 /// <reference path="LiteralCommand.ts" />
 /// <reference path="NotCommand.ts" />
 /// <reference path="OperationCommand.ts" />
@@ -53,7 +56,7 @@ namespace GLS.Commands {
         constructor(context: ConversionContext) {
             this.commands = {
                 "array initialize": new ArrayInitializeCommand(context),
-                "array push": new ArrayPushCommand(context),
+                "array length": new ArrayLengthCommand(context),
                 "break": new BreakCommand(context),
                 "comment block": new CommentBlockCommand(context),
                 "comment block end": new CommentBlockEndCommand(context),
@@ -71,6 +74,9 @@ namespace GLS.Commands {
                 "if end": new IfEndCommand(context),
                 "if start": new IfStartCommand(context),
                 "index": new IndexCommand(context),
+                "list initialize": new ListInitializeCommand(context),
+                "list length": new ListLengthCommand(context),
+                "list push": new ListPushCommand(context),
                 "literal": new LiteralCommand(context),
                 "not": new NotCommand(context),
                 "operation": new OperationCommand(context),

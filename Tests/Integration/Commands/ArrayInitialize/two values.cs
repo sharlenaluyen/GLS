@@ -1,1 +1,1 @@
-new List<string> { "aaa", bbb }
+new string[] { "aaa", bbb }

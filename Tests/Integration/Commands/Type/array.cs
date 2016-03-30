@@ -1,1 +1,1 @@
-List<string>
+string[]

@@ -124,6 +124,15 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on lists.
+         * 
+         * @param lists   A property container for metadata on lists.
+         */
+        protected generateListProperties(lists: Properties.ListProperties): void {
+            lists.asArray = true;
+        }
+
+        /**
          * Generates metadata on loops.
          * 
          * @param loops   The property container for metadata on loops. 
