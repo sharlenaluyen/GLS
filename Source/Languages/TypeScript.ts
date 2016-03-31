@@ -183,7 +183,9 @@ namespace GLS.Languages {
 
             loops.foreach = "for";
             loops.forEachGetKeys = "";
+            loops.forEachGetPairs = "";
             loops.forEachMiddle = " in ";
+            loops.forEachPairsAsKeys = true;
             loops.forEachRight = "";
         }
 

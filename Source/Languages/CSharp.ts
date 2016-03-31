@@ -166,8 +166,11 @@ namespace GLS.Languages {
             loops.foreach = "foreach";
             loops.forEachGetKeys = ".Keys";
             loops.forEachGetPairs = "";
-            loops.forEachGetValues = ".Values";
             loops.forEachMiddle = " in ";
+            loops.forEachPairsAsPair = true;
+            loops.forEachPairsPairClass = "KeyValuePair";
+            loops.forEachPairsRetrieveKey = ".Key";
+            loops.forEachPairsRetrieveValue = ".Value";
             loops.forEachRight = "";
         }
 

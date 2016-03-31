@@ -136,8 +136,7 @@ namespace GLS.Languages {
             loops.forEachAsMethod = true;
             loops.forEachEnd = "}";
             loops.forEachGetKeys = ".each_key { |";
-            loops.forEachGetPairs = ".each_pair { |";
-            loops.forEachGetValues = ".each_value { |";
+            loops.forEachGetPairs = ".each { |";
             loops.forEachRight = "|";
 
             loops.rangedForLoopsLeft = " in ";

@@ -46,11 +46,6 @@ namespace GLS.Languages.Properties {
         public forEachGetPairs: string;
 
         /**
-         * How objects may give their listing of values, such as ".Values".
-         */
-        public forEachGetValues: string;
-
-        /**
          * The middle portion of a foreach loop's initial line.
          */
         public forEachMiddle: string;
@@ -61,7 +56,12 @@ namespace GLS.Languages.Properties {
         public forEachPairsPairClass: string;
 
         /**
-         * Whether foreach loops iterate over pairs of items, rather than over keys.
+         * Whether foreach loops iterate over keys.
+         */
+        public forEachPairsAsKeys: boolean;
+
+        /**
+         * Whether foreach loops iterate over pairs of items.
          */
         public forEachPairsAsPair: boolean;
 

@@ -5,7 +5,7 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for the beginning of a for loop over a container's keys.
+     * A command for the beginning of a foreach loop over a container's keys.
      */
     export class ForEachKeyStartCommand extends Command {
         /**
@@ -17,10 +17,6 @@ namespace GLS.Commands {
          */
         public render(parameters: string[]): CommandResult[] {
             this.requireParametersLength(parameters, 3);
-
-            let container: string = parameters[1],
-                keyName: string = parameters[2],
-                keyType: string = this.context.convertCommon("type", parameters[3]);
 
             if (this.language.properties.loops.forEachAsMethod) {
                 return this.renderForEachAsMethod(parameters);
