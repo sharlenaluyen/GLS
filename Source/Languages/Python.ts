@@ -99,7 +99,7 @@ namespace GLS.Languages {
             comments.docTagSpaceAfter = "  ";
             comments.docTagStart = ":";
 
-            comments.lineLeft = "// ";
+            comments.lineLeft = "# ";
             comments.lineRight = "";
         }
 
@@ -131,6 +131,12 @@ namespace GLS.Languages {
          */
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             super.generateLoopProperties(loops);
+
+            loops.forEachEnd = "\0";
+            loops.forEachGetKeys = "";
+            loops.forEachGetPairs = ".iteritems()";
+            loops.forEachPairsAsPair = true;
+            loops.forEachRight = "";
 
             loops.rangedForLoopsLeft = " in range(";
             loops.rangedForLoopsMiddle = ", ";

@@ -41,6 +41,7 @@ namespace GLS.Commands {
          * 
          * @param lines   In-progress line(s) of code in the rendering language.
          * @param extra   Raw syntax to add to the lines.
+         * @param indentation   How much indentation the last line should be.
          */
         protected addLineEnder(lines: CommandResult[], extra: string, indentation): void {
             let currentLine: CommandResult = lines[lines.length - 1];
@@ -48,6 +49,7 @@ namespace GLS.Commands {
 
             if (endlineIndex === -1) {
                 currentLine.text += extra;
+                currentLine.indentation = indentation;
                 return;
             }
 
@@ -59,7 +61,7 @@ namespace GLS.Commands {
                 currentLine.text += component;
                 currentIndex = endlineIndex;
 
-                currentLine = new CommandResult("", indentation);
+                currentLine = new CommandResult("", 0);
                 lines.push(currentLine);
 
                 endlineIndex = extra.indexOf("\n", currentIndex + 1);
@@ -68,6 +70,11 @@ namespace GLS.Commands {
             if (currentIndex !== -1) {
                 currentLine.text = extra.substring(currentIndex + 1);
             }
+
+            if (this.language.properties.general.name === "TypeScript") {
+                console.log("Giving", indentation, "to", lines.length - 1, lines[lines.length - 1]);
+            }
+            lines[lines.length - 1].indentation = indentation;
         }
 
         /**
@@ -83,14 +90,14 @@ namespace GLS.Commands {
         }
 
         /**
-         * Throws an error if not enough parameters are passed.
+         * Throws an error if too many parameters are passed.
          * 
          * @param parameters   Parameters passed to a command.
          * @param minimum   The minimum allowed number of parameters.
          */
         protected requireParametersLengthMinimum(parameters: string[], minimum: number): void {
             if (parameters.length - 1 < minimum) {
-                throw new Error(`Not enough arguments: expected at least ${minimum} but got ${parameters.length - 1}.`);
+                throw new Error(`Too many arguments: expected at least ${minimum} but got ${parameters.length - 1}.`);
             }
         }
 

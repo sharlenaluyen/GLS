@@ -163,9 +163,15 @@ namespace GLS.Languages {
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             super.generateLoopProperties(loops);
 
-            loops.forEachLeft = "foreach (";
+            loops.foreach = "foreach";
+            loops.forEachGetKeys = ".Keys";
+            loops.forEachGetPairs = "";
             loops.forEachMiddle = " in ";
-            loops.forEachRight = ") {";
+            loops.forEachPairsAsPair = true;
+            loops.forEachPairsPairClass = "KeyValuePair";
+            loops.forEachPairsRetrieveKey = ".Key";
+            loops.forEachPairsRetrieveValue = ".Value";
+            loops.forEachRight = "";
         }
 
         /**

@@ -140,6 +140,7 @@ namespace GLS.Languages {
             loops.break = "break";
             loops.continue = "continue";
             loops.for = "for";
+            loops.forEachEnd = "}";
             loops.forEachRight = ") {";
         }
 

@@ -21,17 +21,18 @@ namespace GLS.Commands {
             let lines = [new CommandResult("", -1)],
                 indentation: number;
 
-            if (this.language.properties.style.separateBraceLines) {
-                indentation = 0;
-            } else {
-                indentation = 1;
+            if (!this.language.properties.style.separateBraceLines) {
+                lines[0].text = "\0";
+                lines.push(new CommandResult("", 0));
             }
 
-            this.addLineEnder(lines, this.language.properties.conditionals.continueLeft, indentation);
+            this.addLineEnder(lines, this.language.properties.conditionals.continueLeft, 0);
             lines[lines.length - 1].text += this.language.properties.conditionals.else;
 
             if (this.language.properties.style.separateBraceLines) {
                 lines.push(new CommandResult("", 1));
+            } else {
+                lines[lines.length - 1].indentation = 1;
             }
 
             lines[lines.length - 1].text += this.language.properties.conditionals.continueRight;

@@ -26,7 +26,6 @@ namespace GLS.Languages {
      * A summary of information for the TypeScript language.
      */
     export class TypeScript extends CLikeLanguage {
-
         /**
          * Generates metadata on arrays.
          * 
@@ -182,9 +181,12 @@ namespace GLS.Languages {
         protected generateLoopProperties(loops: Properties.LoopProperties): void {
             super.generateLoopProperties(loops);
 
-            loops.forEachLeft = "for (";
+            loops.foreach = "for";
+            loops.forEachGetKeys = "";
+            loops.forEachGetPairs = "";
             loops.forEachMiddle = " in ";
-            loops.forEachRight = ") {";
+            loops.forEachPairsAsKeys = true;
+            loops.forEachRight = "";
         }
 
         /**
