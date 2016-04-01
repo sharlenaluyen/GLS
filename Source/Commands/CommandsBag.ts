@@ -32,6 +32,7 @@
 /// <reference path="NotCommand.ts" />
 /// <reference path="OperationCommand.ts" />
 /// <reference path="OperatorCommand.ts" />
+/// <reference path="ReturnCommand.ts" />
 /// <reference path="ThisCommand.ts" />
 /// <reference path="TypeCommand.ts" />
 /// <reference path="ValueCommand.ts" />
@@ -89,6 +90,7 @@ namespace GLS.Commands {
                 "not": new NotCommand(context),
                 "operation": new OperationCommand(context),
                 "operator": new OperatorCommand(context),
+                "return": new ReturnCommand(context),
                 "this": new ThisCommand(context),
                 "type": new TypeCommand(context),
                 "value": new ValueCommand(context),
