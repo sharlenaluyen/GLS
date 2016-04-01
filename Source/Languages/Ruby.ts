@@ -114,6 +114,18 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on functions.
+         * 
+         * @param functions   The property container for metadata on functions. 
+         */
+        protected generateFunctionProperties(functions: Properties.FunctionProperties): void {
+            super.generateFunctionProperties(functions);
+
+            functions.defineStartRight = "";
+            functions.defineEnd = "end";
+        }
+
+        /**
          * Generates metadata on lists.
          * 
          * @param lists   A property container for metadata on loops. 

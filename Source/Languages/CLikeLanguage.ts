@@ -114,8 +114,6 @@ namespace GLS.Languages {
          * @param functions   A property container for metadata on functions.
          */
         protected generateFunctionProperties(functions: Properties.FunctionProperties): void {
-            functions.defineStartLeft = "";
-            functions.defineStartRight = ") {";
             functions.defineEnd = "}";
             functions.explicitReturns = true;
         }

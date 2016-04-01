@@ -54,6 +54,7 @@ namespace GLS.Languages {
 
             classes.aliases = {
                 "dictionary": "object",
+                "float": "number",
                 "int": "number"
             };
             classes.constructorName = "constructor";
@@ -149,6 +150,7 @@ namespace GLS.Languages {
             super.generateFunctionProperties(functions);
 
             functions.defineStartLeft = "function ";
+            functions.defineStartRight = " {";
             functions.returnTypeAfterName = true;
             functions.returnTypeMarker = ": ";
         }

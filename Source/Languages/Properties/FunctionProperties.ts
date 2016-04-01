@@ -6,12 +6,12 @@ namespace GLS.Languages.Properties {
      */
     export class FunctionProperties {
         /**
-         * A prefix before defining a function, such as "def ".
+         * A prefix before defining a function, such as "def " or "function ".
          */
         defineStartLeft: string;
 
         /**
-         * A suffix after defining a function, such as ") {".
+         * A suffix after defining a function, such as " {" or ":".
          */
         defineStartRight: string;
 

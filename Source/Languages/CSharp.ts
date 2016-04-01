@@ -54,6 +54,7 @@ namespace GLS.Languages {
             super.generateClassProperties(classes);
 
             classes.aliases = {
+                "boolean": "bool",
                 "dictionary": "Dictionary",
                 "list": "List",
                 "number": "float"
@@ -143,6 +144,18 @@ namespace GLS.Languages {
         protected generateGeneralProperties(general: Properties.GeneralProperties): void {
             general.name = "C#";
             general.extension = ".cs";
+        }
+
+        /**
+         * Generates metadata on functions.
+         * 
+         * @param functions   A property container for metadata on functions.
+         */
+        protected generateFunctionProperties(functions: Properties.FunctionProperties): void {
+            super.generateFunctionProperties(functions);
+
+            functions.defineStartLeft = " ";
+            functions.defineStartRight = "\n{";
         }
 
         /**
