@@ -1,6 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
-/// <reference path="ConditionalEndCommand.ts" />
+/// <reference path="BlockEndCommand.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -8,5 +8,5 @@ namespace GLS.Commands {
     /**
      * A command for the end of a while loop.
      */
-    export class WhileEndCommand extends ConditionalEndCommand { }
+    export class WhileEndCommand extends BlockEndCommand { }
 }

@@ -21,6 +21,7 @@
 /// <reference path="ForEachPairStartCommand.ts" />
 /// <reference path="ForNumbersStartCommand.ts" />
 /// <reference path="ForNumbersEndCommand.ts" />
+/// <reference path="FunctionEndCommand.ts" />
 /// <reference path="FunctionStartCommand.ts" />
 /// <reference path="IfEndCommand.ts" />
 /// <reference path="IfStartCommand.ts" />
@@ -80,6 +81,7 @@ namespace GLS.Commands {
                 "for numbers start": new ForNumbersStartCommand(context),
                 "for numbers end": new ForNumbersEndCommand(context),
                 "function start": new FunctionStartCommand(context),
+                "function end": new FunctionEndCommand(context),
                 "if end": new IfEndCommand(context),
                 "if start": new IfStartCommand(context),
                 "index": new IndexCommand(context),

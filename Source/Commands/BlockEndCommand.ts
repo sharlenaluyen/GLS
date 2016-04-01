@@ -7,7 +7,7 @@ namespace GLS.Commands {
     /**
      * A general command for the end of a conditional block.
      */
-    export class ConditionalEndCommand extends Command {
+    export class BlockEndCommand extends Command {
         /**
          * Renders the command for a language with the given parameters.
          * 
