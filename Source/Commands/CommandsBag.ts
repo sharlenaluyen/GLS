@@ -16,6 +16,8 @@
 /// <reference path="ConcatenateCommand.ts" />
 /// <reference path="ElseIfStartCommand.ts" />
 /// <reference path="ElseStartCommand.ts" />
+/// <reference path="FileEndCommand.ts" />
+/// <reference path="FileStartCommand.ts" />
 /// <reference path="ForEachEndCommand.ts" />
 /// <reference path="ForEachKeyStartCommand.ts" />
 /// <reference path="ForEachPairStartCommand.ts" />
@@ -75,6 +77,8 @@ namespace GLS.Commands {
                 "continue": new ContinueCommand(context),
                 "else if start": new ElseIfStartCommand(context),
                 "else start": new ElseStartCommand(context),
+                "file end": new FileEndCommand(context),
+                "file start": new FileStartCommand(context),
                 "for each end": new ForEachEndCommand(context),
                 "for each key start": new ForEachKeyStartCommand(context),
                 "for each pair start": new ForEachPairStartCommand(context),

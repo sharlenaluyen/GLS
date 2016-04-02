@@ -224,6 +224,17 @@ namespace GLS.Languages {
         protected generateStyleProperties(style: Properties.StyleProperties): void {
             super.generateStyleProperties(style);
 
+            style.fileEndLines = [
+                "}"
+            ];
+            style.fileIndentation = 1;
+            style.fileStartLines = [
+                "using System;",
+                "using System.Collections.Generic;",
+                "",
+                "class {0}",
+                "{",
+            ];
             style.separateBraceLines = true;
         }
 

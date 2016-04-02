@@ -177,6 +177,10 @@ namespace GLS.Languages {
          * @param style   The property container for metadata on style. 
          */
         protected generateStyleProperties(style: Properties.StyleProperties): void {
+            style.fileEndLines = [];
+            style.fileIndentation = 0;
+            style.fileStartLines = [];
+
             style.semicolon = "";
         }
 

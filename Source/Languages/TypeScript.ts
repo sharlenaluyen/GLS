@@ -222,6 +222,19 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on style.
+         * 
+         * @param style   The property container for metadata on style. 
+         */
+        protected generateStyleProperties(style: Properties.StyleProperties): void {
+            super.generateStyleProperties(style);
+
+            style.fileEndLines = ["}"];
+            style.fileIndentation = 1;
+            style.fileStartLines = ["namespace {0} {"];
+        }
+
+        /**
          * Generates metadata on strings.
          * 
          * @param strings   A property container for metadata on strings.
