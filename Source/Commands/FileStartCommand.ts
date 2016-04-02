@@ -5,7 +5,7 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for ending a file.
+     * A command for starting a file.
      */
     export class FileStartCommand extends Command {
         /**

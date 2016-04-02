@@ -175,6 +175,19 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on style.
+         * 
+         * @param style   The property container for metadata on style. 
+         */
+        protected generateStyleProperties(style: Properties.StyleProperties): void {
+            super.generateStyleProperties(style);
+
+            style.mainEndLines = [];
+            style.mainIndentation = 0;
+            style.mainStartLines = [];
+        }
+
+        /**
          * Generates metadata on strings.
          * 
          * @param strings   A property container for metadata on strings.

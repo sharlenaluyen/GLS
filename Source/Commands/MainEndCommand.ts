@@ -5,28 +5,28 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for ending a file.
+     * A command for ending a main function.
      */
-    export class FileEndCommand extends Command {
+    export class MainEndCommand extends Command {
         /**
          * Renders the command for a language with the given parameters.
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
-         * @remarks Usage: (fileName).
+         * @remarks Usage: ().
          */
         public render(parameters: string[]): CommandResult[] {
-            this.requireParametersLength(parameters, 1);
+            this.requireParametersLength(parameters, 0);
 
             let output: CommandResult[] = [],
-                source: string[] = this.language.properties.style.fileEndLines;
+                source: string[] = this.language.properties.style.mainEndLines;
 
             for (let i: number = 0; i < source.length; i += 1) {
-                output.push(new CommandResult(source[i].replace("{0}", parameters[1]), 0));
+                output.push(new CommandResult(source[i], 0));
             }
 
             if (output.length !== 0) {
-                output[0].indentation = -this.language.properties.style.fileIndentation;
+                output[0].indentation = -this.language.properties.style.mainIndentation;
             }
 
             return output;

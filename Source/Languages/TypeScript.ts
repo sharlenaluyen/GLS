@@ -232,6 +232,12 @@ namespace GLS.Languages {
             style.fileEndLines = ["}"];
             style.fileIndentation = 1;
             style.fileStartLines = ["namespace {0} {"];
+
+            style.mainEndLines = ["})();"];
+            style.mainIndentation = 1;
+            style.mainStartLines = [
+                "(() => {"
+            ];
         }
 
         /**

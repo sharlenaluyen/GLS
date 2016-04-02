@@ -224,9 +224,7 @@ namespace GLS.Languages {
         protected generateStyleProperties(style: Properties.StyleProperties): void {
             super.generateStyleProperties(style);
 
-            style.fileEndLines = [
-                "}"
-            ];
+            style.fileEndLines = ["}"];
             style.fileIndentation = 1;
             style.fileStartLines = [
                 "using System;",
@@ -235,6 +233,14 @@ namespace GLS.Languages {
                 "class {0}",
                 "{",
             ];
+
+            style.mainEndLines = ["}"];
+            style.mainIndentation = 1;
+            style.mainStartLines = [
+                "public static void Main()",
+                "{"
+            ];
+
             style.separateBraceLines = true;
         }
 
