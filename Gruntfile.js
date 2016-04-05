@@ -39,7 +39,10 @@ module.exports = function (grunt) {
                     "<%= meta.paths.source %>/Commands/Command.ts",
                     "<%= meta.paths.source %>/**/*.ts",
                 ],
-                "dest": "<%= meta.paths.dist %>/<%= pkg.name %>.js"
+                "dest": "<%= meta.paths.dist %>/<%= pkg.name %>.js",
+                "options": {
+                    "declaration": true
+                }
             }
         },
     });

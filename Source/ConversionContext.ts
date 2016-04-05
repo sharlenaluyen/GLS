@@ -49,6 +49,11 @@ namespace GLS {
                 output: string[] = [];
 
             for (let i: number = 0; i < lines.length; i += 1) {
+                if (lines[i].trim() === "") {
+                    output.push(this.generateTabs(indentation));
+                    continue;
+                }
+
                 let lineParsed: Commands.CommandResult[] = this.parser.parseCommand(lines[i]);
 
                 for (let j: number = 0; j < lineParsed.length; j += 1) {
