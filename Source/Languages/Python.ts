@@ -184,6 +184,8 @@ namespace GLS.Languages {
             style.mainEndLines = [""];
             style.mainIndentation = 1;
             style.mainStartLines = ["if __name__ == \"__main__\":"];
+            style.printEnd = ")";
+            style.printStart = "print(";
         }
 
         /**

@@ -36,7 +36,10 @@
 /// <reference path="MainStartCommand.ts" />
 /// <reference path="NotCommand.ts" />
 /// <reference path="OperationCommand.ts" />
+/// <reference path="OperationInlineCommand.ts" />
 /// <reference path="OperatorCommand.ts" />
+/// <reference path="ParenthesisCommand.ts" />
+/// <reference path="PrintCommand.ts" />
 /// <reference path="ReturnCommand.ts" />
 /// <reference path="ThisCommand.ts" />
 /// <reference path="TypeCommand.ts" />
@@ -99,7 +102,10 @@ namespace GLS.Commands {
                 "main start": new MainStartCommand(context),
                 "not": new NotCommand(context),
                 "operation": new OperationCommand(context),
+                "operation inline": new OperationInlineCommand(context),
                 "operator": new OperatorCommand(context),
+                "parenthesis": new ParenthesisCommand(context),
+                "print": new PrintCommand(context),
                 "return": new ReturnCommand(context),
                 "this": new ThisCommand(context),
                 "type": new TypeCommand(context),

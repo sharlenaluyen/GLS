@@ -238,6 +238,9 @@ namespace GLS.Languages {
             style.mainStartLines = [
                 "(() => {"
             ];
+
+            style.printEnd = ");";
+            style.printStart = "console.log(";
         }
 
         /**

@@ -42,6 +42,16 @@ namespace GLS.Languages.Properties {
         public pascalCase: boolean;
 
         /**
+         * How to start printing a line.
+         */
+        public printEnd: string;
+
+        /**
+         * How to end printing a line.
+         */
+        public printStart: string;
+
+        /**
          * Whether block-starting braces should be moved to the next line.
          */
         public separateBraceLines: boolean;

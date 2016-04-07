@@ -175,6 +175,17 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on strings.
+         * 
+         * @param strings   A property container for metadata on strings.
+         */
+        protected generateStringProperties(strings: Properties.StringProperties): void {
+            super.generateStringProperties(strings);
+
+            strings.className = "string";
+        }
+
+        /**
          * Generates metadata on style.
          * 
          * @param style   The property container for metadata on style. 
@@ -185,17 +196,8 @@ namespace GLS.Languages {
             style.mainEndLines = [];
             style.mainIndentation = 0;
             style.mainStartLines = [];
-        }
-
-        /**
-         * Generates metadata on strings.
-         * 
-         * @param strings   A property container for metadata on strings.
-         */
-        protected generateStringProperties(strings: Properties.StringProperties): void {
-            super.generateStringProperties(strings);
-
-            strings.className = "string";
+            style.printEnd = "";
+            style.printStart = "puts ";
         }
 
         /**

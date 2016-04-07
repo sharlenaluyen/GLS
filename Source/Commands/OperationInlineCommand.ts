@@ -5,9 +5,9 @@ namespace GLS.Commands {
     "use strict";
 
     /**
-     * A command for printing an operation.
+     * A command for printing an inline operation.
      */
-    export class OperationCommand extends Command {
+    export class OperationInlineCommand extends Command {
         /**
          * Renders the command for a language with the given parameters.
          * 
@@ -25,8 +25,6 @@ namespace GLS.Commands {
                 result += " " + this.context.convertCommon("operator", parameters[i]);
                 result += " " + this.context.convertCommon("value", parameters[i + 1]);
             }
-
-            result += this.language.properties.style.semicolon;
 
             return [new CommandResult(result, 0)];
         }
