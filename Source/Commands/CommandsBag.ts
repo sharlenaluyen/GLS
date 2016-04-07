@@ -41,6 +41,7 @@
 /// <reference path="ParenthesisCommand.ts" />
 /// <reference path="PrintCommand.ts" />
 /// <reference path="ReturnCommand.ts" />
+/// <reference path="StringLengthCommand.ts" />
 /// <reference path="ThisCommand.ts" />
 /// <reference path="TypeCommand.ts" />
 /// <reference path="ValueCommand.ts" />
@@ -107,6 +108,7 @@ namespace GLS.Commands {
                 "parenthesis": new ParenthesisCommand(context),
                 "print": new PrintCommand(context),
                 "return": new ReturnCommand(context),
+                "string length": new StringLengthCommand(context),
                 "this": new ThisCommand(context),
                 "type": new TypeCommand(context),
                 "value": new ValueCommand(context),

@@ -1,5 +1,8 @@
+/// <reference path="ArrayProperties.ts" />
 /// <reference path="ClassGenericProperties.ts" />
 /// <reference path="ClassMemberProperties.ts" />
+/// <reference path="ListProperties.ts" />
+/// <reference path="StringProperties.ts" />
 
 namespace GLS.Languages.Properties {
     "use strict";
@@ -11,71 +14,71 @@ namespace GLS.Languages.Properties {
         /**
          * Aliases of types, from raw GLS syntax to this language's equivalents.
          */
-        aliases: { [i: string]: string };
+        public aliases: { [i: string]: string };
 
         /**
          * Whether making a new instance is done via a static method, rather than new.
          */
-        constructorAsStatic: boolean;
+        public constructorAsStatic: boolean;
         
         /**
          * Whether constructors are named the same as their class.
          */
-        constructorAsClassName: boolean;
+        public constructorAsClassName: boolean;
 
         /**
          * The name of the constructor method, if not the class name.
          */
-        constructorName: string;
+        public constructorName: string;
 
         /**
          * Characters before an inherited class definition.
          */
-        defineInheritanceLeft: string;
+        public defineInheritanceLeft: string;
 
         /**
          * Characters after an inherited class definition.
          */
-        defineInheritanceRight: string;
+        public defineInheritanceRight: string;
 
         /**
          * The last line of a class definition.
          */
-        defineEnd: string;
+        public defineEnd: string;
 
         /**
          * How to start the first line of a class definition.
          */
-        defineStartLeft: string;
+        public defineStartLeft: string;
 
         /**
          * How to end the first line of a class definition.
          */
-        defineStartRight: string;
+        public defineStartRight: string;
 
         /**
          * Metadata on generic (templated) types.
          */
-        generics: ClassGenericProperties = new ClassGenericProperties();
+        public generics: ClassGenericProperties = new ClassGenericProperties();
 
         /**
          * Metadata on class member variables and functions.
          */
-        members: ClassMemberProperties = new ClassMemberProperties();
+        public members: ClassMemberProperties = new ClassMemberProperties();
 
         /**
          * How to start declaring a new instance of a class, such as "new ".
          */
-        newStart: string;
+        public newStart: string;
 
         /**
          * The keyword for a static class or member.
          */
-        staticLabel: string;
+        public staticLabel: string;
 
         /**
          * The keyword used for "this".
          */
-        this: string;
+        public this: string;
     }
 }

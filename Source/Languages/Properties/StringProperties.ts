@@ -14,5 +14,20 @@ namespace GLS.Languages.Properties {
          * The name of the concatenation operator.
          */
         public concatenate: string;
+
+        /**
+         * The kwyword used for retrieving string length.
+         */
+        public length: string;
+
+        /**
+         * Whether length is a function, rather then a member variable.
+         */
+        public lengthAsFunction: boolean;
+
+        /**
+         * Whether length is a static function, rather then a member variable.
+         */
+        public lengthAsStatic: boolean;
     }
 }

@@ -197,6 +197,8 @@ namespace GLS.Languages {
             super.generateStringProperties(strings);
 
             strings.className = "string";
+            strings.length = "len";
+            strings.lengthAsStatic = true;
         }
 
         /**
