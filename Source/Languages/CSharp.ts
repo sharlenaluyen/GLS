@@ -34,6 +34,7 @@ namespace GLS.Languages {
             arrays.className = "Array";
             arrays.initializeAsNew = true;
             arrays.initializeByType = true;
+            arrays.length = "Length";
         }
 
         /**

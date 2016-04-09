@@ -33,6 +33,7 @@ namespace GLS.Languages {
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "Array";
+            arrays.length = "length";
         }
 
         /**

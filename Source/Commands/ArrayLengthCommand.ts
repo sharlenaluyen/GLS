@@ -21,11 +21,19 @@ namespace GLS.Commands {
 
             let result: string = "";
 
-            // if () {
-            //    
-            // } else {
-            //    
-            // }
+            if (this.language.properties.arrays.lengthAsStatic) {
+                result = this.language.properties.arrays.length;
+                result += "(";
+                result += parameters[1];
+                result += ")";
+            } else {
+                result += parameters[1] + ".";
+                result += this.language.properties.arrays.length;
+
+                if (this.language.properties.arrays.lengthAsFunction) {
+                    result += "()";
+                }
+            }
 
             return [new CommandResult(result, 0)];
         }
