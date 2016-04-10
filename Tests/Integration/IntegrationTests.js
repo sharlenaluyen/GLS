@@ -103,17 +103,17 @@ var mocks = require("../mocks.js"),
     /**
      * Ensures a .gls source file's output matches its corresponding files.
      * 
-     * @param descriptor   A description of what this is testing.
-     * @param sourceContents   The raw .gls source file's contents.
-     * @param outputContents   File contents of the known correct output.
-     * @param language   The name of the language to convert in.
+     * @param {String} descriptor   A description of what this is testing.
+     * @param {String} sourceContents   The raw .gls source file's contents.
+     * @param {String} outputContents   File contents of the known correct output.
+     * @param {Language} language   The language to convert in.
      */
     function testCommandOptionFile(descriptor, sourceContents, expectedContents, language) {
         console.log("testCommandOptionFile");
-        console.log(descriptor);
-        console.log(sourceContents);
-        console.log(expectedContents);
-        console.log(language);
+        console.log("descriptor:", descriptor);
+        console.log("sourceContents:", sourceContents);
+        console.log("expectedContents:", expectedContents);
+        console.log("language.name:", language.name);
         console.log("\n");
         let context = new GLS.ConversionContext(language),
             sourceLines = sourceContents.split("\r\n"),
@@ -143,9 +143,9 @@ var mocks = require("../mocks.js"),
     /**
      * Removes a substring from the end of a string.
      * 
-     * @param text   The container string to trim.
-     * @param ending   A substring to trim.
-     * @returns The original text, trimmed.
+     * @param {String} text   The container string to trim.
+     * @param {String} ending   A substring to trim.
+     * @returns {String} The original text, trimmed.
      */
     function trimRight(text, ending) {
         while (text.length >= ending.length && text.lastIndexOf(ending) === text.length - ending.length) {
@@ -172,6 +172,7 @@ var mocks = require("../mocks.js"),
             });
         }
 
-        console.log("filePromises", filePromises);
+        console.log("\n");
+        console.log("filePromises.cache", filePromises.cache);
     });
 })();
