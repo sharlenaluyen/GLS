@@ -96,6 +96,9 @@ var mocks = require("../mocks.js"),
                         testCommandOptionFile(descriptor, sourceContents, outputContents, language);
                     });
 
+                console.log("\n");
+                console.log("filePromises.cache", filePromises.cache);
+
                 done();
             });
     }
@@ -113,7 +116,6 @@ var mocks = require("../mocks.js"),
         console.log("descriptor:", descriptor);
         console.log("sourceContents:", sourceContents);
         console.log("expectedContents:", expectedContents);
-        console.log("language.name:", language.name);
         console.log("\n");
         let context = new GLS.ConversionContext(language),
             sourceLines = sourceContents.split("\r\n"),
@@ -174,8 +176,5 @@ var mocks = require("../mocks.js"),
                 }
             });
         }
-
-        console.log("\n");
-        console.log("filePromises.cache", filePromises.cache);
     });
 })();
