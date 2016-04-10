@@ -1,4 +1,6 @@
 module.exports = (() => {
+    "use strict";
+
     let fs = require("fs");
 
     /**
@@ -9,7 +11,7 @@ module.exports = (() => {
          * Previously accessed file contents, by name.
          */
         cache: {},
-        
+
         /**
          * Reads a file.
          * 
@@ -38,20 +40,18 @@ module.exports = (() => {
                 resolve(contents);
             });
         }),
-        
+
         /**
          * Reads multiple files.
          * 
          * 
          */
         cacheFiles: (fileNames, encoding) => new Promise((resolve, reject) => {
-            "use strict";
-            
             Promise
                 .all(fileNames.map(fileName => filePromises.cacheFile(fileName, encoding)))
                 .then(contents => resolve(contents));
         }),
-        
+
         /**
          * 
          */
