@@ -1,0 +1,1 @@
+aaa.index(bbb)

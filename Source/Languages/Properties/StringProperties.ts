@@ -16,7 +16,12 @@ namespace GLS.Languages.Properties {
         public concatenate: string;
 
         /**
-         * The kwyword used for retrieving string length.
+         * The keyword used for finding the index of a substring.
+         */
+        public index: string;
+
+        /**
+         * The keyword used for retrieving string length.
          */
         public length: string;
 

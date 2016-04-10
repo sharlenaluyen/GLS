@@ -253,6 +253,7 @@ namespace GLS.Languages {
             super.generateStringProperties(strings);
 
             strings.className = "String";
+            strings.index = "indexOf";
             strings.length = "length";
         }
 
