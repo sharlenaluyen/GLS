@@ -113,17 +113,17 @@ var mocks = require("../mocks.js"),
      */
     function testCommandOptionFile(descriptor, sourceContents, expectedContents, language) {
         console.log("testCommandOptionFile");
-        console.log("descriptor:", descriptor);
-        console.log("sourceContents:", sourceContents);
-        console.log("expectedContents:", expectedContents);
+        console.log("descriptor: |" + descriptor + "|");
+        console.log("sourceContents: |" + sourceContents + "|");
+        console.log("expectedContents: |" + expectedContents + "|");
         console.log("\n");
         let context = new GLS.ConversionContext(language),
             sourceLines = sourceContents.split("\r\n"),
             expectedLines = expectedContents.split("\r\n"),
             resultLines;
 
-        console.log("sourceLines:", sourceContents);
-        console.log("expectedLines:", expectedContents);
+        console.log("sourceLines: |" + sourceContents + "|");
+        console.log("expectedLines: |" + expectedContents + "|");
 
         expectedLines.pop();
 
