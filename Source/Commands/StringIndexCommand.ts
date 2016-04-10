@@ -1,5 +1,7 @@
 /// <reference path="../Languages/Language.ts" />
+/// <reference path="../Languages/Properties/NativeCallProperties.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="NativeCallCommand.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -7,27 +9,12 @@ namespace GLS.Commands {
     /**
      * A command for a searching for a substring in a string.
      */
-    export class StringIndexCommand extends Command {
+    export class StringIndexCommand extends NativeCallCommand {
         /**
-         * Renders the command for a language with the given parameters.
-         * 
-         * @param parameters   The command's name, followed by any number of
-         *                     items to initialize in the Array.
-         * @returns Line(s) of code in the language.
-         * @remarks Usage: (name, value).
+         * @returns Metadata on how to perform the native call. 
          */
-        public render(parameters: string[]): CommandResult[] {
-            this.requireParametersLength(parameters, 2);
-
-            let result: string = "";
-
-            result += parameters[1] + ".";
-            result += this.language.properties.strings.index;
-            result += "(";
-            result += parameters[2];
-            result += ")";
-
-            return [new CommandResult(result, 0)];
+        protected retrieveNativeCallProperties(): Languages.Properties.NativeCallProperties {
+            return this.language.properties.strings.index;
         }
     }
 }

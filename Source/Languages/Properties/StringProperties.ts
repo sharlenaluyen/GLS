@@ -1,3 +1,5 @@
+/// <reference path="NativeCallProperties" />
+
 namespace GLS.Languages.Properties {
     "use strict";
 
@@ -16,23 +18,13 @@ namespace GLS.Languages.Properties {
         public concatenate: string;
 
         /**
-         * The keyword used for finding the index of a substring.
+         * How to determine the index of a substring.
          */
-        public index: string;
+        public index: NativeCallProperties;
 
         /**
-         * The keyword used for retrieving string length.
+         * How to retrieve a string's length.
          */
-        public length: string;
-
-        /**
-         * Whether length is a function, rather then a member variable.
-         */
-        public lengthAsFunction: boolean;
-
-        /**
-         * Whether length is a static function, rather then a member variable.
-         */
-        public lengthAsStatic: boolean;
+        public length: NativeCallProperties;
     }
 }

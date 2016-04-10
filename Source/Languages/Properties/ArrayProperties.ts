@@ -26,18 +26,8 @@ namespace GLS.Languages.Properties {
         public initializeViaStatic: boolean;
 
         /**
-         * The kwyword used for retrieving string length.
+         * How to retrieve an array's length.
          */
-        public length: string;
-
-        /**
-         * Whether length is a function, rather then a member variable.
-         */
-        public lengthAsFunction: boolean;
-
-        /**
-         * Whether length is a static function, rather then a member variable.
-         */
-        public lengthAsStatic: boolean;
+        public length: NativeCallProperties;
     }
 }

@@ -1,4 +1,5 @@
 /// <reference path="../Languages/Language.ts" />
+/// <reference path="../Languages/Properties/NativeCallProperties.ts" />
 /// <reference path="Command.ts" />
 
 namespace GLS.Commands {
@@ -7,35 +8,12 @@ namespace GLS.Commands {
     /**
      * A command for a retrieving the length of an string.
      */
-    export class StringLengthCommand extends Command {
+    export class StringLengthCommand extends NativeCallCommand {
         /**
-         * Renders the command for a language with the given parameters.
-         * 
-         * @param parameters   The command's name, followed by any number of
-         *                     items to initialize in the Array.
-         * @returns Line(s) of code in the language.
-         * @remarks Usage: (array).
+         * @returns Metadata on how to perform the native call. 
          */
-        public render(parameters: string[]): CommandResult[] {
-            this.requireParametersLength(parameters, 1);
-
-            let result: string = "";
-
-            if (this.language.properties.strings.lengthAsStatic) {
-                result = this.language.properties.strings.length;
-                result += "(";
-                result += parameters[1];
-                result += ")";
-            } else {
-                result += parameters[1] + ".";
-                result += this.language.properties.strings.length;
-
-                if (this.language.properties.strings.lengthAsFunction) {
-                    result += "()";
-                }
-            }
-
-            return [new CommandResult(result, 0)];
+        protected retrieveNativeCallProperties(): Languages.Properties.NativeCallProperties {
+            return this.language.properties.strings.length;
         }
     }
 }

@@ -16,8 +16,8 @@ namespace GLS.Languages.Properties {
         public className: string;
 
         /**
-         * The keyword used for pushing.
+         * How to add an element to the end of a list.
          */
-        public push: string;
+        public push: NativeCallProperties;
     }
 }

@@ -12,6 +12,7 @@
 /// <reference path="Properties/GeneralProperties.ts" />
 /// <reference path="Properties/LambdaProperties.ts" />
 /// <reference path="Properties/LoopProperties.ts" />
+/// <reference path="Properties/NativeCallProperties.ts" />
 /// <reference path="Properties/NumberProperties.ts" />
 /// <reference path="Properties/OutputProperties.ts" />
 /// <reference path="Properties/OperatorProperties.ts" />
@@ -33,8 +34,7 @@ namespace GLS.Languages {
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "list";
-            arrays.length = "len";
-            arrays.lengthAsStatic = true;
+            arrays.length = Properties.NativeCallProperties.NewStaticFunction("len");
         }
 
         /**
@@ -135,7 +135,7 @@ namespace GLS.Languages {
         protected generateListProperties(lists: Properties.ListProperties): void {
             super.generateListProperties(lists);
 
-            lists.push = "append";
+            lists.push = Properties.NativeCallProperties.NewMemberFunction("append");
         }
 
         /**
@@ -199,9 +199,8 @@ namespace GLS.Languages {
             super.generateStringProperties(strings);
 
             strings.className = "string";
-            strings.index = "index";
-            strings.length = "len";
-            strings.lengthAsStatic = true;
+            strings.index = Properties.NativeCallProperties.NewMemberFunction("index");
+            strings.length = Properties.NativeCallProperties.NewStaticFunction("len");
         }
 
         /**
