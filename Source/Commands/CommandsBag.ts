@@ -128,12 +128,16 @@ namespace GLS.Commands {
          * @param command   A command name, followed by parameters for it.
          * @returns Line(s) of code in the language.
          */
-        renderCommand(parameters: string[]): CommandResult[] {
+        renderCommand(parameters: string[]): Commands.LineResults {
             if (!this.commands.hasOwnProperty(parameters[0])) {
                 throw new Error("Unknown command requested: '" + parameters[0] + "'");
             }
 
-            return this.commands[parameters[0]].render(parameters);
+            let command: Commands.Command = this.commands[parameters[0]],
+                commandResults: Commands.CommandResult[] = command.render(parameters),
+                addSemicolon: boolean = command.addsSemicolon();
+
+            return new LineResults(commandResults, addSemicolon);
         }
     }
 }

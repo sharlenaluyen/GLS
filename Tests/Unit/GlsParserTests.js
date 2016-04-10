@@ -12,7 +12,8 @@ var expect = require("chai").expect,
                     language = mocks.mockLanguage(),
                     command = "literal",
                     parameters = "aaa bbb ccc",
-                    lines = parser.parseCommand(`${command} : ${parameters}`),
+                    lineResults = parser.parseCommand(`${command} : ${parameters}`),
+                    lines = lineResults.commandResults,
                     result = lines[0];
 
                 expect(lines.length).to.be.equal(1);
@@ -28,9 +29,9 @@ var expect = require("chai").expect,
                     command = "literal",
                     parameters = "aaa bbb ccc",
                     line = `{ ${command} : ${parameters} }`,
-                    result = parser.recurseOnCommand(line);
+                    results = parser.recurseOnCommand(line);
 
-                expect(result).to.be.equal(parameters);
+                expect(results).to.be.equal(parameters);
             });
         });
         

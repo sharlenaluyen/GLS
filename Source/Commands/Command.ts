@@ -37,6 +37,13 @@ namespace GLS.Commands {
         public abstract render(parameters: string[]): CommandResult[];
 
         /**
+         * @returns Whether this command's line should end with a semicolon.
+         */
+        public addsSemicolon(): boolean {
+            return true;
+        }
+
+        /**
          * Adds a portion of raw syntax that may contain endlines.
          * 
          * @param lines   In-progress line(s) of code in the rendering language.

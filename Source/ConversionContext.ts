@@ -1,6 +1,7 @@
 /// <reference path="Commands/Command.ts" />
 /// <reference path="Commands/CommandResult.ts" />
 /// <reference path="Commands/CommandStrings.ts" />
+/// <reference path="Commands/LineResults.ts" />
 /// <reference path="Languages/Language.ts" />
 /// <reference path="GlsParser.ts" />
 
@@ -44,7 +45,7 @@ namespace GLS {
          * @param lines   Lines of raw GLS syntax.
          * @returns Equivalent lines of code in the context language.
          */
-        convert(lines: string[]): string[] {
+        public convert(lines: string[]): string[] {
             let indentation: number = 0,
                 output: string[] = [];
 
@@ -54,10 +55,11 @@ namespace GLS {
                     continue;
                 }
 
-                let lineParsed: Commands.CommandResult[] = this.parser.parseCommand(lines[i]);
+                let lineResults: Commands.LineResults = this.parser.parseCommand(lines[i]);
+                let commandResults: Commands.CommandResult[] = lineResults.commandResults;
 
-                for (let j: number = 0; j < lineParsed.length; j += 1) {
-                    let result: Commands.CommandResult = lineParsed[j];
+                for (let j: number = 0; j < commandResults.length; j += 1) {
+                    let result: Commands.CommandResult = commandResults[j];
 
                     if (result.indentation < 0) {
                         indentation += result.indentation;
@@ -83,8 +85,10 @@ namespace GLS {
          * @param argumentRaw   A raw argument for the command.
          * @returns An equivalent line of code in the context language. 
          */
-        convertCommon(command: string, argumentRaw: string): string {
-            return this.parser.renderParsedCommand([command, argumentRaw])[0].text;
+        public convertCommon(command: string, argumentRaw: string): string {
+            let lineResults: Commands.LineResults = this.parser.renderParsedCommand([command, argumentRaw]);
+
+            return lineResults.commandResults[0].text;
         }
         
         /**
@@ -93,8 +97,8 @@ namespace GLS {
          * @param lineParsed   A parsed line from raw GLS syntax.
          * @returns The equivalent lines of code in the language.
          */
-        convertParsed(parameters: string[]): Commands.CommandResult[] {
-            return this.parser.renderParsedCommand(parameters);
+        public convertParsed(parameters: string[]): Commands.CommandResult[] {
+            return this.parser.renderParsedCommand(parameters).commandResults;
         }
 
         /**

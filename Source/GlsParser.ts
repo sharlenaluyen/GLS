@@ -1,6 +1,7 @@
 /// <reference path="Commands/Command.ts" />
 /// <reference path="Commands/CommandsBag.ts" />
 /// <reference path="Commands/CommandResult.ts" />
+/// <reference path="Commands/LineResults.ts" />
 /// <reference path="Languages/Language.ts" />
 
 namespace GLS {
@@ -36,7 +37,7 @@ namespace GLS {
          * @param line   A line of raw GLS syntax.
          * @returns The equivalent lines of code in the language.
          */
-        parseCommand(line: string): Commands.CommandResult[] {
+        public parseCommand(line: string): Commands.LineResults {
             let parameters: string[] = this.separateLineComponents(line.trim());
 
             for (let i: number = 1; i < parameters.length; i += 1) {
@@ -54,7 +55,7 @@ namespace GLS {
          * @param lineParsed   A parsed line from raw GLS syntax.
          * @returns The equivalent lines of code in the language.
          */
-        renderParsedCommand(lineParsed: string[]): Commands.CommandResult[] {
+        public renderParsedCommand(lineParsed: string[]): Commands.LineResults {
             return this.commandsBag.renderCommand(lineParsed);
         }
 
@@ -66,7 +67,11 @@ namespace GLS {
          * @remarks Only the first result line is used.
          */
         private recurseOnCommand(section: string): string {
-            return this.parseCommand(this.trimEndCharacters(section).trim())[0].text;
+            let command: string = this.trimEndCharacters(section).trim(),
+                lineResults: Commands.LineResults = this.parseCommand(command),
+                line: string = lineResults.commandResults[0].text;
+            
+            return line;
         }
 
         /**
