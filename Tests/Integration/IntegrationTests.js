@@ -6,16 +6,16 @@ var mocks = require("../mocks.js"),
     commandsPath = "Tests/Integration/Commands",
     languagesByName = {
         "C#": new GLS.Languages.CSharp(),
-        "Python": new GLS.Languages.Python(),
-        "Ruby": new GLS.Languages.Ruby(),
-        "TypeScript": new GLS.Languages.TypeScript()
+        // "Python": new GLS.Languages.Python(),
+        // "Ruby": new GLS.Languages.Ruby(),
+        // "TypeScript": new GLS.Languages.TypeScript()
     },
     languages = Object.keys(languagesByName).map(key => languagesByName[key]),
     languagesByExtension = {
         ".cs": languagesByName["C#"],
-        ".py": languagesByName["Python"],
-        ".rb": languagesByName["Ruby"],
-        ".ts": languagesByName["TypeScript"]
+        // ".py": languagesByName["Python"],
+        // ".rb": languagesByName["Ruby"],
+        // ".ts": languagesByName["TypeScript"]
     },
     languageExtensions = Object.keys(languagesByExtension),
     // TODO: Read these in using fs.
@@ -119,6 +119,9 @@ var mocks = require("../mocks.js"),
             sourceLines = sourceContents.split("\r\n"),
             expectedLines = expectedContents.split("\r\n"),
             resultLines;
+
+        console.log("sourceLines:", sourceContents);
+        console.log("expectedLines:", expectedContents);
 
         expectedLines.pop();
 
