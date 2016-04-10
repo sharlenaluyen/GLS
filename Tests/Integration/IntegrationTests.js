@@ -84,7 +84,7 @@ var mocks = require("../mocks.js"),
         filePromises
             .cacheFiles(outputPaths.concat(sourceFilePath))
             .then(() => {
-                let sourceContents = filePromises.getCached(sourceFilePath).trim();
+                let sourceContents = filePromises.getCached(sourceFilePath);
 
                 outputPaths
                     .map(outputPath => filePromises.getCached(outputPath))
