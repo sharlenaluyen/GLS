@@ -20,53 +20,53 @@ var mocks = require("../mocks.js"),
     languageExtensions = Object.keys(languagesByExtension),
     // TODO: Read these in using fs.
     commands = {
-        "ArrayInitialize": ["no values", "one value", "two values", "three values"],
-        "ArrayLength": ["array length"],
-        "Break": ["break"],
-        "CommentBlock": ["empty line", "multiple words", "single word"],
-        "CommentBlockEnd": ["comment block end"],
-        "CommentBlockStart": ["comment block start"],
-        "CommentDocEnd": ["comment doc end"],
-        "CommentDocStart": ["comment doc start"],
-        "CommentDocTag": ["giant parameter", "giant summary", "long parameter", "long summary", "parameter", "summary"],
-        "CommentLine": ["empty line", "multiple words", "single word"],
-        "Concatenate": ["two strings", "three strings"],
-        "Continue": ["continue"],
-        "ElseStart": ["else start"],
-        "ElseIfStart": ["else if start"],
-        "FileEnd": ["file end"],
-        "FileStart": ["file start"],
-        "ForEachEnd": ["for each end"],
-        "ForEachKeyStart": ["for each key start"],
-        "ForEachPairStart": ["for each pair start"],
-        "ForNumbersEnd": ["for numbers end"],
-        "ForNumbersStart": ["int", "number"],
-        "FunctionStart": ["no parameters return void", "no parameters return int", "one parameter return void", "one parameter return int", "two parameters return void", "two parameters return int", "three parameters return void", "three parameters return int"],
-        "FunctionEnd": ["function end"],
-        "IfEnd": ["if end"],
-        "IfStart": ["if start"],
-        "Index": ["index"],
-        "ListInitialize": ["no values", "one value", "two values", "three values"],
-        "ListPush": ["list push"],
-        "Literal": ["no parameters", "single parameter", "two parameters"],
-        "MainEnd": ["main end"],
-        "MainStart": ["main start"],
-        "Not": ["not"],
-        "Operation": ["one operation", "two operations", "three operations"],
-        "OperationInline": ["one operation", "two operations", "three operations"],
-        "Operator": ["equal to", "increase by", "not equal to", "plus"],
-        "Parenthesis": ["parenthesis"],
-        "Print": ["print"],
-        "Return": ["no value", "value"],
-        "StringIndex": ["string index"],
-        "StringLength": ["string length"],
-        "This": ["this"],
-        "Type": ["array", "no alias", "with alias"],
-        "Value": ["false", "infinity", "true"],
-        "Variable": ["int", "int value", "number", "number value", "string", "string value"],
-        "VariableInline": ["int", "int value", "number", "number value", "string", "string value"],
-        "WhileEnd": ["while end"],
-        "WhileStart": ["while start"]
+        "ArrayInitialize": ["no values", "one value", "two values", "three values"]
+        // "ArrayLength": ["array length"],
+        // "Break": ["break"],
+        // "CommentBlock": ["empty line", "multiple words", "single word"],
+        // "CommentBlockEnd": ["comment block end"],
+        // "CommentBlockStart": ["comment block start"],
+        // "CommentDocEnd": ["comment doc end"],
+        // "CommentDocStart": ["comment doc start"],
+        // "CommentDocTag": ["giant parameter", "giant summary", "long parameter", "long summary", "parameter", "summary"],
+        // "CommentLine": ["empty line", "multiple words", "single word"],
+        // "Concatenate": ["two strings", "three strings"],
+        // "Continue": ["continue"],
+        // "ElseStart": ["else start"],
+        // "ElseIfStart": ["else if start"],
+        // "FileEnd": ["file end"],
+        // "FileStart": ["file start"],
+        // "ForEachEnd": ["for each end"],
+        // "ForEachKeyStart": ["for each key start"],
+        // "ForEachPairStart": ["for each pair start"],
+        // "ForNumbersEnd": ["for numbers end"],
+        // "ForNumbersStart": ["int", "number"],
+        // "FunctionStart": ["no parameters return void", "no parameters return int", "one parameter return void", "one parameter return int", "two parameters return void", "two parameters return int", "three parameters return void", "three parameters return int"],
+        // "FunctionEnd": ["function end"],
+        // "IfEnd": ["if end"],
+        // "IfStart": ["if start"],
+        // "Index": ["index"],
+        // "ListInitialize": ["no values", "one value", "two values", "three values"],
+        // "ListPush": ["list push"],
+        // "Literal": ["no parameters", "single parameter", "two parameters"],
+        // "MainEnd": ["main end"],
+        // "MainStart": ["main start"],
+        // "Not": ["not"],
+        // "Operation": ["one operation", "two operations", "three operations"],
+        // "OperationInline": ["one operation", "two operations", "three operations"],
+        // "Operator": ["equal to", "increase by", "not equal to", "plus"],
+        // "Parenthesis": ["parenthesis"],
+        // "Print": ["print"],
+        // "Return": ["no value", "value"],
+        // "StringIndex": ["string index"],
+        // "StringLength": ["string length"],
+        // "This": ["this"],
+        // "Type": ["array", "no alias", "with alias"],
+        // "Value": ["false", "infinity", "true"],
+        // "Variable": ["int", "int value", "number", "number value", "string", "string value"],
+        // "VariableInline": ["int", "int value", "number", "number value", "string", "string value"],
+        // "WhileEnd": ["while end"],
+        // "WhileStart": ["while start"]
     };
     
 (() => {
@@ -80,12 +80,12 @@ var mocks = require("../mocks.js"),
             filePathPrefix = `${path}/${option}`,
             sourceFilePath = filePathPrefix + ".gls",
             outputPaths = languageExtensions.map(extension => filePathPrefix + extension);
-            
+
         filePromises
             .cacheFiles(outputPaths.concat(sourceFilePath))
             .then(() => {
                 let sourceContents = filePromises.getCached(sourceFilePath).trim();
-                
+
                 outputPaths
                     .map(outputPath => filePromises.getCached(outputPath))
                     .forEach((outputContents, i) => {
@@ -95,7 +95,7 @@ var mocks = require("../mocks.js"),
                         
                         testCommandOptionFile(descriptor, sourceContents, outputContents, language);
                     });
-                
+
                 done();
             });
     }
@@ -104,29 +104,37 @@ var mocks = require("../mocks.js"),
      * Ensures a .gls source file's output matches its corresponding files.
      * 
      * @param descriptor   A description of what this is testing.
-     * @param sourceContents   The 
+     * @param sourceContents   The raw .gls source file's contents.
+     * @param outputContents   File contents of the known correct output.
+     * @param language   The name of the language to convert in.
      */
-    function testCommandOptionFile(descriptor, sourceContents, outputContents, language) {
+    function testCommandOptionFile(descriptor, sourceContents, expectedContents, language) {
+        console.log("testCommandOptionFile");
+        console.log(descriptor);
+        console.log(sourceContents);
+        console.log(expectedContents);
+        console.log(language);
+        console.log("\n");
         let context = new GLS.ConversionContext(language),
             sourceLines = sourceContents.split("\r\n"),
-            validLines = outputContents.split("\r\n"),
+            expectedLines = expectedContents.split("\r\n"),
             resultLines;
 
-        validLines.pop();
+        expectedLines.pop();
 
         try {
             resultLines = context.convert(sourceLines);
-            expect(validLines).to.be.deep.equal(resultLines);
+            expect(expectedLines).to.be.deep.equal(resultLines);
         } catch (error) {
             if (!resultLines) {
                 console.log(`Could not convert ${descriptor}:`);
                 console.log("    " + error.toString());
-                return;            
+                return;
             }
 
             console.log(`${descriptor}`);
             console.log("Expected:");
-            validLines.forEach(line => console.log(`    |${line}|`));
+            expectedLines.forEach(line => console.log(`    |${line}|`));
             console.log("Actual:");
             resultLines.forEach(line => console.log(`    |${line}|`));
         }
@@ -143,7 +151,7 @@ var mocks = require("../mocks.js"),
         while (text.length >= ending.length && text.lastIndexOf(ending) === text.length - ending.length) {
             text = text.substring(0, text.length - ending.length);
         }
-        
+
         return text;
     }
 
@@ -152,9 +160,9 @@ var mocks = require("../mocks.js"),
             if (!commands.hasOwnProperty(commandName)) {
                 continue;
             }
-            
+
             let options = commands[commandName];
-            
+
             describe(commandName, () => {
                 for (let i = 0; i < options.length; i += 1) {
                     it(options[i], done => {
@@ -163,5 +171,7 @@ var mocks = require("../mocks.js"),
                 }
             });
         }
+
+        console.log("filePromises", filePromises);
     });
 })();

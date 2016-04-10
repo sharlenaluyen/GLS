@@ -1,60 +1,62 @@
-var fs = require("fs");
+module.exports = (() => {
+    let fs = require("fs");
 
-/**
- * Utilities for reading files asynchronously as promises.
- */
-var filePromises = {
     /**
-     * Previously accessed file contents, by name.
+     * Utilities for reading files asynchronously as promises.
      */
-    cache: {},
-    
-    /**
-     * Reads a file.
-     * 
-     * @param filename   The name of the file.
-     * @param encoding   An optional encoding to specify.
-     * @returns A Promise for reading the file. 
-     */
-    cacheFile: (fileName, encoding) => new Promise((resolve, reject) => {
-        "use strict";
+    let filePromises = {
+        /**
+         * Previously accessed file contents, by name.
+         */
+        cache: {},
         
-        if (filePromises.cache.hasOwnProperty(fileName)) {
-            resolve(cache[fileName]);
-            return;
-        }
-        
-        fs.readFile(fileName, encoding, (error, result) => {
-            if (error) {
-                console.error(error.toString());
-                reject(error);
+        /**
+         * Reads a file.
+         * 
+         * @param filename   The name of the file.
+         * @param encoding   An optional encoding to specify.
+         * @returns A Promise for reading the file. 
+         */
+        cacheFile: (fileName, encoding) => new Promise((resolve, reject) => {
+            "use strict";
+            
+            if (filePromises.cache.hasOwnProperty(fileName)) {
+                resolve(cache[fileName]);
                 return;
             }
             
-            let contents = result.toString();
-            
-            filePromises.cache[fileName] = contents;
-            resolve(contents);
-        });
-    }),
-    
-    /**
-     * Reads multiple files.
-     * 
-     * 
-     */
-    cacheFiles: (fileNames, encoding) => new Promise((resolve, reject) => {
-        "use strict";
+            fs.readFile(fileName, encoding, (error, result) => {
+                if (error) {
+                    console.error(error.toString());
+                    reject(error);
+                    return;
+                }
+                
+                let contents = result.toString();
+                
+                filePromises.cache[fileName] = contents;
+                resolve(contents);
+            });
+        }),
         
-        Promise
-            .all(fileNames.map(fileName => filePromises.cacheFile(fileName, encoding)))
-            .then(contents => resolve(contents));
-    }),
+        /**
+         * Reads multiple files.
+         * 
+         * 
+         */
+        cacheFiles: (fileNames, encoding) => new Promise((resolve, reject) => {
+            "use strict";
+            
+            Promise
+                .all(fileNames.map(fileName => filePromises.cacheFile(fileName, encoding)))
+                .then(contents => resolve(contents));
+        }),
+        
+        /**
+         * 
+         */
+        getCached: fileName => filePromises.cache[fileName]
+    };
     
-    /**
-     * 
-     */
-    getCached: fileName => filePromises.cache[fileName]
-};
-
-module.exports = filePromises;
+    return filePromises;
+})();
