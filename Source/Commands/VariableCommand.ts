@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -15,20 +16,20 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (name, type[, value]).
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             this.requireParametersLengthRange(parameters, 2, 3);
 
             if (parameters.length === 3 && !this.language.properties.variables.declarationRequired) {
-                return [new CommandResult("\0", 0)];
+                return LineResults.newSingleLine("\0", false);
             }
 
             let starter: string = this.language.properties.variables.declaration;
+            let newParameters: string[] = parameters.slice();
+            newParameters[0] = "variable inline";
 
-            // I don't know if this will work... :)
-            let ender: string = this.context.convert(["variable inline : " + parameters.slice(1).join(" ")])[0];
-            ender += this.language.properties.style.semicolon;
+            let ender: string = this.context.convertParsed(newParameters).commandResults[0].text;
 
-            return [new CommandResult(starter + ender, 0)];
+            return LineResults.newSingleLine(starter + ender, true);
         }
     }
 }

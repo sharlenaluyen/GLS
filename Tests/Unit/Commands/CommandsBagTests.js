@@ -11,9 +11,9 @@ var expect = require("chai").expect,
                 let commandsBag = mocks.mockCommandsBag(),
                     language = mocks.mockLanguage(),
                     lines = commandsBag.renderCommand([GLS.Commands.CommandStrings.LiteralCommandName]),
-                    result = lines[0];
+                    result = lines.commandResults;
 
-                expect(lines.length).to.be.equal(1);
+                expect(result.length).to.be.equal(1);
             });
 
             it("throws an error for an unknown command", () => {
@@ -21,7 +21,7 @@ var expect = require("chai").expect,
                     language = mocks.mockLanguage(),
                     action = () => commandsBag.renderCommand(["definitely not a command"]);
 
-                expect(action).to.throw();    
+                expect(action).to.throw();
             });
         });
     });

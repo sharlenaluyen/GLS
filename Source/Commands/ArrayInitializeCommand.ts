@@ -1,4 +1,5 @@
 /// <reference path="../Languages/Language.ts" />
+/// <reference path="LineResults.ts" />
 /// <reference path="Command.ts" />
 
 namespace GLS.Commands {
@@ -16,7 +17,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (type[, item, ...]).
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             this.requireParametersLengthMinimum(parameters, 1);
 
             let typeName: string = this.context.convertCommon("type", parameters[1]),
@@ -29,7 +30,7 @@ namespace GLS.Commands {
             if (this.language.properties.arrays.initializeByType) {
                 if (parameters.length === 2) {
                     output += typeName + "[0]";
-                    return [new CommandResult(output, 0)];
+                    return LineResults.newSingleLine(output, false);
                 }
 
                 output += this.context.convertCommon("type", typeName + "[]");
@@ -49,7 +50,7 @@ namespace GLS.Commands {
                 output += "]";
             }
 
-            return [new CommandResult(output, 0)];
+            return LineResults.newSingleLine(output, false);
         }
     }
 }

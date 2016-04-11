@@ -241,7 +241,7 @@ namespace GLS.Languages {
                 "(() => {"
             ];
 
-            style.printEnd = ");";
+            style.printEnd = ")";
             style.printStart = "console.log(";
         }
 

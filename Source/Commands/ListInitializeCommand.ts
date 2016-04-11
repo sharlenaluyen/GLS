@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -16,7 +17,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (type[, item, ...]).
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             if (this.language.properties.lists.asArray) {
                 parameters[0] = "array initialize";
                 return this.context.convertParsed(parameters);
@@ -36,7 +37,7 @@ namespace GLS.Commands {
                 output += "()";
             }
 
-            return [new CommandResult(output, 0)];
+            return LineResults.newSingleLine(output, false);
         }
     }
 }

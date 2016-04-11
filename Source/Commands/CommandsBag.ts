@@ -36,7 +36,6 @@
 /// <reference path="MainStartCommand.ts" />
 /// <reference path="NotCommand.ts" />
 /// <reference path="OperationCommand.ts" />
-/// <reference path="OperationInlineCommand.ts" />
 /// <reference path="OperatorCommand.ts" />
 /// <reference path="ParenthesisCommand.ts" />
 /// <reference path="PrintCommand.ts" />
@@ -104,7 +103,6 @@ namespace GLS.Commands {
                 "main start": new MainStartCommand(context),
                 "not": new NotCommand(context),
                 "operation": new OperationCommand(context),
-                "operation inline": new OperationInlineCommand(context),
                 "operator": new OperatorCommand(context),
                 "parenthesis": new ParenthesisCommand(context),
                 "print": new PrintCommand(context),
@@ -128,7 +126,7 @@ namespace GLS.Commands {
          * @param command   A command name, followed by parameters for it.
          * @returns Line(s) of code in the language.
          */
-        renderCommand(parameters: string[]): CommandResult[] {
+        renderCommand(parameters: string[]): Commands.LineResults {
             if (!this.commands.hasOwnProperty(parameters[0])) {
                 throw new Error("Unknown command requested: '" + parameters[0] + "'");
             }

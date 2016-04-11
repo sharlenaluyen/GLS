@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -15,7 +16,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (container, pairName, keyName, keyType, valueName, valueType).
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             this.requireParametersLength(parameters, 6);
 
             if (this.language.properties.loops.forEachAsMethod) {
@@ -32,7 +33,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (container, pairName, keyName, keyType, valueName, valueType).
          */
-        public renderForEachAsMethod(parameters: string[]): CommandResult[] {
+        public renderForEachAsMethod(parameters: string[]): LineResults {
             let output: string = parameters[1];
             output += this.language.properties.loops.forEachGetPairs;
             output += parameters[3];
@@ -40,7 +41,7 @@ namespace GLS.Commands {
             output += parameters[5];
             output += this.language.properties.loops.forEachRight;
 
-            return [new CommandResult(output, 1)];
+            return new LineResults([new CommandResult(output, 1)], false);
         }
 
         /**
@@ -50,7 +51,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (container, pairName, keyName, keyType, valueName, valueType).
          */
-        public renderForEachAsLoop(parameters: string[]): CommandResult[] {
+        public renderForEachAsLoop(parameters: string[]): LineResults {
             let line: string = this.language.properties.loops.foreach,
                 output: CommandResult[];
 
@@ -78,7 +79,7 @@ namespace GLS.Commands {
                 }
 
                 line += this.language.properties.variables.declaration;
-                line += this.context.convertParsed(["variable inline", iteratorName, typeName])[0].text;
+                line += this.context.convertParsed(["variable inline", iteratorName, typeName]).commandResults[0].text;
             } else {
                 line += parameters[3];
 
@@ -102,7 +103,7 @@ namespace GLS.Commands {
                 this.addKeyedValueLookup(parameters, output);
             }
 
-            return output;
+            return new LineResults(output, false);
         }
 
         /**
@@ -116,7 +117,9 @@ namespace GLS.Commands {
             let keyName: string = this.context.convertCommon("type", parameters[3]);
             let keyType: string = parameters[4];
             let keyLookup: string = parameters[2] + this.language.properties.loops.forEachPairsRetrieveKey;
-            let keyVariable: string = this.context.convertParsed(["variable", keyName, keyType, keyLookup])[0].text;
+            let keyVariable: string = this.context.convertParsed(["variable", keyName, keyType, keyLookup]).commandResults[0].text;
+
+            keyVariable += this.language.properties.style.semicolon;
 
             output.push(new CommandResult(keyVariable, 0));
         }
@@ -132,7 +135,9 @@ namespace GLS.Commands {
             let valueName: string = this.context.convertCommon("type", parameters[5]);
             let valueType: string = parameters[6];
             let valueLookup: string = parameters[2] + this.language.properties.loops.forEachPairsRetrieveValue;
-            let valueVariable: string = this.context.convertParsed(["variable", valueName, valueType, valueLookup])[0].text;
+            let valueVariable: string = this.context.convertParsed(["variable", valueName, valueType, valueLookup]).commandResults[0].text;
+
+            valueVariable  += this.language.properties.style.semicolon;
 
             output.push(new CommandResult(valueVariable, 0));
         }
@@ -147,8 +152,10 @@ namespace GLS.Commands {
         private addKeyedValueLookup(parameters: string[], output: CommandResult[]): void {
             let valueName: string = this.context.convertCommon("type", parameters[5]);
             let valueType: string = parameters[6];
-            let valueLookup: string = this.context.convertParsed(["index", parameters[1], parameters[3]])[0].text;
-            let valueVariable: string = this.context.convertParsed(["variable", valueName, valueType, valueLookup])[0].text;
+            let valueLookup: string = this.context.convertParsed(["index", parameters[1], parameters[3]]).commandResults[0].text;
+            let valueVariable: string = this.context.convertParsed(["variable", valueName, valueType, valueLookup]).commandResults[0].text;
+
+            valueVariable  += this.language.properties.style.semicolon;
 
             output.push(new CommandResult(valueVariable, 0));
         }
