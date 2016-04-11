@@ -1,6 +1,7 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="../ConversionContext.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -33,6 +34,11 @@ namespace GLS.Commands {
             this.context = context;
             this.language = context.getLanguage();
         }
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public abstract getParameters(): Parameters.Parameter[];
 
         /**
          * Renders the command for a language with the given parameters.
