@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="../ConversionContext.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -19,6 +20,11 @@ namespace GLS.Commands {
         protected language: Languages.Language;
 
         /**
+         * Whether this command'slines should end with a semicolon.
+         */
+        protected addsSemicolon: boolean;
+
+        /**
          * Initializes a new instance of the Command class.
          * 
          * @param context   The driving context for converting the command.
@@ -34,13 +40,13 @@ namespace GLS.Commands {
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
          */
-        public abstract render(parameters: string[]): CommandResult[];
+        public abstract render(parameters: string[]): LineResults;
 
         /**
-         * @returns Whether this command's line should end with a semicolon.
+         * @returns Whether this command's lines should end with a semicolon.
          */
-        public addsSemicolon(): boolean {
-            return true;
+        public getAddsSemicolon(): boolean {
+            return this.addsSemicolon;
         }
 
         /**
@@ -78,9 +84,6 @@ namespace GLS.Commands {
                 currentLine.text = extra.substring(currentIndex + 1);
             }
 
-            if (this.language.properties.general.name === "TypeScript") {
-                console.log("Giving", indentation, "to", lines.length - 1, lines[lines.length - 1]);
-            }
             lines[lines.length - 1].indentation = indentation;
         }
 
@@ -153,105 +156,5 @@ namespace GLS.Commands {
                 throw new Error(`Expected parameters to be odd, but got ${parameters.length - 1}.`);
             }
         }
-    }
-
-    /**
-     * A command for performing a native call, such as Array::push.
-     */
-    export abstract class NativeCallCommand extends Command {
-        /**
-         * Metadata on how to perform the native call.
-         */
-        protected nativeCallProperties: Languages.Properties.NativeCallProperties;
-
-        /**
-         * Initializes a new instance of the Command class.
-         * 
-         * @param context   The driving context for converting the command.
-         */
-        constructor(context: ConversionContext) {
-            super(context);
-
-            this.nativeCallProperties = this.retrieveNativeCallProperties();
-        }
-
-        /**
-         * Renders the command for a language with the given parameters.
-         * 
-         * @param parameters   The command's name, followed by any number of
-         *                     items to initialize in the Array.
-         * @returns Line(s) of code in the language.
-         * @remarks Usage: (name[, parameters, ...]).
-         */
-        public render(parameters: string[]): CommandResult[] {
-            if (this.nativeCallProperties.asStatic) {
-                return this.renderAsStatic(parameters);
-            }
-
-            return this.renderAsMember(parameters);
-        }
-
-        /**
-         * Renders the native call as a static.
-         * 
-         * @param parameters   The command's name, followed by any number of
-         *                     items to initialize in the Array.
-         * @returns Line(s) of code in the language.
-         * @remarks Usage: (name[, parameters, ...]).
-         */
-        private renderAsStatic(parameters: string[]): CommandResult[] {
-            this.requireParametersLengthMinimum(parameters, 1);
-
-            let result: string = "";
-
-            result += this.nativeCallProperties.name;
-            result += "(" + parameters[1];
-
-            for (let i: number = 2; i < parameters.length; i += 1) {
-                result += ", " + parameters[i];
-            }
-
-            result += ")";
-
-            return [new CommandResult(result, 0)];
-        }
-
-        /**
-         * Renders the native call as a member.
-         * 
-         * @param parameters   The command's name, followed by any number of
-         *                     items to initialize in the Array.
-         * @returns Line(s) of code in the language.
-         * @remarks Usage: (name[, parameters, ...]).
-         */
-        private renderAsMember(parameters: string[]): CommandResult[] {
-            this.requireParametersLengthMinimum(parameters, 1);
-
-            let result: string = "";
-
-            result += parameters[1] + ".";
-            result += this.nativeCallProperties.name;
-
-            if (this.nativeCallProperties.asFunction) {
-                result += "(";
-
-                if (parameters.length >= 2) {
-                    result += parameters[2];
-
-                    for (let i: number = 3; i < parameters.length; i += 1) {
-                        result += ", " + parameters[i];
-                    }
-                }
-
-                result += ")";
-            }
-
-            return [new CommandResult(result, 0)];
-        }
-
-        /**
-         * @returns Metadata on how to perform the native call. 
-         */
-        protected abstract retrieveNativeCallProperties(): Languages.Properties.NativeCallProperties;
     }
 }

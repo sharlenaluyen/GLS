@@ -245,7 +245,7 @@ namespace GLS.Languages {
                 "{"
             ];
 
-            style.printEnd = ");";
+            style.printEnd = ")";
             style.printStart = "Console.WriteLine(";
             style.separateBraceLines = true;
         }

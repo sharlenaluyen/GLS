@@ -1,6 +1,4 @@
-/// <reference path="../Languages/Language.ts" />
 /// <reference path="../Languages/Properties/NativeCallProperties.ts" />
-/// <reference path="Command.ts" />
 /// <reference path="NativeCallCommand.ts" />
 
 namespace GLS.Commands {

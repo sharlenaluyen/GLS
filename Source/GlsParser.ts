@@ -67,10 +67,10 @@ namespace GLS {
          * @remarks Only the first result line is used.
          */
         private recurseOnCommand(section: string): string {
-            let command: string = this.trimEndCharacters(section).trim(),
-                lineResults: Commands.LineResults = this.parseCommand(command),
-                line: string = lineResults.commandResults[0].text;
-            
+            let command: string = this.trimEndCharacters(section).trim();
+            let lineResults: Commands.LineResults = this.parseCommand(command);
+            let line: string = lineResults.commandResults[0].text;
+
             return line;
         }
 

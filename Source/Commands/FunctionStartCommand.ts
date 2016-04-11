@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -15,7 +16,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (name, returnType[, parameterName, parameterType, ...]).
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             this.requireParametersLengthMinimum(parameters, 2);
             this.requireParametersLengthEven(parameters);
 
@@ -49,7 +50,7 @@ namespace GLS.Commands {
             output = [new CommandResult(declaration, 0)];
             this.addLineEnder(output, this.language.properties.functions.defineStartRight, 1);
 
-            return output;
+            return new LineResults(output, false);
         }
 
         /**
@@ -67,7 +68,7 @@ namespace GLS.Commands {
             let parameterName: string = parameters[i];
             let parameterType: string = this.context.convertCommon("type", parameters[i + 1]);
 
-            return this.context.convertParsed(["variable inline", parameterName, parameterType])[0].text;
+            return this.context.convertParsed(["variable inline", parameterName, parameterType]).commandResults[0].text;
         }
     }
 }

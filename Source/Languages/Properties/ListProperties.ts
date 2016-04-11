@@ -16,6 +16,11 @@ namespace GLS.Languages.Properties {
         public className: string;
 
         /**
+         * How to retrieve the length of a list.
+         */
+        public length: NativeCallProperties;
+
+        /**
          * How to add an element to the end of a list.
          */
         public push: NativeCallProperties;

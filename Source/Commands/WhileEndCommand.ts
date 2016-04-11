@@ -1,5 +1,3 @@
-/// <reference path="../Languages/Language.ts" />
-/// <reference path="Command.ts" />
 /// <reference path="BlockEndCommand.ts" />
 
 namespace GLS.Commands {

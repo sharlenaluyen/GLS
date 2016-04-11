@@ -15,14 +15,14 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (contents, ...).
          */
-        public render(parameters: string[]): CommandResult[] {
-            let result: string = "";
+        public render(parameters: string[]): LineResults {
+            let output: string = "";
 
-            result += this.language.properties.comments.blockLineLeft;
-            result += parameters.slice(1).join(" ");
-            result += this.language.properties.comments.blockLineRight;
+            output += this.language.properties.comments.blockLineLeft;
+            output += parameters.slice(1).join(" ");
+            output += this.language.properties.comments.blockLineRight;
 
-            return [new CommandResult(result, 0)];
+            return LineResults.newSingleLine(output, false);
         }
     }
 }

@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -15,7 +16,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: ().
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             this.requireParametersLength(parameters, 0);
 
             let output: CommandResult[] = [],
@@ -29,7 +30,7 @@ namespace GLS.Commands {
                 output[output.length - 1].indentation = this.language.properties.style.mainIndentation;
             }
 
-            return output;
+            return new LineResults(output, false);
         }
     }
 }

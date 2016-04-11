@@ -73,6 +73,10 @@ namespace GLS {
                         indentation += result.indentation;
                     }
                 }
+
+                if (lineResults.addSemicolon) {
+                    output[output.length - 1] += this.language.properties.style.semicolon;
+                }
             }
 
             return output;
@@ -97,8 +101,8 @@ namespace GLS {
          * @param lineParsed   A parsed line from raw GLS syntax.
          * @returns The equivalent lines of code in the language.
          */
-        public convertParsed(parameters: string[]): Commands.CommandResult[] {
-            return this.parser.renderParsedCommand(parameters).commandResults;
+        public convertParsed(parameters: string[]): Commands.LineResults {
+            return this.parser.renderParsedCommand(parameters);
         }
 
         /**

@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -23,7 +24,7 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (tag[, parameter][, comments]).
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             if (this.language.properties.comments.docAsXml) {
                 return this.renderXmlDoc(parameters);
             } else {
@@ -37,13 +38,13 @@ namespace GLS.Commands {
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
          */
-        private renderXmlDoc(parameters: string[]): CommandResult[] {
+        private renderXmlDoc(parameters: string[]): LineResults {
             this.requireParametersLengthMinimum(parameters, 2);
 
             let lineStart: string = this.language.properties.comments.docLineStart,
                 tagRaw: string = parameters[1],
                 tag: string = this.parseTag(tagRaw),
-                results: CommandResult[] = [],
+                commandResults: CommandResult[] = [],
                 contentsRaw: string;
 
             let starter: string = lineStart + "<" + tag;
@@ -59,20 +60,20 @@ namespace GLS.Commands {
                 contentsRaw = parameters.slice(2).join(" ");
             }
 
-            results.push(new CommandResult(starter, 0));
+            commandResults.push(new CommandResult(starter, 0));
 
             let contents: string[] = this.wrapTagContents(lineStart, contentsRaw),
                 contentsPadded: string[] = this.padContentsWithTag("", contents);
 
             for (let i: number = 0; i < contentsPadded.length; i += 1) {
-                results.push(new CommandResult(contentsPadded[i], 0));
+                commandResults.push(new CommandResult(contentsPadded[i], 0));
             }
 
             let ender: string = this.language.properties.comments.docLineStart;
             ender += "</" + tag + ">";
-            results.push(new CommandResult(ender, 0));
+            commandResults.push(new CommandResult(ender, 0));
 
-            return results;
+            return new LineResults(commandResults, false);
         }
 
         /**
@@ -81,7 +82,7 @@ namespace GLS.Commands {
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
          */
-        private renderJsDoc(parameters: string[]): CommandResult[] {
+        private renderJsDoc(parameters: string[]): LineResults {
             this.requireParametersLengthMinimum(parameters, 2);
 
             let tagRaw: string = parameters[1],
@@ -123,7 +124,7 @@ namespace GLS.Commands {
                 commandResults.push(new CommandResult(contentsPadded[i], 0));
             }
 
-            return commandResults;
+            return new LineResults(commandResults, false);
         }
 
         /**

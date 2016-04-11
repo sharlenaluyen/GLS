@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -15,11 +16,11 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (name, type[, value]).
          */
-        public render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             this.requireParametersLengthRange(parameters, 2, 3);
 
             if (parameters.length === 3 && !this.language.properties.variables.declarationRequired) {
-                return [new CommandResult("\0", 0)];
+                return LineResults.newSingleLine("\0", false);
             }
 
             let name: string = parameters[1];
@@ -41,7 +42,7 @@ namespace GLS.Commands {
                 output += " " + this.renderVariableValue(parameters[3]);
             }
 
-            return [new CommandResult(output, 0)];
+            return LineResults.newSingleLine(output, false);
         }
 
         /**

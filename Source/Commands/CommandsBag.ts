@@ -36,7 +36,6 @@
 /// <reference path="MainStartCommand.ts" />
 /// <reference path="NotCommand.ts" />
 /// <reference path="OperationCommand.ts" />
-/// <reference path="OperationInlineCommand.ts" />
 /// <reference path="OperatorCommand.ts" />
 /// <reference path="ParenthesisCommand.ts" />
 /// <reference path="PrintCommand.ts" />
@@ -104,7 +103,6 @@ namespace GLS.Commands {
                 "main start": new MainStartCommand(context),
                 "not": new NotCommand(context),
                 "operation": new OperationCommand(context),
-                "operation inline": new OperationInlineCommand(context),
                 "operator": new OperatorCommand(context),
                 "parenthesis": new ParenthesisCommand(context),
                 "print": new PrintCommand(context),
@@ -133,11 +131,7 @@ namespace GLS.Commands {
                 throw new Error("Unknown command requested: '" + parameters[0] + "'");
             }
 
-            let command: Commands.Command = this.commands[parameters[0]],
-                commandResults: Commands.CommandResult[] = command.render(parameters),
-                addSemicolon: boolean = command.addsSemicolon();
-
-            return new LineResults(commandResults, addSemicolon);
+            return this.commands[parameters[0]].render(parameters);
         }
     }
 }

@@ -15,8 +15,8 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: ().
          */
-        public render(parameters: string[]): CommandResult[] {
-            return [new CommandResult(this.language.properties.comments.blockEnd, 0)];
+        public render(parameters: string[]): LineResults {
+            return LineResults.newSingleLine(this.language.properties.comments.blockEnd, false);
         }
     }
 }

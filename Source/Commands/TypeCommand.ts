@@ -1,5 +1,6 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
+/// <reference path="LineResults.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -15,10 +16,10 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          * @remarks Usage: (type).
          */
-        render(parameters: string[]): CommandResult[] {
+        public render(parameters: string[]): LineResults {
             this.requireParametersLength(parameters, 1);
 
-            return [new CommandResult(this.convertType(parameters[1]), 0)];
+            return LineResults.newSingleLine(this.convertType(parameters[1]), false);
         }
 
         /**
@@ -27,7 +28,7 @@ namespace GLS.Commands {
          * @param typeNameRaw   A raw type to convert.
          * @returns The equivalent converted type name.
          */
-        convertType(typeNameRaw: string): string {
+        public convertType(typeNameRaw: string): string {
             let typeName: string = typeNameRaw;
 
             if (this.language.properties.classes.aliases.hasOwnProperty(typeName)) {
