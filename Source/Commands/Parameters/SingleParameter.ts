@@ -17,5 +17,18 @@ namespace GLS.Commands.Parameters {
          * Whether this must be provided.
          */
         public required: boolean;
+
+        /**
+         * Initializes a new instance of the Parameter class.
+         * 
+         * @param descriptor   A plain-text description of the parameter.
+         * @param parameters   Parameters contained inside.
+         */
+        constructor(name: string, description: string, required: boolean) {
+            super(description);
+
+            this.name = name;
+            this.required = required;
+        }
     }
 }

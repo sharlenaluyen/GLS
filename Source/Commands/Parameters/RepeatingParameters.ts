@@ -12,5 +12,17 @@ namespace GLS.Commands.Parameters {
          * Parameters contained inside.
          */
         public parameters: Parameter[];
+
+        /**
+         * Initializes a new instance of the Parameter class.
+         * 
+         * @param descriptor   A plain-text description of the parameter.
+         * @param parameters   Parameters contained inside.
+         */
+        constructor(description: string, parameters: Parameter[]) {
+            super(description);
+
+            this.parameters = parameters;
+        }
     }
 }

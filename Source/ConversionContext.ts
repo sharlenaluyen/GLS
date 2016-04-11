@@ -25,7 +25,7 @@ namespace GLS {
         /**
          * Initializes a new instance of the ConversionContext class.
          * 
-         * @param language   
+         * @param language   The language this context is converting GLS code into.
          */
         constructor(language: Languages.Language) {
             this.language = language;
@@ -35,7 +35,7 @@ namespace GLS {
         /**
          * @returns The language this context is converting GLS code into.
          */
-        /* readonly */ getLanguage(): Languages.Language {
+        public /* readonly */ getLanguage(): Languages.Language {
             return this.language;
         }
 

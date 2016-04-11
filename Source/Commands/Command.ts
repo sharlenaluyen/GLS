@@ -106,14 +106,14 @@ namespace GLS.Commands {
         }
 
         /**
-         * Throws an error if too many parameters are passed.
+         * Throws an error if not enough parameters are passed.
          * 
          * @param parameters   Parameters passed to a command.
          * @param minimum   The minimum allowed number of parameters.
          */
         protected requireParametersLengthMinimum(parameters: string[], minimum: number): void {
             if (parameters.length - 1 < minimum) {
-                throw new Error(`Too many arguments: expected at least ${minimum} but got ${parameters.length - 1}.`);
+                throw new Error(`Not enough arguments: expected at least ${minimum} but got ${parameters.length - 1}.`);
             }
         }
 
@@ -125,7 +125,7 @@ namespace GLS.Commands {
          */
         protected requireParametersLengthMaximum(parameters: string[], maximum: number): void {
             if (parameters.length - 1 > maximum) {
-                throw new Error(`Not enough arguments: expected fewer than ${maximum} but got ${parameters.length - 1}.`);
+                throw new Error(`Too many arguments: expected fewer than ${maximum} but got ${parameters.length - 1}.`);
             }
         }
 
