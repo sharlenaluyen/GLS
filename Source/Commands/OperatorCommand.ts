@@ -10,6 +10,20 @@ namespace GLS.Commands {
      */
     export class OperatorCommand extends Command {
         /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("operator", "An operator to alias.", true)
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return OperatorCommand.parameters;
+        }
+
+        /**
          * Renders the command for a language with the given parameters.
          * 
          * @param parameters   The command's name, followed by any parameters.

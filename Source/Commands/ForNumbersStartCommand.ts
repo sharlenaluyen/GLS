@@ -1,6 +1,9 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
+/// <reference path="Parameters/SingleParameter.ts" />
+/// <reference path="Parameters/RepeatingParameters.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -9,6 +12,23 @@ namespace GLS.Commands {
      * A command for the beginning of a for loop over numbers.
      */
     export class ForNumbersStartCommand extends Command {
+        /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("name", "The name of the loop variable.", true),
+            new Parameters.SingleParameter("type", "The type of the loop variable", true),
+            new Parameters.SingleParameter("start", "What the loop variable starts at.", true),
+            new Parameters.SingleParameter("end", "What the loop variable ends at.", true)
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return ForNumbersStartCommand.parameters;
+        }
+
         /**
          * Renders the command for a language with the given parameters.
          * 

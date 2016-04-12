@@ -10,6 +10,28 @@ namespace GLS.Commands {
      */
     export class OperationCommand extends Command {
         /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("value", "A value to work with.", true),
+            new Parameters.SingleParameter("operator", "The operation's operator.", true),
+            new Parameters.SingleParameter("value", "A value to work with.", true),
+            new Parameters.RepeatingParameters(
+                "Additional values and operators",
+                [
+                    new Parameters.SingleParameter("item", "An additional operator.", false),
+                    new Parameters.SingleParameter("item", "An additional value to work with.", false)
+                ])
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return OperationCommand.parameters;
+        }
+
+        /**
          * Renders the command for a language with the given parameters.
          * 
          * @param parameters   The command's name, followed by any parameters.

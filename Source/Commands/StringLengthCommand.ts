@@ -9,6 +9,20 @@ namespace GLS.Commands {
      */
     export class StringLengthCommand extends NativeCallCommand {
         /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("string", "A string to retrieve the length of.", true)
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return StringLengthCommand.parameters;
+        }
+
+        /**
          * @returns Metadata on how to perform the native call. 
          */
         protected retrieveNativeCallProperties(): Languages.Properties.NativeCallProperties {

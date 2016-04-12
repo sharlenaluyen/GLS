@@ -1,6 +1,9 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
+/// <reference path="Parameters/SingleParameter.ts" />
+/// <reference path="Parameters/RepeatingParameters.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -9,6 +12,24 @@ namespace GLS.Commands {
      * A command for wrapping with parenthesis.
      */
     export class ParenthesisCommand extends Command {
+        /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.RepeatingParameters(
+                "Contents within the parenthesis.",
+                [
+                    new Parameters.SingleParameter("contents", "Contents within the parenthesis.", false)
+                ])
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return ParenthesisCommand.parameters;
+        }
+
         /**
          * Renders the command for a language with the given parameters.
          * 

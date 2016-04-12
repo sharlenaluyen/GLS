@@ -11,6 +11,11 @@ namespace GLS.Commands {
      */
     export abstract class Command {
         /**
+         * Default information on parameters a command takes in (none).
+         */
+        private static defaultParameters: Parameters.Parameter[] = [];
+
+        /**
          * The driving context for converting the command.
          */
         protected context: ConversionContext;
@@ -36,9 +41,18 @@ namespace GLS.Commands {
         }
 
         /**
+         * @returns Whether this command's lines should end with a semicolon.
+         */
+        public getAddsSemicolon(): boolean {
+            return this.addsSemicolon;
+        }
+
+        /**
          * @returns Information on parameters this command takes in.
          */
-        public abstract getParameters(): Parameters.Parameter[];
+        public getParameters(): Parameters.Parameter[] {
+            return Command.defaultParameters;
+        }
 
         /**
          * Renders the command for a language with the given parameters.
@@ -47,13 +61,6 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          */
         public abstract render(parameters: string[]): LineResults;
-
-        /**
-         * @returns Whether this command's lines should end with a semicolon.
-         */
-        public getAddsSemicolon(): boolean {
-            return this.addsSemicolon;
-        }
 
         /**
          * Adds a portion of raw syntax that may contain endlines.

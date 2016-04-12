@@ -1,6 +1,9 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
+/// <reference path="Parameters/SingleParameter.ts" />
+/// <reference path="Parameters/RepeatingParameters.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -9,6 +12,26 @@ namespace GLS.Commands {
      * A command for concatenating strings.
      */
     export class ConcatenateCommand extends Command {
+        /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("string", "A string to concatenate.", true),
+            new Parameters.SingleParameter("string", "A string to concatenate.", true),
+            new Parameters.RepeatingParameters(
+                "Additional strings to concatenate.",
+                [
+                    new Parameters.SingleParameter("string", "A string to concatenate.", false)
+                ])
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return ConcatenateCommand.parameters;
+        }
+
         /**
          * Renders the command for a language with the given parameters.
          * 

@@ -1,6 +1,9 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
+/// <reference path="Parameters/SingleParameter.ts" />
+/// <reference path="Parameters/RepeatingParameters.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -9,6 +12,25 @@ namespace GLS.Commands {
      * A command for the beginning of a foreach loop over a container's pairs.
      */
     export class ForEachPairStartCommand extends Command {
+        /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("container", "A container to iterate over.", true),
+            new Parameters.SingleParameter("pairName", "The name of the pair variable", true),
+            new Parameters.SingleParameter("keyName", "The name of the key variable.", true),
+            new Parameters.SingleParameter("keyType", "The type of the key variable.", true),
+            new Parameters.SingleParameter("valueName", "The name of the value variable.", true),
+            new Parameters.SingleParameter("valueType", "The type of the value variable.", true)
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return ForEachPairStartCommand.parameters;
+        }
+
         /**
          * Renders the command for a language with the given parameters.
          * 
