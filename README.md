@@ -89,3 +89,18 @@ Not all languages work similarly to the supported ones. These will likely never 
 | Rust                 | *✓*             |                  |
 
 This list will grow as languages are requested.
+
+
+## Development
+
+This requires [NodeJS](https://nodejs.org). To initialize your build environment, run:
+
+```shell
+npm install
+```
+
+Building is done via [Grunt](http://gruntjs.com):
+
+```shell
+grunt
+```
