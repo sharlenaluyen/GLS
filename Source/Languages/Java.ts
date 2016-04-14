@@ -35,7 +35,7 @@ namespace GLS.Languages {
             arrays.className = "Array";
             arrays.initializeAsNew = true;
             arrays.initializeByType = true;
-            arrays.length = Properties.NativeCallProperties.NewMemberProperty("Length");
+            arrays.length = Properties.NativeCallProperties.NewMemberProperty("length()");
         }
 
         /**
@@ -44,7 +44,7 @@ namespace GLS.Languages {
          * @param booleans   A property container for metadata on booleans.
          */
         protected generateBooleanProperties(booleans: Properties.BooleanProperties): void {
-            booleans.className = "bool";
+            booleans.className = "boolean";
         }
 
         /**
@@ -112,8 +112,8 @@ namespace GLS.Languages {
         protected generateConditionalProperties(conditionals: Properties.ConditionalProperties): void {
             super.generateConditionalProperties(conditionals);
 
-            conditionals.continueLeft = "}";
-            conditionals.continueRight = "{";
+            conditionals.continueLeft = "} ";
+            conditionals.continueRight = " {";
             conditionals.startRight = ") {";
         }
 
@@ -207,7 +207,7 @@ namespace GLS.Languages {
          * @param output   A property container for metadata on output.
          */
         protected generateOutputProperties(output: Properties.OutputProperties): void {
-            output.print = "System.out.printLn";
+            output.print = "System.out.println";
         }
 
         /**
@@ -220,7 +220,7 @@ namespace GLS.Languages {
 
             strings.className = "string";
             strings.index = Properties.NativeCallProperties.NewMemberFunction("indexOf");
-            strings.length = Properties.NativeCallProperties.NewMemberFunction("length");
+            strings.length = Properties.NativeCallProperties.NewMemberProperty("length()");
         }
 
         /**
@@ -231,7 +231,7 @@ namespace GLS.Languages {
         protected generateStyleProperties(style: Properties.StyleProperties): void {
             super.generateStyleProperties(style);
 
-            style.fileEndLines = ["}"];
+            style.fileEndLines = [];
             style.fileIndentation = 0;
             style.fileStartLines = [
                 "import java.lang.System;",
@@ -241,18 +241,18 @@ namespace GLS.Languages {
                 "",
             ];
 
-            style.mainEndLines = [];
+            style.mainEndLines = [
+                "    }",
+                "}"
+            ];
             style.mainIndentation = 2;
             style.mainStartLines = [
-                "class Program",
-                "{",
-                "    public static void Main()",
-                "    {"
+                "class Program {",
+                "    public static void Main() {",
             ];
 
             style.printEnd = ")";
-            style.printStart = "System.out.printLn(";
-            style.separateBraceLines = true;
+            style.printStart = "System.out.println(";
         }
 
         /**
