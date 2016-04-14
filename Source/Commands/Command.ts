@@ -1,6 +1,7 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="../ConversionContext.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -9,6 +10,11 @@ namespace GLS.Commands {
      * Abstract base class for commands that may be rendered into language code.
      */
     export abstract class Command {
+        /**
+         * Default information on parameters a command takes in (none).
+         */
+        private static defaultParameters: Parameters.Parameter[] = [];
+
         /**
          * The driving context for converting the command.
          */
@@ -35,19 +41,26 @@ namespace GLS.Commands {
         }
 
         /**
+         * @returns Whether this command's lines should end with a semicolon.
+         */
+        public getAddsSemicolon(): boolean {
+            return this.addsSemicolon;
+        }
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return Command.defaultParameters;
+        }
+
+        /**
          * Renders the command for a language with the given parameters.
          * 
          * @param parameters   The command's name, followed by any parameters.
          * @returns Line(s) of code in the language.
          */
         public abstract render(parameters: string[]): LineResults;
-
-        /**
-         * @returns Whether this command's lines should end with a semicolon.
-         */
-        public getAddsSemicolon(): boolean {
-            return this.addsSemicolon;
-        }
 
         /**
          * Adds a portion of raw syntax that may contain endlines.
@@ -100,14 +113,14 @@ namespace GLS.Commands {
         }
 
         /**
-         * Throws an error if too many parameters are passed.
+         * Throws an error if not enough parameters are passed.
          * 
          * @param parameters   Parameters passed to a command.
          * @param minimum   The minimum allowed number of parameters.
          */
         protected requireParametersLengthMinimum(parameters: string[], minimum: number): void {
             if (parameters.length - 1 < minimum) {
-                throw new Error(`Too many arguments: expected at least ${minimum} but got ${parameters.length - 1}.`);
+                throw new Error(`Not enough arguments: expected at least ${minimum} but got ${parameters.length - 1}.`);
             }
         }
 
@@ -119,7 +132,7 @@ namespace GLS.Commands {
          */
         protected requireParametersLengthMaximum(parameters: string[], maximum: number): void {
             if (parameters.length - 1 > maximum) {
-                throw new Error(`Not enough arguments: expected fewer than ${maximum} but got ${parameters.length - 1}.`);
+                throw new Error(`Too many arguments: expected fewer than ${maximum} but got ${parameters.length - 1}.`);
             }
         }
 

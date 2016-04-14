@@ -1,6 +1,9 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
+/// <reference path="Parameters/SingleParameter.ts" />
+/// <reference path="Parameters/RepeatingParameters.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -10,10 +13,26 @@ namespace GLS.Commands {
      */
     export class CommentDocTagCommand extends Command {
         /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("tag", "The name of the tag.", true),
+            new Parameters.SingleParameter("parameter", "An optional descriptor for the tag.", false),
+            new Parameters.SingleParameter("comments", "Comments regarding the tag.", false)
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return CommentDocTagCommand.parameters;
+        }
+
+        /**
          * A maximum length for tag lines.
          * 
-         * @todo Calculate this using language style.
-         * @todo Factor in indentation from this.context, if possible. 
+         * @todo Calculate this using language style (#16).
+         * @todo Factor in indentation from this.context (#17). 
          */
         private MaximumLineLength: number = 70;
 

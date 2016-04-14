@@ -234,15 +234,20 @@ namespace GLS.Languages {
                 "using System;",
                 "using System.Collections.Generic;",
                 "",
-                "class {0}",
+                "namespace {0}",
                 "{",
             ];
 
-            style.mainEndLines = ["}"];
-            style.mainIndentation = 1;
+            style.mainEndLines = [
+                "    }",
+                "}"
+            ];
+            style.mainIndentation = 2;
             style.mainStartLines = [
-                "public static void Main()",
-                "{"
+                "class Program",
+                "{",
+                "    public static void Main()",
+                "    {"
             ];
 
             style.printEnd = ")";

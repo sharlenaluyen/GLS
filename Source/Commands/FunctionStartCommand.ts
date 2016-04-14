@@ -1,6 +1,9 @@
 /// <reference path="../Languages/Language.ts" />
 /// <reference path="Command.ts" />
 /// <reference path="LineResults.ts" />
+/// <reference path="Parameters/Parameter.ts" />
+/// <reference path="Parameters/SingleParameter.ts" />
+/// <reference path="Parameters/RepeatingParameters.ts" />
 
 namespace GLS.Commands {
     "use strict";
@@ -9,6 +12,27 @@ namespace GLS.Commands {
      * A command for the beginning of a function.
      */
     export class FunctionStartCommand extends Command {
+        /**
+         * Information on parameters this command takes in.
+         */
+        private static parameters: Parameters.Parameter[] = [
+            new Parameters.SingleParameter("name", "The name of the function.", true),
+            new Parameters.SingleParameter("returnType", "The return type of the function.", true),
+            new Parameters.RepeatingParameters(
+                "Function parameters.",
+                [
+                    new Parameters.SingleParameter("parameterName", "A named parameter for the function.", true),
+                    new Parameters.SingleParameter("parameterType", "The type of the parameter.", true)
+                ])
+        ];
+
+        /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return FunctionStartCommand.parameters;
+        }
+
         /**
          * Renders the command for a language with the given parameters.
          * 
