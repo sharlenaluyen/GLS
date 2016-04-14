@@ -16,12 +16,13 @@ namespace GLS.Commands {
          * Information on parameters this command takes in.
          */
         private static parameters: Parameters.Parameter[] = [
-            new Parameters.SingleParameter("type", "The type of object.", true),
+            new Parameters.SingleParameter("name", "The name of the function.", true),
+            new Parameters.SingleParameter("returnType", "The return type of the function.", true),
             new Parameters.RepeatingParameters(
                 "Function parameters.",
                 [
-                    new Parameters.SingleParameter("item", "An item initially in the array.", true),
-                    new Parameters.SingleParameter("item", "An item initially in the array.", true)
+                    new Parameters.SingleParameter("parameterName", "A named parameter for the function.", true),
+                    new Parameters.SingleParameter("parameterType", "The type of the parameter.", true)
                 ])
         ];
 

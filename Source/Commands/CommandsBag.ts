@@ -120,18 +120,35 @@ namespace GLS.Commands {
         }
 
         /**
+         * @returns Commands, keyed by their GLS aliases.
+         */
+        public getCommands(): { [i: string]: Command } {
+            return this.commands;
+        }
+
+        /**
+         * Retrieves the command under the given alias.
+         * 
+         * @param name   The alias of a command.
+         * @returns The command under the given alias.
+         */
+        public getCommand(alias: string): Command {
+            if (!this.commands.hasOwnProperty(alias)) {
+                throw new Error(`Unknown command requested: ${alias}`);
+            }
+
+            return this.commands[alias];
+        }
+
+        /**
          * Renders a command in a language.
          * 
          * @param language   The language to render the command in.
          * @param command   A command name, followed by parameters for it.
          * @returns Line(s) of code in the language.
          */
-        renderCommand(parameters: string[]): Commands.LineResults {
-            if (!this.commands.hasOwnProperty(parameters[0])) {
-                throw new Error("Unknown command requested: '" + parameters[0] + "'");
-            }
-
-            return this.commands[parameters[0]].render(parameters);
+        public renderCommand(parameters: string[]): Commands.LineResults {
+            return this.getCommand(parameters[0]).render(parameters);
         }
     }
 }
