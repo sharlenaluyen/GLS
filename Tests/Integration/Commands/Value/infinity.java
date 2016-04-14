@@ -1,0 +1,1 @@
+double.POSITIVE_INFINITY
