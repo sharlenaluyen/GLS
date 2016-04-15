@@ -96,11 +96,19 @@ namespace GLS {
                 switch (line[i]) {
                     case "{":
                         end = this.findSearchEnd(line, i, line[i], "}") + 1;
+                        if (end === 0) {
+                            throw new Error(`Could not find end for '{' starting at position ${i}.`);
+                        }
+
                         nextStart = end;
                         break;
 
                     case "(":
                         end = this.findSearchEnd(line, i, line[i], ")");
+                        if (end === -1) {
+                            throw new Error(`Could not find end for '(' starting at position ${i}.`);
+                        }
+
                         nextStart = end + 1;
                         i += 1;
                         break;
