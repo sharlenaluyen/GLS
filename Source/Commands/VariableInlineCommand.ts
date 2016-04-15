@@ -71,10 +71,10 @@ namespace GLS.Commands {
          * @returns   The "= value" part of a command. 
          */
         private renderVariableValue(valueRaw: string): string {
-           let operator = this.context.convert(["operator : equals"])[0];
-           let value = this.context.convert(["value : " + valueRaw])[0];
+            let operator = this.context.convertCommon("operator", "equals");
+            let value = this.context.convertCommon("value", valueRaw);
 
-           return operator + " " + value;
+            return operator + " " + value;
         }
     }
 }
