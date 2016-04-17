@@ -1,0 +1,2 @@
+new HashMap<string, int> {
+}

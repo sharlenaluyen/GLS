@@ -14,6 +14,7 @@
 /// <reference path="CommentLineCommand.ts" />
 /// <reference path="ContinueCommand.ts" />
 /// <reference path="ConcatenateCommand.ts" />
+/// <reference path="DictionaryNewEndCommand.ts" />
 /// <reference path="DictionaryNewStartCommand.ts" />
 /// <reference path="DictionaryTypeCommand.ts" />
 /// <reference path="ElseIfStartCommand.ts" />
@@ -84,6 +85,7 @@ namespace GLS.Commands {
                 "concatenate": new ConcatenateCommand(context),
                 "continue": new ContinueCommand(context),
                 "dictionary new": new DictionaryNewCommand(context),
+                "dictionary new end": new DictionaryNewEndCommand(context),
                 "dictionary new start": new DictionaryNewStartCommand(context),
                 "dictionary type": new DictionaryTypeCommand(context),
                 "else if start": new ElseIfStartCommand(context),

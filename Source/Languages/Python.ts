@@ -111,6 +111,8 @@ namespace GLS.Languages {
          * @param dictionaries   The property container for metadata on dictionaries. 
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
+            super.generateDictionaryProperties(dictionaries);
+
             dictionaries.className = "dict";
         }
 
