@@ -1,0 +1,1 @@
+dictionary new start : string { dictionary type : string int }

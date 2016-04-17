@@ -111,7 +111,7 @@ namespace GLS.Languages {
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Dictionary";
             dictionaries.initializeAsNew = true;
-            dictionaries.initializeStart = "{";
+            dictionaries.initializeStart = "\n{";
             dictionaries.initializeEnd = "}";
             dictionaries.initializePairLeft = "{ ";
             dictionaries.initializePairMiddle = ", ";
