@@ -1,0 +1,5 @@
+variable start : aaa { dictionary type : string int } { dictionary new start : string int }
+    dictionary pair : "aaa" 1 ,
+    dictionary pair : "bbb" 2 ,
+    dictionary pair : "ccc" 3
+variable end

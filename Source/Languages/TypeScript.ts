@@ -126,8 +126,8 @@ namespace GLS.Languages {
             dictionaries.className = "Object";
             dictionaries.initializeStart = "{";
             dictionaries.initializeEnd = "}";
-            dictionaries.initializePairLeft = "\"";
-            dictionaries.initializePairMiddle = "\": ";
+            dictionaries.initializePairLeft = "";
+            dictionaries.initializePairMiddle = ": ";
             dictionaries.initializePairRight = "";
             dictionaries.typeLeft = "{ [i: ";
             dictionaries.typeMiddle = "]: ";

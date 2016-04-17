@@ -16,6 +16,7 @@
 /// <reference path="ConcatenateCommand.ts" />
 /// <reference path="DictionaryNewEndCommand.ts" />
 /// <reference path="DictionaryNewStartCommand.ts" />
+/// <reference path="DictionaryPairCommand.ts" />
 /// <reference path="DictionaryTypeCommand.ts" />
 /// <reference path="ElseIfStartCommand.ts" />
 /// <reference path="ElseStartCommand.ts" />
@@ -88,6 +89,7 @@ namespace GLS.Commands {
                 "dictionary new": new DictionaryNewCommand(context),
                 "dictionary new end": new DictionaryNewEndCommand(context),
                 "dictionary new start": new DictionaryNewStartCommand(context),
+                "dictionary pair": new DictionaryPairCommand(context),
                 "dictionary type": new DictionaryTypeCommand(context),
                 "else if start": new ElseIfStartCommand(context),
                 "else start": new ElseStartCommand(context),

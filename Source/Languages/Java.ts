@@ -116,9 +116,9 @@ namespace GLS.Languages {
             dictionaries.initializeAsNew = true;
             dictionaries.initializeStart = " {";
             dictionaries.initializeEnd = "}";
-            dictionaries.initializePairLeft = "{ ";
+            dictionaries.initializePairLeft = "put(";
             dictionaries.initializePairMiddle = ", ";
-            dictionaries.initializePairRight = "}";
+            dictionaries.initializePairRight = ")";
             dictionaries.keyChecker = "containsKey";
             dictionaries.typeLeft = "<";
             dictionaries.typeMiddle = ", ";
