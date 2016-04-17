@@ -129,6 +129,9 @@ namespace GLS.Languages {
             dictionaries.initializePairLeft = "\"";
             dictionaries.initializePairMiddle = "\": ";
             dictionaries.initializePairRight = "";
+            dictionaries.typeLeft = "{ [i: ";
+            dictionaries.typeMiddle = "]: ";
+            dictionaries.typeRight = " }";
             dictionaries.keyChecker = "hasOwnProperty";
         }
 

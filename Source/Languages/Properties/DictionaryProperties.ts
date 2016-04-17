@@ -44,5 +44,17 @@ namespace GLS.Languages.Properties {
          * The name of the function to check if a key exists.
          */
         public keyChecker: string;
+
+        /**
+         */
+        public typeLeft: string;
+
+        /**
+         */
+        public typeMiddle: string;
+
+        /**
+         */
+        public typeRight: string;
     }
 }

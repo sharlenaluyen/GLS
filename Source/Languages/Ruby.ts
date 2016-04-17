@@ -106,6 +106,15 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates properties on dictionaries.
+         * 
+         * @param dictionaries   The property container for metadata on dictionaries. 
+         */
+        protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
+            dictionaries.className = "hash";
+        }
+
+        /**
          * Generates general metadata.
          * 
          * @param general   A property container for general metadata.

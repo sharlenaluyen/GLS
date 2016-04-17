@@ -66,17 +66,6 @@ namespace GLS.Languages {
         }
 
         /**
-         * Generates metadata on class generics.
-         * 
-         * @param generics   A property container for metadata on class generics.
-         */
-        protected generateClassGenericProperties(generics: Properties.ClassGenericProperties): void {
-            generics.left = "<";
-            generics.middle = ", ";
-            generics.right = ">";
-        }
-
-        /**
          * Generates metadata on comments.
          * 
          * @param comments   A property container for metadata on comments.
@@ -121,12 +110,16 @@ namespace GLS.Languages {
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Dictionary";
+            dictionaries.initializeAsNew = true;
             dictionaries.initializeStart = "{";
             dictionaries.initializeEnd = "}";
             dictionaries.initializePairLeft = "{ ";
             dictionaries.initializePairMiddle = ", ";
             dictionaries.initializePairRight = "}";
             dictionaries.keyChecker = "ContainsKey";
+            dictionaries.typeLeft = "<";
+            dictionaries.typeMiddle = ", ";
+            dictionaries.typeRight = ">";
         }
 
         /**
