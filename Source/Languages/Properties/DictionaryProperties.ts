@@ -46,14 +46,17 @@ namespace GLS.Languages.Properties {
         public keyChecker: string;
 
         /**
+         * How to start displaying types in a dictionary type.
          */
         public typeLeft: string;
 
         /**
+         * Characters in the middle of types in a dictionary type.
          */
         public typeMiddle: string;
 
         /**
+         * How to end displaying types in a dictionary type.
          */
         public typeRight: string;
     }
