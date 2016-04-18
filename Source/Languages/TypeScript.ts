@@ -124,6 +124,8 @@ namespace GLS.Languages {
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Object";
+            dictionaries.containsKey = Properties.NativeCallProperties.NewMemberFunction("hasOwnProperty");
+            dictionaries.keys = Properties.NativeCallProperties.NewStaticFunction("Object.keys");
             dictionaries.initializeEnd = "}";
             dictionaries.initializePairComma = ",";
             dictionaries.initializePairLeft = "";
@@ -133,7 +135,6 @@ namespace GLS.Languages {
             dictionaries.typeLeft = "{ [i: ";
             dictionaries.typeMiddle = "]: ";
             dictionaries.typeRight = " }";
-            dictionaries.keyChecker = "hasOwnProperty";
         }
 
         /**

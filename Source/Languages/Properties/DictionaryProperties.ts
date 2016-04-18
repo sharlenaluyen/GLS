@@ -1,3 +1,5 @@
+/// <reference path="NativeCallProperties.ts" />
+
 namespace GLS.Languages.Properties {
     "use strict";
 
@@ -6,9 +8,19 @@ namespace GLS.Languages.Properties {
      */
     export class DictionaryProperties {
         /**
+         * How to determine if a key exists in a dictionary.
+         */
+        public containsKey: NativeCallProperties;
+        
+        /**
          * The name of the dictionary class.
          */
         public className: string;
+
+        /**
+         * How to retrieve all keys from a dictionary as an array.
+         */
+        public keys: NativeCallProperties;
 
         /**
          * Whether dictionaries are initialized as class instances using "new".
@@ -44,11 +56,6 @@ namespace GLS.Languages.Properties {
          * How to start initializing a new dictionary's values.
          */
         public initializeStart: string;
-
-        /**
-         * The name of the function to check if a key exists.
-         */
-        public keyChecker: string;
 
         /**
          * How to start displaying types in a dictionary type.

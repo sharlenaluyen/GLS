@@ -35,6 +35,10 @@ namespace GLS.Commands {
          * @remarks Usage: (name[, parameters, ...]).
          */
         public render(parameters: string[]): LineResults {
+            if (this.nativeCallProperties.asOperator) {
+                return this.renderAsOperator(parameters);
+            }
+
             if (this.nativeCallProperties.asStatic) {
                 return this.renderAsStatic(parameters);
             }
@@ -91,7 +95,7 @@ namespace GLS.Commands {
             if (this.nativeCallProperties.asFunction) {
                 result += "(";
 
-                if (parameters.length >= 2) {
+                if (parameters.length > 2) {
                     result += parameters[2];
 
                     for (let i: number = 3; i < parameters.length; i += 1) {
@@ -101,6 +105,27 @@ namespace GLS.Commands {
 
                 result += ")";
             }
+
+            return LineResults.newSingleLine(result, true);
+        }
+
+        /**
+         * Renders the native call as an operator.
+         * 
+         * @param parameters   The command's name, followed by any number of
+         *                     items to initialize in the Array.
+         * @returns Line(s) of code in the language.
+         * @remarks Usage: (right, left)
+         * @remarks This is (right, left) because NativeCall needs to be refactored.
+         */
+        private renderAsOperator(parameters: string[]): LineResults {
+            this.requireParametersLength(parameters, 2);
+
+            let result: string = "";
+
+            result += parameters[2];
+            result += this.nativeCallProperties.name;
+            result += parameters[1];
 
             return LineResults.newSingleLine(result, true);
         }
