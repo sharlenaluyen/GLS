@@ -38,10 +38,25 @@ namespace GLS.Commands {
         public render(parameters: string[]): LineResults {
             this.requireParametersLength(parameters, 3);
 
-            parameters[0] = "variable";
-            let output = this.context.convertParsed(parameters);
+            // Languages like C# will give the last value in parameters including a "\n"
+            let newParameters: string[] = ["variable"];
+            for (let i: number = 1; i < parameters.length; i += 1) {
+                newParameters.push(parameters[i].split("\n")[0]);
+            }
+
+            let output = this.context.convertParsed(newParameters);
             output.addSemicolon = false;
-            output.commandResults[0].indentation = 1;
+
+            // Languages like C# might need to pass a separate "\n{" through
+            if (this.language.properties.style.separateBraceLines) {
+                let lastParameter = parameters[parameters.length - 1];
+                if (lastParameter.indexOf("\n") !== -1) {
+                    lastParameter = lastParameter.split("\n")[1];
+                    output.commandResults.push(new CommandResult(lastParameter, 1));
+                }
+            } else {
+                output.commandResults[output.commandResults.length - 1].indentation += 1;
+            }
 
             return output;
         }
