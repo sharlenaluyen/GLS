@@ -8,14 +8,14 @@ namespace GLS.Commands {
         /**
          * How much indentation will change from the result.
          */
-        indentation: number;
+        public indentation: number;
 
         /**
          * Text contents of the result.
          * 
          * @remarks If "\0", this isn't added.
          */
-        text: string;
+        public text: string;
 
         /**
          * Initializes a new instance of the CommandResult class.

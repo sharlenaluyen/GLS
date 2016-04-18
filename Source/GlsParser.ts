@@ -71,6 +71,10 @@ namespace GLS {
             let lineResults: Commands.LineResults = this.parseCommand(command);
             let line: string = lineResults.commandResults[0].text;
 
+            for (let i: number = 1; i < lineResults.commandResults.length; i += 1) {
+                line += "\n" + lineResults.commandResults[i].text;
+            }
+
             return line;
         }
 

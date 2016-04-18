@@ -49,6 +49,7 @@ namespace GLS.Languages {
             generics.left = "<";
             generics.middle = ", ";
             generics.right = ">";
+            generics.used = true;
         }
 
         /**

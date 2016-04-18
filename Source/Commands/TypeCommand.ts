@@ -107,7 +107,7 @@ namespace GLS.Commands {
          * @returns Whether the type name includes Array notation.
          */
         private typeContainsArray(typeNameRaw: string): boolean {
-            return typeNameRaw.indexOf("[") !== -1;
+            return typeNameRaw.indexOf("[]") !== -1;
         }
 
         /**

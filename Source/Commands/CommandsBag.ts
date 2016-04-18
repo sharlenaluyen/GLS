@@ -14,6 +14,10 @@
 /// <reference path="CommentLineCommand.ts" />
 /// <reference path="ContinueCommand.ts" />
 /// <reference path="ConcatenateCommand.ts" />
+/// <reference path="DictionaryNewEndCommand.ts" />
+/// <reference path="DictionaryNewStartCommand.ts" />
+/// <reference path="DictionaryPairCommand.ts" />
+/// <reference path="DictionaryTypeCommand.ts" />
 /// <reference path="ElseIfStartCommand.ts" />
 /// <reference path="ElseStartCommand.ts" />
 /// <reference path="FileEndCommand.ts" />
@@ -47,6 +51,7 @@
 /// <reference path="ValueCommand.ts" />
 /// <reference path="VariableCommand.ts" />
 /// <reference path="VariableInlineCommand.ts" />
+/// <reference path="VariableStartCommand.ts" />
 /// <reference path="WhileEndCommand.ts" />
 /// <reference path="WhileStartCommand.ts" />
 
@@ -81,6 +86,11 @@ namespace GLS.Commands {
                 "comment line": new CommentLineCommand(context),
                 "concatenate": new ConcatenateCommand(context),
                 "continue": new ContinueCommand(context),
+                "dictionary new": new DictionaryNewCommand(context),
+                "dictionary new end": new DictionaryNewEndCommand(context),
+                "dictionary new start": new DictionaryNewStartCommand(context),
+                "dictionary pair": new DictionaryPairCommand(context),
+                "dictionary type": new DictionaryTypeCommand(context),
                 "else if start": new ElseIfStartCommand(context),
                 "else start": new ElseStartCommand(context),
                 "file end": new FileEndCommand(context),
@@ -114,6 +124,7 @@ namespace GLS.Commands {
                 "value": new ValueCommand(context),
                 "variable": new VariableCommand(context),
                 "variable inline": new VariableInlineCommand(context),
+                "variable start": new VariableStartCommand(context),
                 "while end": new WhileEndCommand(context),
                 "while start": new WhileStartCommand(context)
             };
