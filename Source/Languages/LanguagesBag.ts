@@ -1,4 +1,5 @@
 /// <reference path="CSharp.ts" />
+/// <reference path="Java.ts" />
 /// <reference path="Language.ts" />
 /// <reference path="Python.ts" />
 /// <reference path="Ruby.ts" />
@@ -15,6 +16,11 @@ namespace GLS.Languages {
          * An instance of the CSharp class.
          */
         public CSharp: CSharp = new CSharp();
+
+        /**
+         * An instance of the Java class.
+         */
+        public Java: Java = new Java();
 
         /**
          * An instance of the CSharp class.
@@ -36,10 +42,18 @@ namespace GLS.Languages {
          */
         private languagesByName: { [i: string]: Language } = {
             "CSharp": this.CSharp,
+            "Java": this.Java,
             "Python": this.Python,
             "Ruby": this.Ruby,
             "TypeScript": this.TypeScript
         };
+
+        /**
+         * @returns Names of languages in the listing.
+         */
+        public getLanguageNames(): string[] {
+            return Object.keys(this.languagesByName);
+        }
 
         /**
          * Adds a language to the listing.
