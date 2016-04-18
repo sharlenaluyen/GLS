@@ -1,0 +1,6 @@
+-
+if aaa
+    # ...
+elsif bbb
+    # ...
+-
