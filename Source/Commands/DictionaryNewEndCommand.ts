@@ -21,7 +21,7 @@ namespace GLS.Commands {
 
             let ender: string = this.language.properties.dictionaries.initializeEnd;
 
-            return new LineResults([new CommandResult(ender, -1)], false);
+            return new LineResults([new CommandResult(ender, -1)], true);
         }
     }
 }

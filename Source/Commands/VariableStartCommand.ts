@@ -41,6 +41,7 @@ namespace GLS.Commands {
             parameters[0] = "variable";
             let output = this.context.convertParsed(parameters);
             output.addSemicolon = false;
+            output.commandResults[0].indentation = 1;
 
             return output;
         }

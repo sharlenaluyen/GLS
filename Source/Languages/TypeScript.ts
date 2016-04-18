@@ -124,11 +124,12 @@ namespace GLS.Languages {
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Object";
-            dictionaries.initializeStart = "{";
             dictionaries.initializeEnd = "}";
+            dictionaries.initializePairComma = ",";
             dictionaries.initializePairLeft = "";
             dictionaries.initializePairMiddle = ": ";
             dictionaries.initializePairRight = "";
+            dictionaries.initializeStart = "{";
             dictionaries.typeLeft = "{ [i: ";
             dictionaries.typeMiddle = "]: ";
             dictionaries.typeRight = " }";

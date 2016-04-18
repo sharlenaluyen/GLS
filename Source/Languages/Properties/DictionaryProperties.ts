@@ -21,9 +21,9 @@ namespace GLS.Languages.Properties {
         public initializeEnd: string;
 
         /**
-         * How to start initializing a new dictionary's values.
+         * How to end a new dictionary's in-place value.
          */
-        public initializeStart: string;
+        public initializePairComma: string;
 
         /**
          * How to start an in-place pair initialization.
@@ -39,6 +39,11 @@ namespace GLS.Languages.Properties {
          * How to end an in-place pair initialization.
          */
         public initializePairRight: string;
+
+        /**
+         * How to start initializing a new dictionary's values.
+         */
+        public initializeStart: string;
 
         /**
          * The name of the function to check if a key exists.

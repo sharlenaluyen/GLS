@@ -37,7 +37,7 @@ namespace GLS.Commands {
             results += this.language.properties.dictionaries.initializePairRight;
 
             if (parameters.length === 4) {
-                results += ",";
+                results += this.language.properties.dictionaries.initializePairComma;
             }
 
             return LineResults.newSingleLine(results, false);
