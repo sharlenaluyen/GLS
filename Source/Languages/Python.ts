@@ -34,7 +34,10 @@ namespace GLS.Languages {
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "list";
-            arrays.length = Properties.NativeCallProperties.NewStaticFunction("len");
+            arrays.length = new Properties.NativeCallProperties(
+                "len",
+                Properties.NativeCallScope.Static,
+                Properties.NativeCallType.Function);
         }
 
         /**
@@ -114,7 +117,10 @@ namespace GLS.Languages {
             super.generateDictionaryProperties(dictionaries);
 
             dictionaries.className = "dict";
-            dictionaries.keys = Properties.NativeCallProperties.NewMemberFunction("keys");
+            dictionaries.keys = new Properties.NativeCallProperties(
+                "keys",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
         }
 
         /**
@@ -147,7 +153,10 @@ namespace GLS.Languages {
         protected generateListProperties(lists: Properties.ListProperties): void {
             super.generateListProperties(lists);
 
-            lists.push = Properties.NativeCallProperties.NewMemberFunction("append");
+            lists.push = new Properties.NativeCallProperties(
+                "append",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
         }
 
         /**
@@ -211,8 +220,14 @@ namespace GLS.Languages {
             super.generateStringProperties(strings);
 
             strings.className = "string";
-            strings.index = Properties.NativeCallProperties.NewMemberFunction("index");
-            strings.length = Properties.NativeCallProperties.NewStaticFunction("len");
+            strings.index = new Properties.NativeCallProperties(
+                "index",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
+            strings.length = new Properties.NativeCallProperties(
+                "len",
+                Properties.NativeCallScope.Static,
+                Properties.NativeCallType.Function);
         }
 
         /**

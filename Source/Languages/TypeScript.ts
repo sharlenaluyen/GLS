@@ -34,7 +34,10 @@ namespace GLS.Languages {
          */
         protected generateArrayProperties(arrays: Properties.ArrayProperties): void {
             arrays.className = "Array";
-            arrays.length = Properties.NativeCallProperties.NewMemberProperty("length");
+            arrays.length = new Properties.NativeCallProperties(
+                "length",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Property);
         }
 
         /**
@@ -124,8 +127,14 @@ namespace GLS.Languages {
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "Object";
-            dictionaries.containsKey = Properties.NativeCallProperties.NewMemberFunction("hasOwnProperty");
-            dictionaries.keys = Properties.NativeCallProperties.NewStaticFunction("Object.keys");
+            dictionaries.containsKey = new Properties.NativeCallProperties(
+                "hasOwnProperty",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
+            dictionaries.keys = new Properties.NativeCallProperties(
+                "Object.keys",
+                Properties.NativeCallScope.Static,
+                Properties.NativeCallType.Function);
             dictionaries.initializeEnd = "}";
             dictionaries.initializePairComma = ",";
             dictionaries.initializePairLeft = "";
@@ -179,7 +188,10 @@ namespace GLS.Languages {
          */
         protected generateListProperties(lists: Properties.ListProperties): void {
             lists.asArray = true;
-            lists.push = Properties.NativeCallProperties.NewMemberFunction("push");
+            lists.push = new Properties.NativeCallProperties(
+                "push",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
         }
 
         /**
@@ -259,8 +271,14 @@ namespace GLS.Languages {
             super.generateStringProperties(strings);
 
             strings.className = "String";
-            strings.index = Properties.NativeCallProperties.NewMemberFunction("indexOf");
-            strings.length = Properties.NativeCallProperties.NewMemberProperty("length");
+            strings.index = new Properties.NativeCallProperties(
+                "indexOf",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
+            strings.length = new Properties.NativeCallProperties(
+                "length",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Property);
         }
 
         /**

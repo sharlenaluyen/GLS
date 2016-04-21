@@ -35,7 +35,10 @@ namespace GLS.Languages {
             arrays.className = "Array";
             arrays.initializeAsNew = true;
             arrays.initializeByType = true;
-            arrays.length = Properties.NativeCallProperties.NewMemberProperty("length()");
+            arrays.length = new Properties.NativeCallProperties(
+                "length",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
         }
 
         /**
@@ -113,8 +116,14 @@ namespace GLS.Languages {
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
             dictionaries.className = "HashMap";
-            dictionaries.containsKey = Properties.NativeCallProperties.NewMemberFunction("containsKey");
-            dictionaries.keys = Properties.NativeCallProperties.NewMemberFunction("keySet");
+            dictionaries.containsKey = new Properties.NativeCallProperties(
+                "containsKey",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
+            dictionaries.keys = new Properties.NativeCallProperties(
+                "keySet",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
             dictionaries.initializeAsNew = true;
             dictionaries.initializeEnd = "}}";
             dictionaries.initializePairComma = "";
@@ -165,7 +174,10 @@ namespace GLS.Languages {
          */
         protected generateListProperties(lists: Properties.ListProperties): void {
             lists.className = "ArrayList";
-            lists.push = Properties.NativeCallProperties.NewMemberFunction("add");
+            lists.push = new Properties.NativeCallProperties(
+                "add",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
         }
 
         /**
@@ -214,8 +226,14 @@ namespace GLS.Languages {
             super.generateStringProperties(strings);
 
             strings.className = "string";
-            strings.index = Properties.NativeCallProperties.NewMemberFunction("indexOf");
-            strings.length = Properties.NativeCallProperties.NewMemberProperty("length()");
+            strings.index = new Properties.NativeCallProperties(
+                "indexOf",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
+            strings.length = new Properties.NativeCallProperties(
+                "length",
+                Properties.NativeCallScope.Member,
+                Properties.NativeCallType.Function);
         }
 
         /**

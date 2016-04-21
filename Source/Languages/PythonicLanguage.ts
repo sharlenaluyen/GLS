@@ -80,7 +80,10 @@ namespace GLS.Languages {
          * @param dictionaries   The property container for metadata on dictionaries. 
          */
         protected generateDictionaryProperties(dictionaries: Properties.DictionaryProperties): void {
-            dictionaries.containsKey = Properties.NativeCallProperties.NewOperator(" in ");
+            dictionaries.containsKey = new Properties.NativeCallProperties(
+                " in ",
+                Properties.NativeCallScope.Operator,
+                Properties.NativeCallType.FloatingLeft);
             dictionaries.initializeEnd = "}";
             dictionaries.initializePairComma = ",";
             dictionaries.initializePairLeft = "";
