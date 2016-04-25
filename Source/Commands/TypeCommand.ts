@@ -71,7 +71,7 @@ namespace GLS.Commands {
             let bracketIndex: number = typeNameRaw.indexOf("["),
                 typeName: string = this.convertType(typeNameRaw.substring(0, bracketIndex));
 
-            return typeName + "[]";
+            return typeName + typeNameRaw.substring(bracketIndex);
         }
 
         /**
