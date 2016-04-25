@@ -36,7 +36,7 @@ namespace GLS.Commands {
         public render(parameters: string[]): LineResults {
             let line: string = this.language.properties.conditionals.while;
             line += this.language.properties.conditionals.startLeft;
-            line += parameters[1];
+            line += this.context.convertCommon("value", parameters[1]);
 
             let lines: CommandResult[] = [new CommandResult(line, 0)];
             this.addLineEnder(lines, this.language.properties.conditionals.startRight, 1);
