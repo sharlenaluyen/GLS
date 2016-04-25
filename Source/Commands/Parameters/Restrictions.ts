@@ -81,7 +81,7 @@ namespace GLS.Commands.Parameters {
                 descriptor += "s";
             }
             
-            throw new Error(`Expected ${descriptor} but got ${inputsLength}.`);
+            throw new Error(`'${inputs[0]}' expects ${descriptor} but got ${inputsLength}.`);
         }
 
         /**
@@ -93,7 +93,7 @@ namespace GLS.Commands.Parameters {
             let remaining: number = inputs.length - this.minimum;
 
             if (remaining % this.intervals.length !== 0) {
-                throw new Error(`Expected extra parameters to be a multiple of ${this.intervals[0]}, not ${inputs.length}.`);
+                throw new Error(`'${inputs[0]}' expects extra parameters to be a multiple of ${this.intervals[0]}, not ${inputs.length}.`);
             }
         }
         
