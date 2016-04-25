@@ -58,8 +58,6 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          */
         private renderXmlDoc(parameters: string[]): LineResults {
-            this.requireParametersLengthMinimum(parameters, 2);
-
             let lineStart: string = this.language.properties.comments.docLineStart,
                 tagRaw: string = parameters[1],
                 tag: string = this.parseTag(tagRaw),
@@ -102,8 +100,6 @@ namespace GLS.Commands {
          * @returns Line(s) of code in the language.
          */
         private renderJsDoc(parameters: string[]): LineResults {
-            this.requireParametersLengthMinimum(parameters, 2);
-
             let tagRaw: string = parameters[1],
                 tagParsed: string = this.parseTag(tagRaw),
                 tag: string = tagParsed + this.language.properties.comments.docTagEnd,

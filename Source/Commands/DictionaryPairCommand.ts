@@ -26,8 +26,6 @@ namespace GLS.Commands {
          * @remarks Usage: (keyType, valueType[, comma]).
          */
         public render(parameters: string[]): LineResults {
-            this.requireParametersLengthRange(parameters, 2, 3);
-
             let results: string = "";
 
             results += this.language.properties.dictionaries.initializePairLeft;

@@ -25,8 +25,6 @@ namespace GLS.Commands {
          * @remarks Usage: (keyType, valueType).
          */
         public render(parameters: string[]): LineResults {
-            this.requireParametersLength(parameters, 2);
-
             let output: string = "";
 
             if (this.language.properties.dictionaries.initializeAsNew) {

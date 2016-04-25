@@ -36,8 +36,6 @@ namespace GLS.Commands {
          * @remarks Usage: (name, type[, value]).
          */
         public render(parameters: string[]): LineResults {
-            this.requireParametersLengthRange(parameters, 2, 3);
-
             if (parameters.length === 3 && !this.language.properties.variables.declarationRequired) {
                 return LineResults.newSingleLine("\0", false);
             }

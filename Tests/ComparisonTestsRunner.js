@@ -19,6 +19,7 @@ var ComparisonTestsRunner = (function () {
             this.section = section;
             this.rootPath = path.resolve(section);
             this.commandTests = this.readTestsUnderPath(this.rootPath);
+            this.commandTests = { DictionaryNew: ["complex"] };
             this.languagesBag = new GLS.Languages.LanguagesBag();
         }
 
