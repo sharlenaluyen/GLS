@@ -37,8 +37,6 @@ namespace GLS.Commands {
          * @remarks Usage: (name, type, start, end).
          */
         public render(parameters: string[]): LineResults {
-            this.requireParametersLength(parameters, 4);
-
             let starter: string;
 
             if (this.language.properties.loops.rangedForLoops) {
