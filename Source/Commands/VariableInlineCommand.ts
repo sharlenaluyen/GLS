@@ -18,7 +18,7 @@ namespace GLS.Commands {
         private static parameters: Parameters.Parameter[] = [
             new Parameters.SingleParameter("name", "The name of the variable.", true),
             new Parameters.SingleParameter("type", "The type of the variable.", true),
-            new Parameters.SingleParameter("value", "The starting value of the variable.", true)
+            new Parameters.SingleParameter("value", "The starting value of the variable.", false)
         ];
 
         /**

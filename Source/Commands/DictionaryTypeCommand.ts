@@ -18,6 +18,13 @@ namespace GLS.Commands {
         ];
 
         /**
+         * @returns Information on parameters this command takes in.
+         */
+        public getParameters(): Parameters.Parameter[] {
+            return DictionaryTypeCommand.parameters;
+        }
+
+        /**
          * Renders the command for a language with the given parameters.
          * 
          * @param parameters   The command's name, followed by any parameters.

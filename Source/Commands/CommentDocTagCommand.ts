@@ -18,7 +18,7 @@ namespace GLS.Commands {
         private static parameters: Parameters.Parameter[] = [
             new Parameters.SingleParameter("tag", "The name of the tag.", true),
             new Parameters.SingleParameter("parameter", "An optional descriptor for the tag.", false),
-            new Parameters.SingleParameter("comments", "Comments regarding the tag.", false)
+            new Parameters.RepeatingParameters("Comments regarding the tag", [])
         ];
 
         /**
