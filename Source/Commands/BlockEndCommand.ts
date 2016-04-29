@@ -17,13 +17,22 @@ namespace GLS.Commands {
          * @remarks Usage: ().
          */
         public render(parameters: string[]): LineResults {
-            let ender: string = this.language.properties.conditionals.end;
+            let ender: string = this.renderBlockEnd();
 
             if (ender === "\0") {
                 return LineResults.newBlockLine("\0", -1);
             }
 
             return LineResults.newBlockLine(ender, -1);
+        }
+
+        /**
+         * Renders the default end block for conditionals.
+         * 
+         * @returns The default end block for conditionals.
+         */
+        protected renderBlockEnd(): string {
+            return this.language.properties.conditionals.end;
         }
     }
 }
