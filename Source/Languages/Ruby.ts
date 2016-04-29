@@ -134,6 +134,20 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on enums.
+         * 
+         * @param enums   A property container for metadata on enums.
+         */
+        protected generateEnumProperties(enums: Properties.EnumProperties): void {
+            super.generateEnumProperties(enums);
+
+            enums.declareEnd = "end";
+            enums.declareStartRight = "";
+            enums.declareValueLeft = " = ";
+            enums.valueMiddle = "::";
+        }
+
+        /**
          * Generates metadata on functions.
          * 
          * @param functions   The property container for metadata on functions. 

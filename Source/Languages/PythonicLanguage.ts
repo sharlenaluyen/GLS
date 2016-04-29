@@ -93,6 +93,20 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on enums.
+         * 
+         * @param enums   A property container for metadata on enums.
+         */
+        protected generateEnumProperties(enums: Properties.EnumProperties): void {
+            enums.declareStartLeft = "class ";
+            enums.declareValueRight = "";
+            enums.declareCommaRight = "";
+            enums.declareLastRight = "";
+            enums.valueLeft = "";
+            enums.valueRight = "";
+        }
+
+        /**
          * Generates metadata on exceptions.
          * 
          * @param exceptions   The property container for metadata on exceptions. 
