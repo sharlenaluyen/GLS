@@ -11,11 +11,6 @@ namespace GLS.Languages.Properties {
         public declareCommaRight: string;
 
         /**
-         * Suffix after the last member and value declaration in an enum.
-         */
-        public declareEnd: string;
-
-        /**
          * End line of an enum declaration.
          */
         public declareLastRight: string;

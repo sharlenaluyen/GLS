@@ -64,7 +64,6 @@ namespace GLS.Languages {
                 "list": "List",
                 "number": "float"
             };
-            classes.constructorAsClassName = true;
             classes.declareExtendsLeft = " : ";
             classes.declareStartRight = "\n{";
         }

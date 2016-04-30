@@ -111,14 +111,17 @@ constructor(name: string, count: number) {
         </tr>
         <tr>
             <td>ConstructorTakesThis</td>
+            <td>boolean</td>
             <td>Whether constructors take in the class instance as a first parameter.</td>
         </tr>
         <tr>
             <td>ConstructorUsesKeyword</td>
+            <td>boolean</td>
             <td>Whether constructors are named with a keyword, rather than the class name.</td>
         </tr>
         <tr>
-            <td>SuperKeyword</td>
+            <td>SuperConstructor</td>
+            <td>string</td>
             <td>A keyword used for calling the parent class constructor.</td>
         </tr>
     </tbody>
@@ -132,7 +135,7 @@ constructor(name: string, count: number) {
         <th>ConstructorKeyword</th>
         <th>ConstructorTakesThis</th>
         <th>ConstructorUsesKeyword</th>
-        <th>SuperKeyword</th>
+        <th>SuperConstructor</th>
     </thead>
     <tbody>
         <tr>
@@ -151,14 +154,14 @@ constructor(name: string, count: number) {
         </tr>
         <tr>
             <th>Python</th>
-            <td>`"__init_"`</td>
+            <td>`"def __init__"`</td>
             <td>`true`</td>
             <td>`true`</td>
             <td>`"super().__init__"`</td>
         </tr>
         <tr>
             <th>Ruby</th>
-            <td>`"initialize"`</td>
+            <td>`"def initialize"`</td>
             <td>`false`</td>
             <td>`true`</td>
             <td>`"super"`</td>

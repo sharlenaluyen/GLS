@@ -60,6 +60,8 @@ namespace GLS.Languages {
                 "dictionary": "dict",
                 "number": "float"
             };
+            classes.constructorKeyword = "def __init__";
+            classes.constructorTakesThis = true;
             classes.declareEnd = "\0";
             classes.declareExtendsLeft = "(";
             classes.declareExtendsRight = ")";
@@ -136,7 +138,6 @@ namespace GLS.Languages {
         protected generateEnumProperties(enums: Properties.EnumProperties): void {
             super.generateEnumProperties(enums);
 
-            enums.declareEnd = "\0";
             enums.declareStartRight = "(Enum):";
             enums.declareValueLeft = " = ";
             enums.valueMiddle = ".";

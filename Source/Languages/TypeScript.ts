@@ -63,7 +63,8 @@ namespace GLS.Languages {
                 "float": "number",
                 "int": "number"
             };
-            classes.constructorName = "constructor";
+            classes.constructorKeyword = "constructor";
+            classes.constructorUsesKeyword = true;
             classes.declareExtendsLeft = " extends ";
             classes.declareStartRight = " {";
         }

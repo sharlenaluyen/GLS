@@ -97,7 +97,7 @@ The starting line consists of `DeclareStartLeft`, the provided name, then `Decla
 Each value line consists of a member name, `DeclareValueLeft`, the value, and `DeclareValueRight`.
 Value lines with a comma appended end in `DeclareCommaRight`; value lines without end in `DeclareLastRight`.
 
-The ending line consists solely of `DeclareEnd`.
+The ending line is a standard block end.
 
 ### Properties
 
@@ -143,11 +143,6 @@ The ending line consists solely of `DeclareEnd`.
             <td>string</td>
             <td>Suffix after the last member and value declaration in an enum.</td>
         </tr>
-        <tr>
-            <td>DeclareEnd</td>
-            <td>string</td>
-            <td>End line of an enum declaration.</td>
-        </tr>
     </tbody>
 </table>
 
@@ -162,7 +157,6 @@ The ending line consists solely of `DeclareEnd`.
         <th>DeclareValueRight</th>
         <th>DeclareCommaRight</th>
         <th>DeclareLastRight</th>
-        <th>DeclareEnd</th>
     </thead>
     <tbody>
         <tr>
@@ -173,7 +167,6 @@ The ending line consists solely of `DeclareEnd`.
             <td>`""`</td>
             <td>`","`</td>
             <td>`""`</td>
-            <td>`"}"`</td>
         </tr>
         <tr>
             <th>Java</th>
@@ -183,14 +176,12 @@ The ending line consists solely of `DeclareEnd`.
             <td>`")"`</td>
             <td>`","`</td>
             <td>`""`</td>
-            <td>`"}"`</td>
         </tr>
         <tr>
             <th>Python</th>
             <td>`"class "`</td>
             <td>`"(Enum):"`</td>
             <td>`" = "`</td>
-            <td>`""`</td>
             <td>`""`</td>
             <td>`""`</td>
             <td>`""`</td>
@@ -203,7 +194,6 @@ The ending line consists solely of `DeclareEnd`.
             <td>`""`</td>
             <td>`""`</td>
             <td>`""`</td>
-            <td>`""`</td>
         </tr>
         <tr>
             <th>TypeScript</th>
@@ -213,7 +203,6 @@ The ending line consists solely of `DeclareEnd`.
             <td>`""`</td>
             <td>`","`</td>
             <td>`""`</td>
-            <td>`"end"`</td>
         </tr>
     <tbody>
 </table>

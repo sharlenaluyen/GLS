@@ -15,6 +15,7 @@
 /// <reference path="CommentDocTagCommand.ts" />
 /// <reference path="CommentLineCommand.ts" />
 /// <reference path="ConstructorEndCommand.ts" />
+/// <reference path="ConstructorStartCommand.ts" />
 /// <reference path="ContinueCommand.ts" />
 /// <reference path="ConcatenateCommand.ts" />
 /// <reference path="DictionaryContainsKeyCommand.ts" />
@@ -98,6 +99,7 @@ namespace GLS.Commands {
                 "comment line": new CommentLineCommand(context),
                 "concatenate": new ConcatenateCommand(context),
                 "constructor end": new ConstructorEndCommand(context),
+                "constructor start": new ConstructorStartCommand(context),
                 "continue": new ContinueCommand(context),
                 "dictionary contains key": new DictionaryContainsKeyCommand(context),
                 "dictionary keys": new DictionaryKeysCommand(context),

@@ -64,7 +64,6 @@ namespace GLS.Languages {
                 "list": "ArrayList",
                 "number": "double"
             };
-            classes.constructorAsClassName = true;
             classes.declareExtendsLeft = " extends ";
             classes.declareStartRight = " {";
         }

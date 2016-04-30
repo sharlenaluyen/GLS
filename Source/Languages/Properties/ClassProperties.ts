@@ -17,19 +17,19 @@ namespace GLS.Languages.Properties {
         public aliases: { [i: string]: string };
 
         /**
-         * Whether making a new instance is done via a static method, rather than new.
+         * The keyword used for constructors, if not the class name.
          */
-        public constructorAsStatic: boolean;
+        public constructorKeyword: string;
         
         /**
-         * Whether constructors are named the same as their class.
+         * Whether constructors take in the class instance as a first parameter.
          */
-        public constructorAsClassName: boolean;
+        public constructorTakesThis: boolean;
 
         /**
-         * The name of the constructor method, if not the class name.
+         * Whether constructors are named with a keyword, rather than the class name.
          */
-        public constructorName: string;
+        public constructorUsesKeyword: boolean;
 
         /**
          * Characters before an inherited class declaration.
@@ -75,6 +75,11 @@ namespace GLS.Languages.Properties {
          * The keyword for a static class or member.
          */
         public staticLabel: string;
+
+        /**
+         * The keyword for calling a parent class constructor.
+         */
+        public superConstructor: string;
 
         /**
          * The keyword used for "this".

@@ -60,6 +60,7 @@ namespace GLS.Languages {
                 "dictionary": "Hash",
                 "number": "Float"
             };
+            classes.constructorKeyword = "def initialize";
             classes.declareEnd = "end";
             classes.declareExtendsLeft = " < ";
             classes.declareExtendsRight = "";
@@ -76,6 +77,7 @@ namespace GLS.Languages {
             super.generateConditionalProperties(conditionals);
 
             conditionals.continueRight = "";
+            conditionals.end = "end";
             conditionals.elif = "elsif";
             conditionals.startRight = "";
         }
@@ -146,7 +148,6 @@ namespace GLS.Languages {
         protected generateEnumProperties(enums: Properties.EnumProperties): void {
             super.generateEnumProperties(enums);
 
-            enums.declareEnd = "end";
             enums.declareStartRight = "";
             enums.declareValueLeft = " = ";
             enums.valueMiddle = "::";
