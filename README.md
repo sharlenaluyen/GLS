@@ -44,7 +44,7 @@ print line : { operation : 1 plus 2 }
 
 ### Tidbits
 
-* Each GLS command is *idempotent* - it doesn't know or care about any preceding or following commands.
+* Each GLS command is *independent* - it doesn't know or care about any preceding or following commands.
 
 
 ## Status
