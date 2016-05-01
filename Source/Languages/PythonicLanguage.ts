@@ -47,16 +47,12 @@ namespace GLS.Languages {
         }
 
         /**
-         * Generates metadata on class members.
+         * Generates metadata on class member variables.
          * 
-         * @param members   The property container for metadata on class members. 
+         * @param members   A property container for metadata on class member variables.
          */
-        protected generateClassMemberProperties(members: Properties.ClassMemberProperties): void {
-            members.functionStart = "";
-            members.privacy = false;
-            members.staticDecorator = "static ";
-            members.variableStart = "";
-            members.variableDefault = "";
+        protected generateClassMemberVariableProperties(variables: Properties.ClassMemberVariableProperties): void {
+            variables.skipMemberVariables = true;
         }
 
         /**

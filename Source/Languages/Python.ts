@@ -1,4 +1,5 @@
 /// <reference path="PythonicLanguage.ts" />
+/// <reference path="Casing/CaseStyle.ts" />
 /// <reference path="Properties/ArrayProperties.ts" />
 /// <reference path="Properties/BooleanProperties.ts" />
 /// <reference path="Properties/ClassProperties.ts" />
@@ -67,6 +68,22 @@ namespace GLS.Languages {
             classes.declareExtendsRight = ")";
             classes.declareStartLeft = "def ";
             classes.declareStartRight = ":";
+        }
+
+        /**
+         * Generates metadata on class member variables.
+         * 
+         * @param members   A property container for metadata on class member variables.
+         */
+        protected generateClassMemberVariableProperties(variables: Properties.ClassMemberVariableProperties): void {
+            super.generateClassMemberVariableProperties(variables);
+
+            variables.private = "__";
+            variables.privateCase = Casing.CaseStyle.SnakeCase;
+            variables.protected = "_";
+            variables.protectedCase = Casing.CaseStyle.SnakeCase;
+            variables.public = "";
+            variables.publicCase = Casing.CaseStyle.CamelCase;
         }
 
         /**

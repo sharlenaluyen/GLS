@@ -1,4 +1,5 @@
 /// <reference path="CLikeLanguage.ts" />
+/// <reference path="Casing/CaseStyle.ts" />
 /// <reference path="Properties/ArrayProperties.ts" />
 /// <reference path="Properties/BooleanProperties.ts" />
 /// <reference path="Properties/ClassProperties.ts" />
@@ -70,16 +71,15 @@ namespace GLS.Languages {
         }
 
         /**
-         * Generates metadata on class members.
+         * Generates metadata on class member variables.
          * 
-         * @param members   A property container for metadata on class members.
+         * @param members   A property container for metadata on class member variables.
          */
-        protected generateClassMemberProperties(members: Properties.ClassMemberProperties): void {
-            super.generateClassMemberProperties(members);
+        protected generateClassMemberVariableProperties(variables: Properties.ClassMemberVariableProperties): void {
+            super.generateClassMemberVariableProperties(variables);
 
-            members.functionGetBound = true;
-            members.functionGetLeft = ".bind(";
-            members.functionGetRight = ")";
+            variables.protectedCase = Casing.CaseStyle.CamelCase;
+            variables.publicCase = Casing.CaseStyle.CamelCase;
         }
 
         /**
