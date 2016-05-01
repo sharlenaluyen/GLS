@@ -166,6 +166,19 @@ namespace GLS.Languages {
         }
 
         /**
+         * Generates metadata on lambdas.
+         * 
+         * @param lambdas   A property container for metadata on lambdas.
+         */
+        protected generateLambdaProperties(lambdas: Properties.LambdaProperties): void {
+            super.generateLambdaProperties(lambdas);
+
+            lambdas.functionLeft = "lambda { |";
+            lambdas.functionMiddle = "| ";
+            lambdas.functionRight = " }";
+        }
+
+        /**
          * Generates metadata on lists.
          * 
          * @param lists   A property container for metadata on loops. 
