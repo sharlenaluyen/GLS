@@ -127,7 +127,7 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td></td>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
         </tr>
         <tr>
@@ -136,20 +136,20 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td></td>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
         </tr>
         <tr>
             <td>Multiline Lambdas</td>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td>Optional Parameters</td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
             <td></td>
             <td></td>
@@ -158,9 +158,9 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td>Overloaded Functions</td>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
-            <td>*Missing*</td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
+            <td><em>Missing</em></td>
+            <td><em>Missing</em></td>
         </tr>
         <tr>
             <td>String.Replace</td>
@@ -168,13 +168,13 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td></td>
             <td></td>
             <td></td>
-            <td>*Abnormal*</td>
+            <td><em>Abnormal</em></td>
         </tr>
         <tr>
             <td>Switch Statements</td>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
             <td></td>
         </tr>
@@ -197,22 +197,22 @@ Not all languages work similarly to the supported ones. These will likely never 
     <tbody>
         <tr>
             <td>C</td>
-            <td>*✓*</td>
-            <td>*✓*</td>
+            <td><em>✓</em></td>
+            <td><em>✓</em></td>
         </tr>
         <tr>
             <td>C++</td>
-            <td>*✓*</td>
+            <td><em>✓</em></td>
             <td></td>
         </tr>
         <tr>
             <td>JavaScript (&lt;ES6) </td>
             <td></td>
-            <td>*✓*</td>
+            <td><em>✓</em></td>
         </tr>
         <tr>
             <td>Rust</td>
-            <td>*✓*</td>
+            <td><em>✓</em></td>
             <td></td>
         </tr>
     </tbody>
