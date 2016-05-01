@@ -272,10 +272,9 @@ namespace GLS.Languages {
             style.fileEndLines = [];
             style.fileIndentation = 0;
             style.fileStartLines = [
-                "import java.lang.System;",
-                "import java.util.*;",
-                "",
                 "package {0};",
+                "",
+                "import java.util.*;",
                 "",
             ];
 
@@ -286,7 +285,7 @@ namespace GLS.Languages {
             style.mainIndentation = 2;
             style.mainStartLines = [
                 "class Program {",
-                "    public static void Main() {",
+                "    public static void main(String[] args) {",
             ];
 
             style.printEnd = ")";
