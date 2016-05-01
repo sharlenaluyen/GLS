@@ -104,43 +104,43 @@ The output starts with `lambdaLeft`. A list of parameters follows, comma separat
     <tbody>
         <tr>
             <th>Python</th>
-            <td>`"lambda "`</td>
-            <td>`": "`</td>
-            <td>`""`</td>
-            <td>`false`</td>
-            <td>`false`</td>
+            <td><code>"lambda "</code></td>
+            <td><code>": "</code></td>
+            <td><code>""</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
         </tr>
         <tr>
             <th>Java</th>
-            <td>`"("`</td>
-            <td>`") -> "`</td>
-            <td>`""`</td>
-            <td>`false`</td>
-            <td>`false`</td>
+            <td><code>"("</code></td>
+            <td><code>") -> "</code></td>
+            <td><code>""</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
         </tr>
         <tr>
             <th>Ruby</th>
-            <td>`"lambda { |"`</td>
-            <td>`"\| "`</td>
-            <td>`" }"`</td>
-            <td>`false`</td>
-            <td>`false`</td>
+            <td><code>"lambda { |"</code></td>
+            <td><code>"\| "</code></td>
+            <td><code>" }"</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
         </tr>
         <tr>
             <th>CSharp</th>
-            <td>`"("`</td>
-            <td>`") => "`</td>
-            <td>`""`</td>
-            <td>`false`</td>
-            <td>`false`</td>
+            <td><code>"("</code></td>
+            <td><code>") => "</code></td>
+            <td><code>""</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
         </tr>
         <tr>
             <th>TypeScript</th>
-            <td>`"("`</td>
-            <td>`") => "`</td>
-            <td>`""`</td>
-            <td>`false`</td>
-            <td>`false`</td>
+            <td><code>"("</code></td>
+            <td><code>") => "</code></td>
+            <td><code>""</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
         </tr>
     <tbody>
 </table>
