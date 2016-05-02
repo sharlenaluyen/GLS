@@ -58,13 +58,13 @@ print line : { operation : 1 plus 2 }
     </thead>
     <tbody>
         <tr>
-            <td>C++ Compiler</td>
+            <th>C++ Compiler</th>
             <td>0.1</td>
             <td>May 2015</td>
             <td>Command-line GLS prototype, written in C++.</td>
         </tr>
         <tr>
-            <td>TypeScript Compiler draft</td>
+            <th>TypeScript Compiler draft</th>
             <td>0.2</td>
             <td>July 2015</td>
             <td>GLS compiler as a website, written in TypeScript.</td>
