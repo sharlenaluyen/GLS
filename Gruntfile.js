@@ -4,14 +4,19 @@ module.exports = grunt => {
         meta: {
             paths: {
                 coverage: {
+                    base: "Coverage",
                     instrument: "Coverage/Instrument",
                     reports: "Coverage/Reports"
                 },
-                dist: "Distribution",
+                distribution: "Distribution",
                 source: "Source"
             }
         },
-        clean: ["<%= meta.paths.dist %>/**"],
+        clean: [
+            "<%= meta.paths.coverage.base %>",
+            "<%= meta.paths.distribution %>/**",
+            "<%= meta.paths.source %>/**/*.js.*"
+        ],
         env: {
             coverage: {
                 INSTRUMENTED_SOURCE: "/<%= meta.paths.coverage.instrument %>/<%= meta.paths.source %>/"
@@ -33,22 +38,16 @@ module.exports = grunt => {
             }
         },
         mochaTest: {
+            options: {
+                reporter: "Nyan"
+            },
             unit: {
-                options: {
-                    reporter: "spec"
-                },
                 src: ["Tests/Unit/**/*.js"]
             },
             integration: {
-                options: {
-                    reporter: "spec"
-                },
                 src: ["Tests/IntegrationTests.js"]
             },
             "end-to-end": {
-                options: {
-                    reporter: "spec"
-                },
                 src: ["Tests/EndToEndTests.js"]
             }
         },
@@ -66,12 +65,35 @@ module.exports = grunt => {
         ts: {
             default: {
                 tsconfig: true
+            },
+            distribution: {
+                options: {
+                    declaration: true,
+                    module: "amd",
+                    removeComments: false,
+                    sourceMap: true
+                },
+                out: "<%= meta.paths.distribution %>/GLS.js",
+                src: ["<%= meta.paths.source %>/**/*.ts"]
             }
         },
+        uglify: {
+            distribution: {
+                options: {
+                    sourceMapIn: "<%= meta.paths.distribution %>/GLS.js.map",
+                    sourceMap: "<%= meta.paths.distribution %>/GLS.min.map",
+                    sourceMapRoot: "<%= meta.paths.source %>"
+                },
+                files: {
+                    "<%= meta.paths.distribution %>/GLS.min.js": ["<%= meta.paths.distribution %>/GLS.js"]
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-env");
     grunt.loadNpmTasks("grunt-istanbul");
     grunt.loadNpmTasks("grunt-mocha-test");
@@ -80,7 +102,7 @@ module.exports = grunt => {
 
     grunt.registerTask(
         "build",
-        ["tslint", "ts"]);
+        ["tslint", "ts", "uglify"]);
 
     grunt.registerTask(
         "coverage",
