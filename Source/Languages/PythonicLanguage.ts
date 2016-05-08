@@ -52,6 +52,10 @@ namespace GLS.Languages {
          * @param members   A property container for metadata on class member variables.
          */
         protected generateClassMemberVariableProperties(variables: Properties.ClassMemberVariableProperties): void {
+            variables.private = "";
+            variables.protected = "";
+            variables.public = "";
+            variables.publicPrefix = "";
             variables.skipMemberVariables = true;
         }
 
