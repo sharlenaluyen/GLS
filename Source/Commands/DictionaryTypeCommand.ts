@@ -14,7 +14,7 @@ namespace GLS.Commands {
          */
         private static parameters: Parameters.Parameter[] = [
             new Parameters.SingleParameter("keyType", "The type of the keys.", true),
-            new Parameters.SingleParameter("valueType", "Tye type of the values", true)
+            new Parameters.SingleParameter("valueType", "The type of the values", true)
         ];
 
         /**
@@ -46,7 +46,13 @@ namespace GLS.Commands {
                 output += this.language.properties.dictionaries.typeRight;
             }
 
-            return LineResults.newSingleLine(output, false);
+            let results = LineResults.newSingleLine(output, false);
+
+            if (this.language.properties.dictionaries.requiredImports) {
+                results.addImports(this.language.properties.dictionaries.requiredImports);
+            }
+
+            return results;
         }
     }
 }
