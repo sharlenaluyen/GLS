@@ -130,7 +130,7 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td></td>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
         </tr>
         <tr>
@@ -138,21 +138,13 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td></td>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
-        </tr>
-        <tr>
-            <th>Foreach Over Values</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>*Missing*</td>
         </tr>
         <tr>
             <th>Multiline Lambdas</th>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
             <td></td>
             <td></td>
@@ -160,7 +152,7 @@ No language is perfect. The following are some seemingly obvious omissions in GL
         <tr>
             <th>Optional Parameters</th>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
             <td></td>
             <td></td>
@@ -169,9 +161,9 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <th>Overloaded Functions</th>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
-            <td>*Missing*</td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
+            <td><em>Missing</em></td>
+            <td><em>Missing</em></td>
         </tr>
         <tr>
             <th>String.Replace</th>
@@ -179,13 +171,13 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td></td>
             <td></td>
             <td></td>
-            <td>*Abnormal*</td>
+            <td><em>Abnormal</em></td>
         </tr>
         <tr>
             <th>Switch Statements</th>
             <td></td>
             <td></td>
-            <td>*Missing*</td>
+            <td><em>Missing</em></td>
             <td></td>
             <td></td>
         </tr>
