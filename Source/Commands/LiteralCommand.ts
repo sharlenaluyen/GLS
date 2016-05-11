@@ -31,7 +31,6 @@ export class LiteralCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: ([contents, ...]).
      */
     public render(parameters: string[]): LineResults {
         return LineResults.newSingleLine(parameters.slice(1).join(" "), false);

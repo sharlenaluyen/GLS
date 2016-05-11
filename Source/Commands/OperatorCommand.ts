@@ -27,7 +27,6 @@ export class OperatorCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (operator).
      */
     public render(parameters: string[]): LineResults {
         return LineResults.newSingleLine(this.convertOperator(parameters[1]), false);

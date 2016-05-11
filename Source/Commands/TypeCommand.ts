@@ -28,7 +28,6 @@ export class TypeCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (type).
      */
     public render(parameters: string[]): LineResults {
         return LineResults.newSingleLine(this.convertType(parameters[1]), false);

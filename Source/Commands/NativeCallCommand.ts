@@ -40,7 +40,6 @@ export abstract class NativeCallCommand extends Command {
      * @param parameters   The command's name, followed by any number of
      *                     items to initialize in the Array.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (name[, parameters, ...]).
      */
     public render(parameters: string[]): LineResults {
         let scope: NativeCallScope = this.nativeCallProperties.scope;

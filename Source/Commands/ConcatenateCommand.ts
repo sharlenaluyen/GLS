@@ -34,7 +34,6 @@ export class ConcatenateCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (string, string[, string, ...])
      */
     public render(parameters: string[]): LineResults {
         let result = parameters[1];

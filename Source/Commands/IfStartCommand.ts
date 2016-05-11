@@ -29,7 +29,6 @@ export class IfStartCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (conditional).
      */
     public render(parameters: string[]): LineResults {
         let line: string = this.language.properties.conditionals.if;

@@ -31,7 +31,6 @@ export class VariableStartCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (name, type, value).
      */
     public render(parameters: string[]): LineResults {
         // Languages like C# will give the last value in parameters including a "\n"

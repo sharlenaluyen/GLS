@@ -33,7 +33,6 @@ export class ForEachPairStartCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (container, pairName, keyName, keyType, valueName, valueType).
      */
     public render(parameters: string[]): LineResults {
         if (this.language.properties.loops.forEachAsMethod) {

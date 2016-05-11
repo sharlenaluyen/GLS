@@ -39,7 +39,6 @@ export class CommentDocTagCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (tag[, parameter][, comments]).
      */
     public render(parameters: string[]): LineResults {
         if (this.language.properties.comments.docAsXml) {
