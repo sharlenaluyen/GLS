@@ -29,7 +29,6 @@ export class IndexCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (container, index).
      */
     public render(parameters: string[]): LineResults {
         return LineResults.newSingleLine(parameters[1] + "[" + parameters[2] + "]", false);

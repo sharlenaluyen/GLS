@@ -34,7 +34,6 @@ export class FunctionStartCommand extends Command {
      * Renders the command for a language with the given parameters.
      * 
      * @param parameters   The command's name, followed by any parameters.
-     * @remarks Usage: (name, returnType[, parameterName, parameterType, ...]).
      */
     public render(parameters: string[]): LineResults {
         let returnType: string = this.context.convertCommon("type", parameters[2]),

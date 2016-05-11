@@ -34,7 +34,6 @@ export class ListInitializeCommand extends Command {
      * @param parameters   The command's name, followed by any number of
      *                     items to initialize in the Array.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (type[, item, ...]).
      */
     public render(parameters: string[]): LineResults {
         if (this.language.properties.lists.asArray) {

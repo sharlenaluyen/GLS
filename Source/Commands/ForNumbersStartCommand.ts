@@ -32,7 +32,6 @@ export class ForNumbersStartCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (name, type, start, end).
      */
     public render(parameters: string[]): LineResults {
         let starter: string;

@@ -34,7 +34,6 @@ export class ArrayInitializeCommand extends Command {
      * @param parameters   The command's name, followed by any number of
      *                     items to initialize in the Array.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (type[, item, ...]).
      */
     public render(parameters: string[]): LineResults {
         let typeName: string = this.context.convertCommon("type", parameters[1]),

@@ -28,7 +28,6 @@ export class DictionaryNewCommand extends Command {
      * 
      * @param parameters   The command's name, followed by any parameters.
      * @returns Line(s) of code in the language.
-     * @remarks Usage: (keyType, valueType).
      */
     public render(parameters: string[]): LineResults {
         if (!this.language.properties.dictionaries.initializeAsNew) {
