@@ -39,7 +39,7 @@ module.exports = grunt => {
         },
         mochaTest: {
             options: {
-                reporter: "Nyan"
+                reporter: "spec"
             },
             unit: {
                 src: ["Tests/Unit/**/*.js"]
