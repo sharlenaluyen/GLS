@@ -59,7 +59,7 @@ export class Gls {
      * @param input   GLS syntax to be converted.
      * @returns Language code from the input.
      */
-    public convert(input: string): string[] {
-        return this.conversionContext.convert(input.replace(/\\r/g, "").split("\n"));
+    public convert(input: string[]): string[] {
+        return this.conversionContext.convert(input);
     }
 }
