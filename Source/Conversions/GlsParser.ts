@@ -1,9 +1,9 @@
-import { CommandsBag } from "./Commands/CommandsBag";
-import { LineResults } from "./Commands/LineResults";
-import { ConversionContext } from "./Conversions/ConversionContext";
-import { Language } from "./Languages/Language"
-import { CaseStyle } from "./Languages/Casing/CaseStyle"
-import { CaseStyleConverterBag } from "./Languages/Casing/CaseStyleConverterBag"
+import { CommandsBag } from "../Commands/CommandsBag";
+import { LineResults } from "../Commands/LineResults";
+import { ConversionContext } from "./ConversionContext";
+import { Language } from "../Languages/Language";
+import { CaseStyle } from "../Languages/Casing/CaseStyle";
+import { CaseStyleConverterBag } from "../Languages/Casing/CaseStyleConverterBag";
 
 /**
  * Converter to transform raw GLS syntax into language code.
@@ -52,7 +52,7 @@ export class GlsParser {
 
         return this.renderParsedCommand(parameters);
     }
-    
+
     /**
      * Renders a parsed line into the equivalent language code. 
      * 

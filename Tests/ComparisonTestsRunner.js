@@ -5,7 +5,7 @@ var ComparisonTestsRunner = (function () {
     const fs = require("fs");
     const path = require("path");
     const LanguagesBag = require("../Source/Languages/LanguagesBag").LanguagesBag;
-    const ConversionContext = require("../Source/Conversions/ConversionContext").ConversionContext;
+    const Gls = require("../Source/Gls").Gls;
 
     /**
      * Test runner for comparing converted .gls files and expected output.
@@ -44,9 +44,8 @@ var ComparisonTestsRunner = (function () {
                 .forEach(test => {
                     describe(test, () => {
                         this.languagesBag.getLanguageNames()
-                            .map(languageName => this.languagesBag.getLanguage(languageName))
                             .forEach(language => {
-                                it(language.properties.general.name, () => {
+                                it(language, () => {
                                     this.runCommandTest(command, test, language);
                                 });
                             });
@@ -59,16 +58,16 @@ var ComparisonTestsRunner = (function () {
          * 
          * @param {string} command   A GLS command to be tested, such as "ArrayInitialize".
          * @param {string} test   A test to be run for the command, such as "no values".
-         * @param {Language} language   The language the test is running as.
+         * @param {string} language   The language the test is running as.
          */
         runCommandTest(command, test, language) {
-            const context = new ConversionContext(language);
-            const extension = language.properties.general.extension;
+            const gls = new Gls().setLanguage(language);
+            const extension = gls.getLanguage().properties.general.extension;
 
             const source = this.readCommandFile(command, test + ".gls");
             const expected = this.readCommandFile(command, test + extension);
 
-            expect(context.convert(source)).to.be.deep.equal(expected);
+            expect(gls.convert(source)).to.be.deep.equal(expected);
         }
 
         /**
