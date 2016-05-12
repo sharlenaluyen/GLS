@@ -1,5 +1,5 @@
 import { LineResults } from "../Commands/LineResults";
-import { GlsParser } from "../GlsParser";
+import { GlsParser } from "./GlsParser";
 import { Language } from "../Languages/Language";
 import { CaseStyle } from "../Languages/Casing/CaseStyle";
 import { Conversion } from "./Conversion";

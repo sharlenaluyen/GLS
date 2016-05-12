@@ -1,4 +1,3 @@
-import { GlsParser } from "../GlsParser";
 import { CommandResult } from "../Commands/CommandResult";
 import { LineResults } from "../Commands/LineResults";
 import { ConversionContext } from "./ConversionContext";
