@@ -56,56 +56,47 @@ print line : { operation : 1 plus 2 }
     <thead>
         <th>Deliverable</th>
         <th>Version</th>
-        <th>Date</th>
         <th>Description</th>
     </thead>
     <tbody>
         <tr>
             <th>C++ Compiler</th>
             <td>0.1</td>
-            <td>May 2015</td>
             <td>Command-line GLS prototype, written in C++.</td>
         </tr>
         <tr>
             <th>TypeScript Compiler draft</th>
             <td>0.2</td>
-            <td>July 2015</td>
             <td>GLS compiler as a website, written in TypeScript.</td>
         </tr>
         <tr>
             <th>TypeScript Compiler + C# Output</th>
             <td>0.3</td>
-            <td>March 2016</td>
             <td>GLS compiler re-written in TypeScript, with correct TypeScript and C# output.</td>
         </tr>
         <tr>
             <th>Dogfood Feature Complete</th>
             <td>0.4</td>
-            <td>April 2016</td>
             <td>All features expected to be required for dogfooding implemented. Ruby, Python, and Java support.</td>
         </tr>
         <tr>
             <th>Dogfood</th>
             <td>0.5</td>
-            <td>May 2016</td>
             <td>Compiler written in GLS code, working in C#, Java, Ruby, Python, and TypeScript.</td>
         </tr>
         <tr>
             <th>Powershell, PHP, ES6 JavaScript, Objective-C, Swift, Misc.</th>
             <td>0.6</td>
-            <td>June 2016</td>
             <td>Dogfood or reject those languages and other possibilities.</td>
         </tr>
         <tr>
             <th>Language Specification Finalized</th>
             <td>0.7</td>
-            <td>July 2016</td>
             <td>Finalized language spec & cleaned internals of code.</td>
         </tr>
         <tr>
             <th>General Release</th>
             <td>1.0</td>
-            <td>August 2016</td>
             <td>Public announcement, glory to everyone.</td>
         </tr>
     </tbody>
