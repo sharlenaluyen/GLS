@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
+        "rootDir": "src",
         "module": "commonjs",
-        "sourceMap": false,
-        "removeComments": false,
-        "target": "es5"
+        "target": "es5",
+        "noImplicitAny": true,
+        "declaration": false
     },
     "exclude": [
-        "Coverage", "Documentation", "node_modules", "Tests"
+        "coverage", "docs", "node_modules", "test"
     ]
 }
