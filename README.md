@@ -52,6 +52,8 @@ print line : { operation : 1 plus 2 }
 
 ## Status
 
+GLS is halfway between **0.3** and **0.4**.
+
 <table>
     <thead>
         <th>Deliverable</th>
