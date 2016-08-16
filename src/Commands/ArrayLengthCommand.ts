@@ -28,4 +28,3 @@ export class ArrayLengthCommand extends NativeCallCommand {
         return this.language.properties.arrays.length;
     }
 }
-
