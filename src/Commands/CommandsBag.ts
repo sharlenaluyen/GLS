@@ -52,6 +52,7 @@ import { LiteralCommand } from "./LiteralCommand";
 import { ListTypeCommand } from "./ListTypeCommand";
 import { MainEndCommand } from "./MainEndCommand";
 import { MainStartCommand } from "./MainStartCommand";
+import { MathAbsoluteCommand } from "./MathAbsoluteCommand";
 import { MemberVariableCommand } from "./MemberVariableCommand";
 import { MemberVariableDeclareCommand } from "./MemberVariableDeclareCommand";
 import { NotCommand } from "./NotCommand";
@@ -139,6 +140,7 @@ export class CommandsBag {
             "list type": new ListTypeCommand(context),
             "main end": new MainEndCommand(context),
             "main start": new MainStartCommand(context),
+            "math absolute": new MathAbsoluteCommand(context),
             "member variable": new MemberVariableCommand(context),
             "member variable declare": new MemberVariableDeclareCommand(context),
             "not": new NotCommand(context),

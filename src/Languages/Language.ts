@@ -15,6 +15,7 @@ import { LambdaProperties } from "./Properties/LambdaProperties";
 import { LanguageProperties } from "./Properties/LanguageProperties";
 import { ListProperties } from "./Properties/ListProperties";
 import { LoopProperties } from "./Properties/LoopProperties";
+import { MathProperties } from "./Properties/MathProperties";
 import { NumberProperties } from "./Properties/NumberProperties";
 import { OperatorProperties } from "./Properties/OperatorProperties";
 import { OutputProperties } from "./Properties/OutputProperties";
@@ -53,6 +54,7 @@ export abstract class Language {
         this.generateLambdaProperties(this.properties.lambdas);
         this.generateListProperties(this.properties.lists);
         this.generateLoopProperties(this.properties.loops);
+        this.generateMathProperties(this.properties.math);
         this.generateNumberProperties(this.properties.numbers);
         this.generateOperatorProperties(this.properties.operators);
         this.generateOutputProperties(this.properties.output);
@@ -171,6 +173,13 @@ export abstract class Language {
      * @param loops   A property container for metadata on loops.
      */
     protected abstract generateLoopProperties(loops: LoopProperties): void;
+
+    /**
+     * Generates metadata on math.
+     * 
+     * @param math   A property container for metadata on math.
+     */
+    protected abstract generateMathProperties(math: MathProperties): void;
 
     /**
      * Generates metadata on numbers.

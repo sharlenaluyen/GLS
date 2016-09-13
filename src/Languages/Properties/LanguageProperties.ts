@@ -12,6 +12,7 @@ import { ImportProperties } from "./ImportProperties";
 import { LambdaProperties } from "./LambdaProperties";
 import { ListProperties } from "./ListProperties";
 import { LoopProperties } from "./LoopProperties";
+import { MathProperties } from "./MathProperties";
 import { NumberProperties } from "./NumberProperties";
 import { OutputProperties } from "./OutputProperties";
 import { OperatorProperties } from "./OperatorProperties";
@@ -94,6 +95,11 @@ export class LanguageProperties {
     public loops: LoopProperties;
 
     /**
+     * Metadata on math.
+     */
+    public math: MathProperties;
+
+    /**
      * Metadata on numbers.
      */
     public numbers: NumberProperties;
@@ -141,6 +147,7 @@ export class LanguageProperties {
         this.lambdas = new LambdaProperties();
         this.lists = new ListProperties();
         this.loops = new LoopProperties();
+        this.math = new MathProperties();
         this.numbers = new NumberProperties();
         this.operators = new OperatorProperties();
         this.output = new OutputProperties();
