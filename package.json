@@ -34,5 +34,5 @@
     "run-sequence": "^1.2.1",
     "tslint": "^3.9.0",
     "typescript": "^1.8.10"
-  },
+  }
 }
