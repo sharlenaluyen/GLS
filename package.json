@@ -9,7 +9,6 @@
   "description": "General Language Syntax - A unified syntax that compiles into a number of OOP languages.",
   "devDependencies": {
     "chai": "^3.5.0",
-    "codecov": "^1.0.1",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
@@ -18,8 +17,10 @@
     "gulp-mocha-phantomjs": "^0.11.0",
     "gulp-tslint": "^5.0.0",
     "gulp-typescript": "^2.13.5",
+    "gulp-typespace": "^0.1.8",
     "gulp-webpack": "^1.5.0",
     "install": "^0.8.1",
+    "merge2": "^1.0.2",
     "mocha": "^2.5.3",
     "requirejs": "^2.2.0",
     "run-sequence": "^1.2.1",

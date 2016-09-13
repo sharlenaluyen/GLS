@@ -2,11 +2,13 @@ const del = require("del");
 const eventStream = require("event-stream");
 const gulp = require("gulp");
 const insert = require("gulp-insert");
+const merge = require("merge2");
 const mocha = require("gulp-mocha");
 const mochaPhantomJS = require("gulp-mocha-phantomjs");
 const runSequence = require("run-sequence");
 const ts = require("gulp-typescript");
 const tslint = require("gulp-tslint");
+const typespace = require("gulp-typespace");
 const webpack = require("gulp-webpack");
 
 const distTypes = ["amd", "commonjs", "es2015", "system", "umd"];
@@ -44,10 +46,14 @@ gulp.task("dist:modules", () => {
                 module: moduleType
             });
 
-        pipes[moduleType] = tsProject
+        const result = tsProject
             .src()
-            .pipe(ts(tsProject))
-            .js.pipe(gulp.dest(`dist/${moduleType}`));
+            .pipe(ts(tsProject));
+
+        pipes[moduleType] = merge([
+            result.dts.pipe(gulp.dest(`dist/${moduleType}`)),
+            result.js.pipe(gulp.dest(`dist/${moduleType}`))
+        ]);
     });
 
     return eventStream.merge(Object.keys(pipes).map(moduleType => pipes[moduleType]));
@@ -102,15 +108,30 @@ gulp.task("test", callback => {
         "test:browser");
 });
 
+gulp.task("typespace", () => {
+    const settings = {
+        config: "./tsconfig.json",
+        namespace: "GLS.",
+        pathPrefix: "src/",
+        root: "."
+    };
+
+    typespace(settings)
+        .pipe(gulp.dest("dist/typespace"));
+});
+
 gulp.task("watch", ["default"], () => {
     gulp.watch("src/**/*.ts", ["default"]);
 });
 
-gulp.task("default", callback => {
+gulp.task("build", callback => {
     runSequence(
         "clean",
         ["tsc", "tslint"],
         "dist",
-        "test",
-        callback);
+        "test");
+})
+
+gulp.task("default", callback => {
+    runSequence("build", "test", callback);
 });
