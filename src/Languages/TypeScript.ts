@@ -15,6 +15,7 @@ import { ImportProperties } from "./Properties/ImportProperties";
 import { LambdaProperties } from "./Properties/LambdaProperties";
 import { ListProperties } from "./Properties/ListProperties";
 import { LoopProperties } from "./Properties/LoopProperties";
+import { MathProperties } from "./Properties/MathProperties";
 import { NativeCallProperties, NativeCallScope, NativeCallType } from "./Properties/NativeCallProperties";
 import { NumberProperties } from "./Properties/NumberProperties";
 import { OperatorProperties } from "./Properties/OperatorProperties";
@@ -249,6 +250,20 @@ export class TypeScript extends CLikeLanguage {
         loops.forEachMiddle = " in ";
         loops.forEachPairsAsKeys = true;
         loops.forEachRight = "";
+    }
+
+    /**
+     * Generates metadata on math.
+     * 
+     * @param math   A property container for metadata on math.
+     */
+    protected generateMathProperties(math: MathProperties): void {
+        math.absolute = new NativeCallProperties(
+            "Math.abs",
+            NativeCallScope.Static,
+            NativeCallType.Function);
+        math.requiredImports = {};
+        math.mathName = "Math";
     }
 
     /**

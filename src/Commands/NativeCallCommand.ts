@@ -42,14 +42,24 @@ export abstract class NativeCallCommand extends Command {
      */
     public render(parameters: string[]): LineResults {
         let scope: NativeCallScope = this.nativeCallProperties.scope;
+        let results: LineResults = this.scopeRenderers[scope](parameters);
 
-        return this.scopeRenderers[scope](parameters);
+        results.addImports(this.retrieveImports());
+
+        return results;
     }
 
     /**
      * @returns Metadata on how to perform the native call. 
      */
     protected abstract retrieveNativeCallProperties(): NativeCallProperties;
+
+    /**
+     * @returns Any imports this native command requires.
+     */
+    protected retrieveImports(): { [i: string]: string[] } {
+        return {};
+    }
 
     /**
      * Renders the native call as a member.
