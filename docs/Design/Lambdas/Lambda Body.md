@@ -35,23 +35,31 @@ lambda { |x, y|  x == y }
 
 ## Design
 
-### GLS Syntax:
-`lambda : returnType`*`[parameterName, parameterType, ...]`* `command`
+### Command Format
 
-The GLS syntax for a lambda body will be as above. The command starts with `lambda :`, which is followed with zero or more parameter names, each one followed by its type. The final part is a GLS command. Any variables used in the GLS command must be passed in the parameter list that precedes the command.
+```
+lambdaLeft parameterType parameterName, ... lambdaMiddle commandString lambdaRight
+```
 
-#### Examples:
+The output starts with `lambdaLeft`.
+A list of parameters follows, comma separated.
+If the language property `lambdaParameterTypeRequired` is set to `false`, then all `parameterType`s are ommitted.
+`lambdaMiddle` follows the parameter list, followed by the actual code for the lambda.
+It is passed to this implmentation as a string which contains the output of another `command`.
+After the command string, a `lambdaRight` ends the output of the lambda command. 
+
+#### Examples
 ```
 lambda : x number y number { operation : x (equal to) y }
 ```
 
-### Language Specific Properties:
+### Properties
 
 Properties will be stored in a LambdaProperties file in langauge.properties.lambdas. The following properties will be added.
 
 <table>
     <thead>
-        <th>Property Name</th>
+        <th>Name</th>
         <th>Type</th>
         <th>Description</th>
     </thead>
@@ -84,13 +92,7 @@ Properties will be stored in a LambdaProperties file in langauge.properties.lamb
     </tbody>
 </table>
 
-
-Command Format:
-```
-lambdaLeft parameterType parameterName, ... lambdaMiddle commandString lambdaRight
-```
-
-The output starts with `lambdaLeft`. A list of parameters follows, comma separated. If the language property `lambdaParameterTypeRequired` is set to `false`, then all `parameterType`s are ommitted. `lambdaMiddle` follows the parameter list, followed by the actual code for the lambda. It is passed to this implmentation as a string which contains the output of another `command`. After the command string, a `lambdaRight` ends the output of the lambda command. 
+### Language Values
 
 <table>
     <thead>

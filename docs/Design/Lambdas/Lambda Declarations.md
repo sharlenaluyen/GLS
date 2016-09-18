@@ -46,7 +46,7 @@ Properties will be stored in the LambdaProperties object. The following properti
 
 <table>
     <thead>
-        <th>Property Name</th>
+        <th>Name</th>
         <th>Type</th>
         <th>Description</th>
     </thead>
