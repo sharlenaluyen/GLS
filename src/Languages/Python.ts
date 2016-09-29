@@ -339,5 +339,8 @@ export class Python extends PythonicLanguage {
             "true": "True"
         };
         variables.null = "None";
+        variables.isNotNullMiddle = "is not";
+        variables.isNullMiddle = "not";
+        variables.nullRight = "None";
     }
 }

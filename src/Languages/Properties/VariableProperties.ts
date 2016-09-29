@@ -46,4 +46,29 @@ export class VariableProperties {
      * How to start a variable's type name.
      */
     public typeLeft: string;
+
+    /**
+     * Precedes variable when negatively checking for null.
+     */
+    public isNotNullLeft: string;
+
+    /**
+     * Precedes variable when positively checking for null.
+     */
+    public isNullLeft: string;
+
+    /**
+     * Middle portion of expression when positively checking for null.
+     */
+    public isNullMiddle: string;
+
+    /**
+     * Middle portion of expression when negatively checking for null.
+     */
+    public isNotNullMiddle: string;
+
+    /**
+     * Explicit null to check variable against.
+     */
+    public nullRight: string;
 }

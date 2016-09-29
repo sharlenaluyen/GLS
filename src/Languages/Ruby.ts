@@ -343,5 +343,7 @@ export class Ruby extends PythonicLanguage {
             "infinity": "float::Infinity",
         };
         variables.null = "Nil";
+        variables.isNotNullLeft = "!";
+        variables.nullRight = ".nil?";
     }
 }
