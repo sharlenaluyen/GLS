@@ -75,7 +75,9 @@ for (let item of arrayvar) {
             <td>Starts first line of for each code block</td>
         </tr>
         <tr>
+            <td>ForEachStartItteration</td>
             <td><code>string</code></td>
+            <td>Start of iteration statement</td>
         </tr>
         <tr>
             <td>ForEachStartSeparator</td>
@@ -101,6 +103,7 @@ for (let item of arrayvar) {
     <thead>
         <th>Language</th>
         <th>ForEachStartLeft</th>
+        <th>ForEachStartItteration</th>
         <th>ForEachStartSeparator</th>
         <th>ForEachStartRight</th>
         <th>ForEachEnd</th>
