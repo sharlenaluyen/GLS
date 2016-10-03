@@ -1,5 +1,7 @@
 # For Each
-A loop that iterates over all elements of an array. This loop does not use an explicit index.
+
+A loop that iterates over all elements of an array. 
+This loop does not use an explicit index.
 
 ## Commands
 
@@ -7,24 +9,26 @@ A loop that iterates over all elements of an array. This loop does not use an ex
 
 `for each start : array type iterator`
 
-This command will be used to start a for each code block. The first parameter is the array to be iterated over.
-The second command is the type of the array. The third parameter is the iterator variable.
+Starts a for each block. 
+The first parameter is the array to be iterated over.
+The second command is the type of the array. 
+The third parameter is the iterator variable.
 
 ### `for each end`
 
-This command ends a for each code block.
+Ends a for each block.
 
 ## Usage
 
 ```
-for each start : arrayvar int item
+for each start : myArray int item
 for each end
 ```
 
 ### CSharp
 
 ```csharp
-foreach (int item in arrayvar)
+foreach (int item in myArray)
 {
 }
 ```
@@ -32,7 +36,7 @@ foreach (int item in arrayvar)
 ### Java
 
 ```java
-for (int item : arrayvar) 
+for (int item : myArray) 
 {
 }
 ```
@@ -40,21 +44,21 @@ for (int item : arrayvar)
 ### Python
 
 ```python
-for item in arrayvar:
+for item in myArray:
 
 ```
 
 ### Ruby
 
 ```ruby
-for item in arrayvar
+for item in myArray
 end
 ```
 
 ### TypeScript
 
 ```typescript
-for (let item of arrayvar) {
+for (let item of myArray) {
 }
 ```
 
@@ -72,27 +76,27 @@ for (let item of arrayvar) {
         <tr>
             <td>ForEachStartLeft</td>
             <td><code>string</code></td>
-            <td>Starts first line of for each code block</td>
+            <td>Starts the first line of for each block</td>
         </tr>
         <tr>
             <td>ForEachStartItteration</td>
             <td><code>string</code></td>
-            <td>Start of iteration statement</td>
+            <td>Starts the iteration statement</td>
         </tr>
         <tr>
             <td>ForEachStartSeparator</td>
             <td><code>string</code></td>
-            <td>Links iterator variable and array</td>
+            <td>Links the iterator variable and array</td>
         </tr>     
         <tr>
             <td>ForEachStartRight</td>
             <td><code>string</code></td>
-            <td>Ends first line of for each code block</td>
+            <td>Ends the first line of for each block</td>
         </tr>     
         <tr>
             <td>ForEachEnd</td>
             <td><code>string</code></td>
-            <td>End of for each code block.</td>
+            <td>The end of for each block.</td>
         </tr>
     </tbody>
 </table>
@@ -151,5 +155,3 @@ for (let item of arrayvar) {
         </tr>
     </tbody>
 </table>
-
-### Errata
