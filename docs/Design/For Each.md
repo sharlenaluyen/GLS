@@ -21,14 +21,14 @@ Ends a for each block.
 ## Usage
 
 ```
-for each start : myArray int item
+for each start : basket string fruit
 for each end
 ```
 
 ### CSharp
 
 ```csharp
-foreach (int item in myArray)
+foreach (string fruit in basket)
 {
 }
 ```
@@ -36,7 +36,7 @@ foreach (int item in myArray)
 ### Java
 
 ```java
-for (int item : myArray) 
+for (string fruit : basket) 
 {
 }
 ```
@@ -44,21 +44,21 @@ for (int item : myArray)
 ### Python
 
 ```python
-for item in myArray:
+for fruit in basket:
 
 ```
 
 ### Ruby
 
 ```ruby
-for item in myArray
+for fruit in basket
 end
 ```
 
 ### TypeScript
 
 ```typescript
-for (let item of myArray) {
+for (let fruit of basket) {
 }
 ```
 
