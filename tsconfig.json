@@ -46,6 +46,7 @@
         "src/Commands/ForEachEndCommand.ts",
         "src/Commands/ForEachKeyStartCommand.ts",
         "src/Commands/ForEachPairStartCommand.ts",
+        "src/Commands/ForEachStartCommand.ts",
         "src/Commands/ForNumbersEndCommand.ts",
         "src/Commands/ForNumbersStartCommand.ts",
         "src/Commands/FunctionEndCommand.ts",

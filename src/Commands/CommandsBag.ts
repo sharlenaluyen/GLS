@@ -36,6 +36,7 @@ import { FileStartCommand } from "./FileStartCommand";
 import { ForEachEndCommand } from "./ForEachEndCommand";
 import { ForEachKeyStartCommand } from "./ForEachKeyStartCommand";
 import { ForEachPairStartCommand } from "./ForEachPairStartCommand";
+import { ForEachStartCommand } from "./ForEachStartCommand";
 import { ForNumbersStartCommand } from "./ForNumbersStartCommand";
 import { ForNumbersEndCommand } from "./ForNumbersEndCommand";
 import { FunctionEndCommand } from "./FunctionEndCommand";
@@ -126,6 +127,7 @@ export class CommandsBag {
             "file start": new FileStartCommand(context),
             "for each end": new ForEachEndCommand(context),
             "for each key start": new ForEachKeyStartCommand(context),
+            "for each start" : new ForEachStartCommand(context),
             "for each pair start": new ForEachPairStartCommand(context),
             "for numbers start": new ForNumbersStartCommand(context),
             "for numbers end": new ForNumbersEndCommand(context),
