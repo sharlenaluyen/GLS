@@ -143,6 +143,14 @@ No language is perfect. The following are some seemingly obvious omissions in GL
             <td></td>
         </tr>
         <tr>
+            <th>Do/While Loops</th>
+            <td></td>
+            <td></td>
+            <td><em>Missing</em></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
             <th>Enums Without Values</th>
             <td></td>
             <td></td>
