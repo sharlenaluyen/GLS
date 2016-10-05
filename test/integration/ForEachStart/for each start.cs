@@ -1,2 +1,1 @@
-foreach (string fruit in basket)
-{
+foreach (string fruit in basket) {

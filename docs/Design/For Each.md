@@ -28,8 +28,7 @@ for each end
 ### CSharp
 
 ```csharp
-foreach (string fruit in basket)
-{
+foreach (string fruit in basket) {
 }
 ```
 
@@ -118,7 +117,7 @@ for (let fruit of basket) {
             <td><code>"foreach"</code></td>
             <td><code>"("</code></td>
             <td><code>"in"</code></td>
-            <td><code>")\n{"</code></td>
+            <td><code>") {"</code></td>
             <td><code>"\n}"</code></td>
         </tr>
         <tr>
