@@ -58,10 +58,9 @@ export class ForEachStartCommand extends Command {
 
         line += this.language.properties.loops.forEachStartSeparator;
         line += parameters[1];
-        line += this.language.properties.loops.forEachRight;
 
         output = [new CommandResult(line, 0)];
-        this.addLineEnder(output, this.language.properties.conditionals.startRight, 1);
+        this.addLineEnder(output, this.language.properties.loops.forEachStartRight, 1);
 
         return new LineResults(output, false);
     }

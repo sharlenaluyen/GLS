@@ -88,6 +88,11 @@ export class LoopProperties {
     public forEachStartSeparator: string;
 
     /**
+     * Last part of a foreach loop's initial line.
+     */
+    public forEachStartRight: string;
+
+    /**
      * Whether Pythonic ranged loops are used, rather than traditional C-like ones.
      */
     public rangedForLoops: boolean;

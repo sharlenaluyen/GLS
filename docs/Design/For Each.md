@@ -126,7 +126,7 @@ for (let fruit of basket) {
             <td><code>"for"</code></td>
             <td><code>"("</code></td>
             <td><code>":"</code></td>
-            <td><code>")\n{"</code></td>
+            <td><code>") {"</code></td>
             <td><code>"\n}"</code></td>
         </tr>
         <tr>
@@ -134,7 +134,7 @@ for (let fruit of basket) {
             <td><code>"for"</code></td>
             <td><code>""</code></td>
             <td><code>"in"</code></td>
-            <td><code>"\n"</code></td>
+            <td><code>""</code></td>
             <td><code>"end"</code></td>
         </tr>
         <tr>
@@ -142,7 +142,7 @@ for (let fruit of basket) {
             <td><code>"for"</code></td>
             <td><code>""</code></td>
             <td><code>"in"</code></td>
-            <td><code>":\n"</code></td>
+            <td><code>":"</code></td>
             <td><code>""</code></td>
         </tr>
         <tr>
@@ -150,7 +150,7 @@ for (let fruit of basket) {
             <td><code>"for"</code></td>
             <td><code>"(let"</code></td>
             <td><code>"of"</code></td>
-            <td><code>") {\n"</code></td>
+            <td><code>") {"</code></td>
             <td><code>"\n}"</code></td>
         </tr>
     </tbody>
