@@ -78,6 +78,16 @@ export class LoopProperties {
     public forEachRight: string;
 
     /**
+     * Starts itteration portion of foreach loop's initial line.
+     */
+    public forEachStartItteration: string;
+
+    /**
+     * Separates itteration variable and array in a foreach loop's initial line.
+     */
+    public forEachStartSeparator: string;
+
+    /**
      * Whether Pythonic ranged loops are used, rather than traditional C-like ones.
      */
     public rangedForLoops: boolean;

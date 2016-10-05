@@ -237,6 +237,7 @@ export class Ruby extends PythonicLanguage {
         loops.forEachGetKeys = ".each_key { |";
         loops.forEachGetPairs = ".each { |";
         loops.forEachRight = "|";
+        loops.forEachStartSeparator = "in";
 
         loops.rangedForLoopsLeft = " in ";
         loops.rangedForLoopsMiddle = "..";

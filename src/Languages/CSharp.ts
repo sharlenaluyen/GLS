@@ -259,6 +259,8 @@ export class CSharp extends CLikeLanguage {
         loops.forEachPairsRetrieveKey = ".Key";
         loops.forEachPairsRetrieveValue = ".Value";
         loops.forEachRight = "";
+        loops.forEachStartItteration = "(";
+        loops.forEachStartSeparator = "in";
     }
 
     /**
