@@ -31,17 +31,6 @@ export class ForEachStartCommand extends Command {
      * @returns Line(s) of code in the language.
      */
     public render(parameters: string[]): LineResults {
-        return this.renderForEachAsLoop(parameters);
-    }
-
-    /**
-     * Renders a traditional foreach loop.
-     * 
-     * @param parameters   The command's name, followed by any parameters.
-     * @returns Line(s) of code in the language.
-     * @remarks Usage: (container, keyName, keyType).
-     */
-    public renderForEachAsLoop(parameters: string[]): LineResults {
         let line: string = this.language.properties.loops.foreach;
         let output: CommandResult[];
 
