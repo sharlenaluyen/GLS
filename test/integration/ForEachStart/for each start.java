@@ -1,2 +1,1 @@
 for (string fruit : basket) {
-}
