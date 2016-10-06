@@ -238,7 +238,8 @@ export class Python extends PythonicLanguage {
         loops.forEachPairsAsPair = true;
         loops.forEachRight = "";
 
-        loops.forEachStartSeparator = "in";
+        loops.forEachStartLeft = "for";
+        loops.forEachStartSeparator = " in ";
         loops.forEachStartRight = ":";
 
         loops.rangedForLoopsLeft = " in range(";

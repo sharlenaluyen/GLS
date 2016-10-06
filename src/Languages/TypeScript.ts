@@ -255,8 +255,9 @@ export class TypeScript extends CLikeLanguage {
         loops.forEachPairsAsKeys = true;
         loops.forEachRight = "";
 
-        loops.forEachStartItteration = "(";
-        loops.forEachStartSeparator = "of";
+        loops.forEachStartLeft = "for";
+        loops.forEachStartItteration = " (";
+        loops.forEachStartSeparator = " of ";
         loops.forEachStartRight = ") {";
     }
 
