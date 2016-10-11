@@ -13,6 +13,7 @@ All supported languages provide some amount of built-in support to interact with
 
 The `list pop` command removes the last element of a list.
 
+
 ## Usage
 
 ```gls
