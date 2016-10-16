@@ -184,3 +184,14 @@ These commands will be implemented as native calls.
     </tbody>
 </table>
 
+### `list clear`
+
+`list clear : name`
+
+The `list clear` command clears the entire list.
+
+## Usage
+
+```gls
+list clear : foo
+```
